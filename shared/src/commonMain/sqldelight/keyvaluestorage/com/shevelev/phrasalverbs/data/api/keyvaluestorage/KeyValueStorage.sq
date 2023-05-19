@@ -1,0 +1,50 @@
+CREATE TABLE key (
+    key_id INTEGER NOT NULL PRIMARY KEY,
+    key TEXT NOT NULL,
+    bunch TEXT NOT NULL,
+    type INTEGER AS Short NOT NULL,
+    single INTEGER AS Boolean NOT NULL DEFAULT 0
+);
+
+CREATE INDEX key_search_index ON key(key, bunch);
+
+CREATE TABLE value (
+    value_id INTEGER NOT NULL PRIMARY KEY,
+    key_id INTEGER NOT NULL,
+    value TEXT NOT NULL,
+    sort_order INTEGER AS Short NOT NULL
+);
+
+CREATE INDEX value_link_index ON value(key_id);
+
+createKey:
+INSERT INTO key(key_id, key, bunch, type, single)
+VALUES (?, ?, ?, ?, ?);
+
+createValue:
+INSERT INTO value(value_id, key_id, value, sort_order)
+VALUES (?, ?, ?, ?);
+
+readKey:
+SELECT key_id, type, single FROM key WHERE key = ? AND bunch = ?;
+
+readCombinedList:
+SELECT k.type, k.single, v.value FROM key k INNER JOIN value v
+ON k.key_id = v.key_id
+WHERE k.key = ? AND k.bunch = ?
+ORDER BY sort_order;
+
+readValuesList:
+SELECT value FROM value WHERE key_id = ? ORDER BY sort_order;
+
+updateKey:
+UPDATE key SET type = ?, single = ? WHERE key_id = ?;
+
+updateValue:
+UPDATE value SET value = ? WHERE key_id = ?;
+
+deleteKey:
+DELETE FROM key WHERE key_id = ?;
+
+deleteValue:
+DELETE FROM value WHERE key_id = ?;

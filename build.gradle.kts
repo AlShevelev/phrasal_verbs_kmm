@@ -6,3 +6,11 @@ plugins {
     id("com.android.library").apply(false)
     id("org.jetbrains.compose").apply(false)
 }
+
+buildscript {
+    val sqlDelightVersion = extra["sqlDelight.version"] as String
+
+    dependencies {
+        classpath("com.squareup.sqldelight:gradle-plugin:$sqlDelightVersion")
+    }
+}

@@ -1,0 +1,104 @@
+/**
+One card */
+CREATE TABLE card (
+    card_id INTEGER AS Long NOT NULL PRIMARY KEY,
+    color INTEGER AS Short
+);
+
+createCard:
+INSERT INTO card(card_id, color)
+VALUES (?, ?);
+
+readAllCards:
+SELECT *  FROM card;
+
+updateCardColor:
+UPDATE card SET color = ? WHERE card_id = ?;
+
+
+/**
+A card's side */
+CREATE TABLE card_side (
+    card_side_id INTEGER AS Long NOT NULL PRIMARY KEY,
+    card_id INTEGER AS Long NOT NULL,
+    language_code INTEGER AS Short NOT NULL
+);
+
+CREATE INDEX card_side_link ON card_side(card_id);
+
+createCardSide:
+INSERT INTO card_side(card_side_id, card_id, language_code)
+VALUES (?, ?, ?);
+
+readCardSide:
+SELECT *  FROM card_side WHERE card_id = ?;
+
+/**
+One element of content in a card's side
+This is a list of possible values for the field 'type':
+0 - clarfication
+1 - main content
+2 - example */
+CREATE TABLE card_side_content_item (
+    card_side_content_item_id INTEGER AS Long NOT NULL PRIMARY KEY,
+    card_side_id INTEGER AS Long NOT NULL,
+    type INTEGER AS Short NOT NULL,
+    value TEXT NOT NULL,
+    value_voicing TEXT,
+    description TEXT,
+    sort_order INTEGER AS Short NOT NULL
+);
+
+CREATE INDEX card_side_content_item_link ON card_side_content_item(card_side_id);
+
+createCardSideContentItem:
+INSERT INTO card_side_content_item(card_side_content_item_id, card_side_id, type, value, value_voicing, description, sort_order)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+readCardSideContentItems:
+SELECT *  FROM card_side_content_item WHERE card_side_id = ?;
+
+
+/**
+A group of cards */
+CREATE TABLE tag (
+    tag_id INTEGER AS Long NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL
+);
+
+createTag:
+INSERT INTO tag(tag_id, title)
+VALUES (?, ?);
+
+readAllTags:
+SELECT *  FROM tag;
+
+updateTagTitle:
+UPDATE tag SET title = ? WHERE tag_id = ?;
+
+deleteTag:
+DELETE FROM tag WHERE tag_id = ?;
+
+
+/**
+A link between cards and groups */
+CREATE TABLE card_tag (
+    card_id INTEGER AS Long NOT NULL,
+    tag_id INTEGER AS Long NOT NULL,
+    sort_order INTEGER AS Short NOT NULL
+);
+
+CREATE INDEX card_tag_index ON card_tag(card_id, tag_id);
+
+createCardTag:
+INSERT INTO card_tag(card_id, tag_id, sort_order)
+VALUES (?, ?, ?);
+
+readAllCardTags:
+SELECT *  FROM card_tag;
+
+deleteCardTag:
+DELETE FROM card_tag WHERE card_id = ? AND tag_id = ?;
+
+updateCardTagSortOrder:
+UPDATE card_tag SET sort_order = ? WHERE card_id = ? AND tag_id = ?;

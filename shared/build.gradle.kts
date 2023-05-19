@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -25,9 +26,16 @@ kotlin {
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
 
+    val coroutinesVersion = extra["coroutines.version"] as String
+    val sqlDelightVersion = extra["sqlDelight.version"] as String
+
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+
+                implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
@@ -40,6 +48,8 @@ kotlin {
                 api("androidx.activity:activity-compose:1.6.1")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.9.0")
+
+                implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
             }
         }
         val iosX64Main by getting
@@ -50,6 +60,10 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation("com.squareup.sqldelight:native-driver:$sqlDelightVersion")
+            }
         }
     }
 }
@@ -74,3 +88,16 @@ android {
         jvmToolchain(11)
     }
 }
+
+sqldelight {
+    database("AppStorageDatabase") {
+        packageName = "com.shevelev.phrasalverbs.data.api.appstorage"
+        sourceFolders = listOf("sqldelight/appstorage")
+    }
+
+    database("KeyValueStorageDatabase") {
+        packageName = "com.shevelev.phrasalverbs.data.api.keyvaluestorage"
+        sourceFolders = listOf("sqldelight/keyvaluestorage")
+    }
+}
+
