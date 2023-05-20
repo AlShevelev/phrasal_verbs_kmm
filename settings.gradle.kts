@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "PhrasalVerbs"
 
 include(":androidApp")
 include(":shared")
