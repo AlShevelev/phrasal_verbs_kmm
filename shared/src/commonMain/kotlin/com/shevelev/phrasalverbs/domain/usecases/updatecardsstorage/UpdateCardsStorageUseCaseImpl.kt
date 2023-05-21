@@ -1,6 +1,6 @@
 package com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage
 
-import com.shevelev.languagecards.shared.usecases.updatecardsstorage.batches.SyncCardsVersion1Batch
+import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsVersion1Batch
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorage
 import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsBatch
