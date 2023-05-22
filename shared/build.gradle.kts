@@ -28,6 +28,7 @@ kotlin {
 
     val coroutinesVersion = extra["coroutines.version"] as String
     val sqlDelightVersion = extra["sqlDelight.version"] as String
+    val koinVersion = extra["koin.version"] as String
 
     sourceSets {
         val commonMain by getting {
@@ -35,6 +36,8 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+
+                api("io.insert-koin:koin-core:$koinVersion")
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)

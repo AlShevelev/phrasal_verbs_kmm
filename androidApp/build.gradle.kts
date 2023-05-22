@@ -6,10 +6,16 @@ plugins {
 
 kotlin {
     android()
+
+    val koinVersion = extra["koin.version"] as String
+
     sourceSets {
         val androidMain by getting {
             dependencies {
                 implementation(project(":shared"))
+
+                implementation("io.insert-koin:koin-core:$koinVersion")
+                implementation("io.insert-koin:koin-android:$koinVersion")
             }
         }
     }
