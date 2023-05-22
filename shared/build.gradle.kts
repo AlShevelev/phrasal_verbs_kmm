@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     id("com.squareup.sqldelight")
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -29,6 +30,7 @@ kotlin {
     val coroutinesVersion = extra["coroutines.version"] as String
     val sqlDelightVersion = extra["sqlDelight.version"] as String
     val koinVersion = extra["koin.version"] as String
+    val mokoResourcesVersion = extra["moko.resources.version"] as String
 
     sourceSets {
         val commonMain by getting {
@@ -38,6 +40,9 @@ kotlin {
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
 
                 api("io.insert-koin:koin-core:$koinVersion")
+
+                api("dev.icerock.moko:resources:$mokoResourcesVersion")
+                api("dev.icerock.moko:resources-compose:$mokoResourcesVersion")
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -104,3 +109,7 @@ sqldelight {
     }
 }
 
+multiplatformResources {
+    multiplatformResourcesPackage = "com.shevelev.phrasalverbs.resources" // required
+    iosBaseLocalizationRegion = "ru" // optional, default "en"
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="greeting_default">Hello, World!</string>
+    <string name="greeting_platform">Hello, %s!</string>
+</resources>

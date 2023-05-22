@@ -8,9 +8,15 @@ plugins {
 }
 
 buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+
     val sqlDelightVersion = extra["sqlDelight.version"] as String
+    val mokoResourcesVersion = extra["moko.resources.version"] as String
 
     dependencies {
         classpath("com.squareup.sqldelight:gradle-plugin:$sqlDelightVersion")
+        classpath("dev.icerock.moko:resources-generator:$mokoResourcesVersion")
     }
 }

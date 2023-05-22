@@ -14,7 +14,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.utils.koin.getKoin
+import com.shevelev.phrasalverbs.utils.resource.toLocString
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -22,14 +24,15 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello, World!") }
+        val defaultGreeting = MR.strings.greeting_default.toLocString()
+        var greetingText by remember { mutableStateOf(defaultGreeting) }
         var showImage by remember { mutableStateOf(false) }
 
         val viewModel = getKoin<AppViewModel>()
 
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = {
-                greetingText = "Hello, ${viewModel.getPlatformName()}"
+                greetingText = MR.strings.greeting_platform.toLocString(viewModel.getPlatformName())
                 showImage = !showImage
             }) {
                 Text(greetingText)
@@ -37,7 +40,7 @@ fun App() {
             AnimatedVisibility(showImage) {
                 Image(
                     painterResource("compose-multiplatform.xml"),
-                    null
+                    null,
                 )
             }
         }
