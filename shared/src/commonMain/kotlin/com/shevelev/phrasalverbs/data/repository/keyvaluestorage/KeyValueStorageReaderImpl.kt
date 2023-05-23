@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
  * An implementation for reading data from a key-value storage that based on
  * SQLDelight database
  */
-class KeyValueStorageReaderImpl(
+internal class KeyValueStorageReaderImpl(
     private val dbQueries: KeyValueStorageQueries,
     private val storageKey: String,
     private val ioDispatcher: CoroutineDispatcher,

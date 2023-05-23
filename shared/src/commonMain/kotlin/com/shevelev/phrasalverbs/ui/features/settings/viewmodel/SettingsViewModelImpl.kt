@@ -4,7 +4,7 @@ import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import com.shevelev.phrasalverbs.utils.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.utils.ui.viewmodel.ViewModelBase
 
-class SettingsViewModelImpl(
+internal class SettingsViewModelImpl(
     val navigation: NavigationGraph,
     scopeClosable: KoinScopeClosable,
 ) : ViewModelBase(scopeClosable), SettingsViewModel {

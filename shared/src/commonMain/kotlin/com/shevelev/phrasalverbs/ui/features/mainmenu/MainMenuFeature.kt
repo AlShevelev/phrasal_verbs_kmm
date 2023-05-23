@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
 import com.shevelev.phrasalverbs.utils.ui.Feature
 
 @Composable
-fun MainMenuFeature(
+internal fun MainMenuFeature(
     params: FeatureParams.MainMenu,
     modifier: Modifier = Modifier
 ) {

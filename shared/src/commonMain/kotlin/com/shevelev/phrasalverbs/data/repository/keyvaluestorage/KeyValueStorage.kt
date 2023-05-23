@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * An interface for access to a key-value storage
  */
-interface KeyValueStorage {
+internal interface KeyValueStorage {
     /**
      * An entity for reading data from a key-value storage
      */

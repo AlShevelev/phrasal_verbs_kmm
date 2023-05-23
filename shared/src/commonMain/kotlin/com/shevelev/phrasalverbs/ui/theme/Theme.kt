@@ -9,7 +9,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MainTheme(content: @Composable () -> Unit) {
+internal fun MainTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colors = lightColors(
             primary = ColorsTheme.Primary,

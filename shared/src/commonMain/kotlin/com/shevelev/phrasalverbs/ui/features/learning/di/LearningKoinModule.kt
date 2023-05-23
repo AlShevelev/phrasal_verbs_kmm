@@ -9,7 +9,7 @@ import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-object LearningKoinScope : KoinScopeDescriptor {
+internal object LearningKoinScope : KoinScopeDescriptor {
     override val name: StringQualifier = named("LEARNING_SCOPE")
     override val id: String = "622eb456-79fa-4922-a541-88617fa29132"
 }

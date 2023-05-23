@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * Set of constants for supported types
  */
-object Types {
+internal object Types {
     const val INTEGER: Short = 0
     const val SHORT: Short = 1
     const val LONG: Short = 2

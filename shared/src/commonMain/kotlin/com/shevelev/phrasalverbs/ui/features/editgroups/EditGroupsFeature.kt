@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
 import com.shevelev.phrasalverbs.utils.ui.Feature
 
 @Composable
-fun EditGroupsFeature(
+internal fun EditGroupsFeature(
     params: FeatureParams.EditGroups,
     modifier: Modifier = Modifier,
 ) {

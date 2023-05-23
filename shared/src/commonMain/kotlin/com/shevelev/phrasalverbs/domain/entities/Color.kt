@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.domain.entities
 /**
  * Predefined colors
  */
-enum class Color {
+internal enum class Color {
     RED,
     GREEN,
     BLUE,

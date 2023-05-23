@@ -4,7 +4,7 @@ import com.shevelev.phrasalverbs.domain.entities.Color
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
-interface CardsRepositoryMapper {
+internal interface CardsRepositoryMapper {
     fun colorToDb(color: Color?): Short?
 
     fun colorFromDb(color: Short?): Color?

@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.utils.idgenerator.IdGenerator
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
-class CardsRepositoryImpl(
+internal class CardsRepositoryImpl(
     private val appStorageDatabase: AppStorageDatabase,
     private val ioDispatcher: CoroutineDispatcher,
     private val mapper: CardsRepositoryMapper,

@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * An interface for reading data from a key-value storage
  */
-interface KeyValueStorageReader {
+internal interface KeyValueStorageReader {
 
     /**
      * Get a boolean value from the storage by its key

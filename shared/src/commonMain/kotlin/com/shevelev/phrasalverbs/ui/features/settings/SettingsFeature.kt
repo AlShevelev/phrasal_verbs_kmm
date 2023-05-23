@@ -12,13 +12,13 @@ import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
 import com.shevelev.phrasalverbs.utils.ui.Feature
 
 @Composable
-fun SettingsFeature(
+internal fun SettingsFeature(
     params: FeatureParams.Settings,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Feature<SettingsViewModel>(
         scope = SettingsKoinScope,
-    ) {  viewModel ->
+    ) { viewModel ->
         Box(
             contentAlignment = Alignment.Center,
             modifier = modifier,

@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
  * An implementation for updating data in a key-value storage that based on
  * SQLDelight database
  */
-class KeyValueStorageWriteOperationsImpl(
+internal class KeyValueStorageWriteOperationsImpl(
     private val dbQueries: KeyValueStorageQueries,
     private val storageKey: String,
     private val ioDispatcher: CoroutineDispatcher,

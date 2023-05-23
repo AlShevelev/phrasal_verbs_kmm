@@ -1,5 +1,5 @@
 package com.shevelev.phrasalverbs.utils.koin
 
-interface KoinScopeClosable {
+internal interface KoinScopeClosable {
     fun closeScope()
 }

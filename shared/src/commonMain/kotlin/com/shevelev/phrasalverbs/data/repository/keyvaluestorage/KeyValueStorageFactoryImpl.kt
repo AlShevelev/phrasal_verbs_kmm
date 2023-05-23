@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 import com.shevelev.phrasalverbs.data.api.DatabaseDriverFactory
 import kotlinx.coroutines.CoroutineDispatcher
 
-class KeyValueStorageFactoryImpl(
+internal class KeyValueStorageFactoryImpl(
     private val dbDriverFactory: DatabaseDriverFactory,
     private val ioDispatcher: CoroutineDispatcher,
 ) : KeyValueStorageFactory {

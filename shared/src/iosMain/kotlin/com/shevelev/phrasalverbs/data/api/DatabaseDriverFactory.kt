@@ -5,7 +5,7 @@ import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageDatabas
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
 
-actual class DatabaseDriverFactory {
+internal actual class DatabaseDriverFactory {
     actual fun createKeyValueStorageDriver(): SqlDriver {
         return NativeSqliteDriver(KeyValueStorageDatabase.Schema, "key_value_storage.db")
     }

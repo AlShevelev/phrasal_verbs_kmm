@@ -1,6 +1,6 @@
 package com.shevelev.phrasalverbs.domain.entities
 
-enum class ContentItemType {
+internal enum class ContentItemType {
     CLARIFICATION,
     MAIN,
     EXAMPLE

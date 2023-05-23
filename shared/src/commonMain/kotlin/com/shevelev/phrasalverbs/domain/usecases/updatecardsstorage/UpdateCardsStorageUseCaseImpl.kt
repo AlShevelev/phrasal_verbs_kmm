@@ -1,16 +1,16 @@
 package com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage
 
-import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsVersion1Batch
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorage
 import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsBatch
+import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsVersion1Batch
 
 private const val LAST_CARDS_BATCH_VERSION = "LAST_CARDS_BATCH_VERSION"
 
 /**
  * This in a logic for create/update card's database
  */
-class UpdateCardsStorageUseCaseImpl(
+internal class UpdateCardsStorageUseCaseImpl(
     private val keyValueStorage: KeyValueStorage,
     private val repository: CardsRepository,
 ) : UpdateCardsStorageUseCase {

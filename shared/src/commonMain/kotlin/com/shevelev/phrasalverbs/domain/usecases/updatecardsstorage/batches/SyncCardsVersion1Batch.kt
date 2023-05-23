@@ -7,7 +7,7 @@ import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.Language
 import com.shevelev.phrasalverbs.utils.idgenerator.IdGenerator
 
-class SyncCardsVersion1Batch(
+internal class SyncCardsVersion1Batch(
     private val repository: CardsRepository,
 ) : SyncCardsBatch {
 

@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * An interface for updating data in a key-value storage
  */
-interface KeyValueStorageWriter {
+internal interface KeyValueStorageWriter {
     /**
      * Executes writing operations inside [updateAction] block with reading data opportunity
      */

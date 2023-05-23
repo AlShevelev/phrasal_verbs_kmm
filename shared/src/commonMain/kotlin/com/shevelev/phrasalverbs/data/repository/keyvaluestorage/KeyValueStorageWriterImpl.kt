@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * An implementation for updating data in a key-value storage bases on SQLDelight
  */
-class KeyValueStorageWriterImpl(
+internal class KeyValueStorageWriterImpl(
     private val reader: KeyValueStorageReader,
     private val writerOperations: KeyValueStorageWriteOperations,
 ) : KeyValueStorageWriter {

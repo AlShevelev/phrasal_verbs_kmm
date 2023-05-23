@@ -2,7 +2,7 @@ package com.shevelev.phrasalverbs.data.repository.appstorage
 
 import com.shevelev.phrasalverbs.domain.entities.Card
 
-interface CardsRepository {
+internal interface CardsRepository {
     /**
      * Returns all cards in random order
      */

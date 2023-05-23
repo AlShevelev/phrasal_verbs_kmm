@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class NavigationGraphImpl : NavigationGraph {
+internal class NavigationGraphImpl : NavigationGraph {
     private val _activeFeature = MutableStateFlow<FeatureParams>(FeatureParams.MainMenu)
     override val activeFeature: StateFlow<FeatureParams>
         get() = _activeFeature.asStateFlow()

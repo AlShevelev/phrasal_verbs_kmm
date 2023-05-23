@@ -7,7 +7,7 @@ import com.shevelev.phrasalverbs.utils.koin.getKoin
 import com.shevelev.phrasalverbs.utils.ui.viewmodel.ViewModel
 
 @Composable
-inline fun <reified TVM : ViewModel>Feature(
+internal inline fun <reified TVM : ViewModel>Feature(
     scope: KoinScopeDescriptor,
     content: @Composable (TVM) -> Unit,
 ) {

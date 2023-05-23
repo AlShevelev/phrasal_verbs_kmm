@@ -4,7 +4,7 @@ package com.shevelev.phrasalverbs.utils.idgenerator
  * A pure Kotlin implementation of the Murmur 2 hashing algorithm as presented
  * https://sites.google.com/site/murmurhash
  */
-object Murmur2 {
+internal object Murmur2 {
     private const val MASK: Long = 0xFFFFFFFFL
 
     fun hash(data: ByteArray, seed: Long): Long {

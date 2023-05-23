@@ -1,6 +1,6 @@
 package com.shevelev.phrasalverbs.ui.navigation
 
-sealed interface FeatureParams {
+internal sealed interface FeatureParams {
     object EditGroups : FeatureParams
 
     object Learning : FeatureParams

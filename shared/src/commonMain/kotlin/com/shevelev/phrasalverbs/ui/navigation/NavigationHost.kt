@@ -10,35 +10,35 @@ import com.shevelev.phrasalverbs.ui.features.settings.SettingsFeature
 import com.shevelev.phrasalverbs.utils.koin.getKoin
 
 @Composable
-fun NavigationHost(
-    modifier: Modifier = Modifier
+internal fun NavigationHost(
+    modifier: Modifier = Modifier,
 ) {
     val navigationGraph = getKoin<NavigationGraph>()
     val feature = navigationGraph.activeFeature.collectAsState()
 
-    when(val params = feature.value) {
+    when (val params = feature.value) {
         is FeatureParams.EditGroups -> {
             EditGroupsFeature(
                 params = params,
-                modifier = modifier
+                modifier = modifier,
             )
         }
         is FeatureParams.Learning -> {
             LearningFeature(
                 params = params,
-                modifier = modifier
+                modifier = modifier,
             )
         }
         is FeatureParams.MainMenu -> {
             MainMenuFeature(
                 params = params,
-                modifier = modifier
+                modifier = modifier,
             )
         }
         is FeatureParams.Settings -> {
             SettingsFeature(
                 params = params,
-                modifier = modifier
+                modifier = modifier,
             )
         }
     }

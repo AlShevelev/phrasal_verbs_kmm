@@ -3,7 +3,7 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 /**
  * A set of operations for updating data in a key-value storage
  */
-interface KeyValueStorageWriteOperations {
+internal interface KeyValueStorageWriteOperations {
     /**
      * Puts a value with given key to a storage. If the value exists, it'll be overwritten
      * @param key value's key

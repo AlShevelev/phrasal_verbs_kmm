@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 /**
  * An implementation for access to a key-value storage based on SQLDelight
  */
-class KeyValueStorageImpl(
+internal class KeyValueStorageImpl(
     private val dbDriverFactory: DatabaseDriverFactory,
     private val storageKey: String,
     private val ioDispatcher: CoroutineDispatcher,

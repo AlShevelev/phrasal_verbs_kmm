@@ -6,7 +6,7 @@ import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageDatabas
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 
-actual class DatabaseDriverFactory(private val context: Context) {
+internal actual class DatabaseDriverFactory(private val context: Context) {
     actual fun createKeyValueStorageDriver(): SqlDriver {
         return AndroidSqliteDriver(KeyValueStorageDatabase.Schema, context, "key_value_storage.db")
     }

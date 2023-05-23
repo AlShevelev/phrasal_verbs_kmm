@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
 import com.shevelev.phrasalverbs.utils.ui.Feature
 
 @Composable
-fun LearningFeature(
+internal fun LearningFeature(
     params: FeatureParams.Learning,
     modifier: Modifier = Modifier
 ) {
