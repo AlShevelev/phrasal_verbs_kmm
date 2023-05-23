@@ -5,7 +5,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -15,6 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.theme.MainTheme
 import com.shevelev.phrasalverbs.utils.koin.getKoin
 import com.shevelev.phrasalverbs.utils.resource.toLocString
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -23,7 +23,7 @@ import org.jetbrains.compose.resources.painterResource
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
-    MaterialTheme {
+    MainTheme {
         val defaultGreeting = MR.strings.greeting_default.toLocString()
         var greetingText by remember { mutableStateOf(defaultGreeting) }
         var showImage by remember { mutableStateOf(false) }
