@@ -18,10 +18,11 @@ internal fun SettingsFeature(
 ) {
     Feature<SettingsViewModel>(
         scope = SettingsKoinScope,
-    ) { viewModel ->
+        modifier = modifier,
+    ) { viewModel, contentModifier ->
         Box(
             contentAlignment = Alignment.Center,
-            modifier = modifier,
+            modifier = contentModifier,
         ) {
             Button(
                 onClick = { viewModel.onNextClick() },

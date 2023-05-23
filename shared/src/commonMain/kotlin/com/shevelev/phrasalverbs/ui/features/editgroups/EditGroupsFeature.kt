@@ -1,11 +1,13 @@
 package com.shevelev.phrasalverbs.ui.features.editgroups
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsKoinScope
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
@@ -18,10 +20,11 @@ internal fun EditGroupsFeature(
 ) {
     Feature<EditGroupsViewModel>(
         scope = EditGroupsKoinScope,
-    ) { viewModel ->
+        modifier = modifier,
+    ) { viewModel, contentModifier ->
         Box(
             contentAlignment = Alignment.Center,
-            modifier = modifier,
+            modifier = contentModifier.background(Color.Red),
         ) {
             Button(
                 onClick = { viewModel.onNextClick() },
