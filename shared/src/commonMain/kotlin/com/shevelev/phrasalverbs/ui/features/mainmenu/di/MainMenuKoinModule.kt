@@ -2,9 +2,9 @@ package com.shevelev.phrasalverbs.ui.features.mainmenu.di
 
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModelImpl
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeClosable
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeDescriptor
-import com.shevelev.phrasalverbs.utils.koin.closeKoinScope
+import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
+import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
+import com.shevelev.phrasalverbs.core.koin.closeKoinScope
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

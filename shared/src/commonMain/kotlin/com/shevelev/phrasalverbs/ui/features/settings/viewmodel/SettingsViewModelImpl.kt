@@ -1,8 +1,8 @@
 package com.shevelev.phrasalverbs.ui.features.settings.viewmodel
 
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeClosable
-import com.shevelev.phrasalverbs.utils.ui.viewmodel.ViewModelBase
+import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
+import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 
 internal class SettingsViewModelImpl(
     val navigation: NavigationGraph,

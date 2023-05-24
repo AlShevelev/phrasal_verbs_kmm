@@ -7,7 +7,7 @@ import com.shevelev.phrasalverbs.ui.features.editgroups.EditGroupsFeature
 import com.shevelev.phrasalverbs.ui.features.learning.LearningFeature
 import com.shevelev.phrasalverbs.ui.features.mainmenu.MainMenuFeature
 import com.shevelev.phrasalverbs.ui.features.settings.SettingsFeature
-import com.shevelev.phrasalverbs.utils.koin.getKoin
+import com.shevelev.phrasalverbs.core.koin.getKoin
 
 @Composable
 internal fun NavigationHost(

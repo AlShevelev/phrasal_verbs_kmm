@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuKoinScope
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
-import com.shevelev.phrasalverbs.utils.ui.Feature
+import com.shevelev.phrasalverbs.core.ui.Feature
 
 @Composable
 internal fun MainMenuFeature(

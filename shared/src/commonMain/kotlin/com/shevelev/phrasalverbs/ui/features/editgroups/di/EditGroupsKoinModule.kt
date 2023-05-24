@@ -2,9 +2,9 @@ package com.shevelev.phrasalverbs.ui.features.editgroups.di
 
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModelImpl
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeClosable
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeDescriptor
-import com.shevelev.phrasalverbs.utils.koin.closeKoinScope
+import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
+import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
+import com.shevelev.phrasalverbs.core.koin.closeKoinScope
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.ui.features.settings.di.SettingsKoinScope
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
-import com.shevelev.phrasalverbs.utils.ui.Feature
+import com.shevelev.phrasalverbs.core.ui.Feature
 
 @Composable
 internal fun SettingsFeature(

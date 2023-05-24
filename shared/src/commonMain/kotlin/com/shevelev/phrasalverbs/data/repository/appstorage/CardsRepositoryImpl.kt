@@ -8,7 +8,7 @@ import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
-import com.shevelev.phrasalverbs.utils.idgenerator.IdGenerator
+import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

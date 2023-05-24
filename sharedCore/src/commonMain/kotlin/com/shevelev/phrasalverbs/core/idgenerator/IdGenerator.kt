@@ -1,8 +1,8 @@
-package com.shevelev.phrasalverbs.utils.idgenerator
+package com.shevelev.phrasalverbs.core.idgenerator
 
 import kotlin.random.Random
 
-internal object IdGenerator {
+object IdGenerator {
     fun newId(): Long {
         val buffer = Random.nextBytes(32)
         val seed = Random.nextLong()

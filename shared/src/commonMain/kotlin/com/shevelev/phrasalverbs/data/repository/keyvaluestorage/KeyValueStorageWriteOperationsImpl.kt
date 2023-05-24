@@ -1,7 +1,7 @@
 package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
 
 import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageQueries
-import com.shevelev.phrasalverbs.utils.idgenerator.IdGenerator
+import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

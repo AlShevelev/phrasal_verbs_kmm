@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.utils.idgenerator
+package com.shevelev.phrasalverbs.core.idgenerator
 
 /**
  * A pure Kotlin implementation of the Murmur 2 hashing algorithm as presented

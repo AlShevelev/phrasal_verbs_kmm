@@ -1,18 +1,18 @@
-package com.shevelev.phrasalverbs.utils.resource
+package com.shevelev.phrasalverbs.core.resource
 
 import android.content.Context
-import com.shevelev.phrasalverbs.utils.koin.getKoin
+import com.shevelev.phrasalverbs.core.koin.getKoin
 import dev.icerock.moko.resources.StringResource
 import dev.icerock.moko.resources.desc.Resource
 import dev.icerock.moko.resources.desc.ResourceFormatted
 import dev.icerock.moko.resources.desc.StringDesc
 
-internal actual fun StringResource.toLocString(): String {
+actual fun StringResource.toLocString(): String {
     val context = getKoin<Context>()
     return StringDesc.Resource(this).toString(context)
 }
 
-internal actual fun StringResource.toLocString(vararg args: Any): String {
+actual fun StringResource.toLocString(vararg args: Any): String {
     val context = getKoin<Context>()
     return StringDesc.ResourceFormatted(this, *args).toString(context)
 }

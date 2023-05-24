@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import com.shevelev.phrasalverbs.ui.features.learning.di.LearningKoinScope
 import com.shevelev.phrasalverbs.ui.features.learning.viewmodel.LearningViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
-import com.shevelev.phrasalverbs.utils.ui.Feature
+import com.shevelev.phrasalverbs.core.ui.Feature
 
 @Composable
 internal fun LearningFeature(

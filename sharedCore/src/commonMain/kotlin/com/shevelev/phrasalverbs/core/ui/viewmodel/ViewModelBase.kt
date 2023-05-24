@@ -1,8 +1,8 @@
-package com.shevelev.phrasalverbs.utils.ui.viewmodel
+package com.shevelev.phrasalverbs.core.ui.viewmodel
 
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeClosable
+import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 
-internal abstract class ViewModelBase(
+abstract class ViewModelBase(
     private val scopeClosable: KoinScopeClosable,
 ) : ViewModel {
     override val id = hashCode().toString()

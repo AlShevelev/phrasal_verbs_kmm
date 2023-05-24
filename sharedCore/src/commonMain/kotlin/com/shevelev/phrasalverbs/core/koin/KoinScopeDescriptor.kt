@@ -1,8 +1,8 @@
-package com.shevelev.phrasalverbs.utils.koin
+package com.shevelev.phrasalverbs.core.koin
 
 import org.koin.core.qualifier.StringQualifier
 
-internal interface KoinScopeDescriptor {
+interface KoinScopeDescriptor {
     val name: StringQualifier
     val id: String
 }

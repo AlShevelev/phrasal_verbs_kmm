@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.utils.ui
+package com.shevelev.phrasalverbs.core.ui
 
 import androidx.compose.animation.core.animate
 import androidx.compose.animation.core.tween
@@ -11,12 +11,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import com.shevelev.phrasalverbs.utils.koin.KoinScopeDescriptor
-import com.shevelev.phrasalverbs.utils.koin.getKoin
-import com.shevelev.phrasalverbs.utils.ui.viewmodel.ViewModel
+import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
+import com.shevelev.phrasalverbs.core.koin.getKoin
+import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModel
 
 @Composable
-internal inline fun <reified TVM : ViewModel>Feature(
+inline fun <reified TVM : ViewModel>Feature(
     scope: KoinScopeDescriptor,
     modifier: Modifier = Modifier,
     content: @Composable (TVM, Modifier) -> Unit,

@@ -2,6 +2,7 @@ rootProject.name = "PhrasalVerbs"
 
 include(":androidApp")
 include(":shared")
+include(":sharedCore")
 
 pluginManagement {
     repositories {
@@ -34,3 +35,4 @@ dependencyResolutionManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
+
