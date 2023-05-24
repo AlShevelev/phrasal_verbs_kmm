@@ -6,10 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.shevelev.phrasalverbs.core.ui.Feature
 import com.shevelev.phrasalverbs.ui.features.settings.di.SettingsKoinScope
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
-import com.shevelev.phrasalverbs.core.ui.Feature
 
 @Composable
 internal fun SettingsFeature(

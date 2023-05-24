@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-    <string name="greeting_default">Hello, World!</string>
-    <string name="greeting_platform">Hello, %s!</string>
+    <string name="app_name">Английские фразовые глаголы</string>
+    <string name="version">Версия %s (%s)</string>
+    <string name="edit_groups">Редактирование групп карт</string>
+    <string name="learning">Обучение</string>
+    <string name="settings">Настройки</string>
 </resources>
