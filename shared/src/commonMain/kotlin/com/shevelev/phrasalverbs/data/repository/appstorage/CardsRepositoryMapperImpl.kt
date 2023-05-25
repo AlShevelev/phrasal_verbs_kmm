@@ -4,7 +4,7 @@ import com.shevelev.phrasalverbs.domain.entities.Color
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
-internal class CardsRepositoryMapperImpl : CardsRepositoryMapper {
+internal class CardsRepositoryMapperImpl() : CardsRepositoryMapper {
     override fun colorToDb(color: Color?): Short? =
         color?.let {
             when (it) {

@@ -14,7 +14,7 @@ internal object EditGroupsKoinScope : KoinScopeDescriptor {
     override val id: String = "7fbab1ca-9300-47a0-85d4-371f6b26b8d5"
 }
 
-val EditGroupsKoinModule = module {
+val EditGroupsFeatureKoinModule = module {
     scope(EditGroupsKoinScope.name) {
         scoped<EditGroupsViewModel> {
             EditGroupsViewModelImpl(

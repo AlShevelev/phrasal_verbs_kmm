@@ -33,7 +33,7 @@ inline fun <reified TVM : ViewModel>Feature(
 
     DisposableEffect(Unit) {
         onDispose {
-            viewModel.closeScope()
+            viewModel.close()
         }
     }
 }

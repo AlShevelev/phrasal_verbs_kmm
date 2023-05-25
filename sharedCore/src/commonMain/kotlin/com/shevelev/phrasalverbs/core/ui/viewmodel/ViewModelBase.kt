@@ -1,11 +1,19 @@
 package com.shevelev.phrasalverbs.core.ui.viewmodel
 
 import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 
 abstract class ViewModelBase(
     private val scopeClosable: KoinScopeClosable,
 ) : ViewModel {
-    override val id = hashCode().toString()
+    private val viewModelJob = SupervisorJob()
 
-    override fun closeScope() = scopeClosable.closeScope()
+    protected val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+    override fun close() {
+        viewModelJob.cancel()
+        scopeClosable.closeScope()
+    }
 }

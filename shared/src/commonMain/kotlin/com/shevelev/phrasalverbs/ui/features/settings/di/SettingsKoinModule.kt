@@ -14,7 +14,7 @@ internal object SettingsKoinScope : KoinScopeDescriptor {
     override val id: String = "1230bec8-8211-41c9-b2b5-4b43183a2103"
 }
 
-val SettingsKoinModule = module {
+val SettingsFeatureKoinModule = module {
     scope(SettingsKoinScope.name) {
         scoped<SettingsViewModel> {
             SettingsViewModelImpl(

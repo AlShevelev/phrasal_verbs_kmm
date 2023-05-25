@@ -1,4 +1,8 @@
 package com.shevelev.phrasalverbs
 
 import androidx.compose.runtime.Composable
-@Composable fun MainView() = App()
+import com.shevelev.phrasalverbs.ui.compositionlocal.PlatformInfo
+
+@Composable fun MainView(
+    platformInfo: PlatformInfo
+) = App(platformInfo)

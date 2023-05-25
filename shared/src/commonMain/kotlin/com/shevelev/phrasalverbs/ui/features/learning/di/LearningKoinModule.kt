@@ -14,7 +14,7 @@ internal object LearningKoinScope : KoinScopeDescriptor {
     override val id: String = "622eb456-79fa-4922-a541-88617fa29132"
 }
 
-val LearningKoinModule = module {
+val LearningKoinFeatureModule = module {
     scope(LearningKoinScope.name) {
         scoped<LearningViewModel> {
             LearningViewModelImpl(

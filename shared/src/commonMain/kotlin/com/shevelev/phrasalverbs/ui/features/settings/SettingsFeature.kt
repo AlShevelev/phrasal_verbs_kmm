@@ -27,7 +27,7 @@ internal fun SettingsFeature(
             Button(
                 onClick = { viewModel.onNextClick() },
             ) {
-                Text("[Settings (${viewModel.id})] Next screen: Learning")
+                Text("[Settings (${viewModel.hashCode()})] Next screen: Learning")
             }
         }
     }

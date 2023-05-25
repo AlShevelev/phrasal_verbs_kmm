@@ -27,7 +27,7 @@ internal fun EditGroupsFeature(
             Button(
                 onClick = { viewModel.onNextClick() },
             ) {
-                Text("[Edit (${viewModel.id})] Next screen: Main menu")
+                Text("[Edit (${viewModel.hashCode()})] Next screen: Main menu")
             }
         }
     }

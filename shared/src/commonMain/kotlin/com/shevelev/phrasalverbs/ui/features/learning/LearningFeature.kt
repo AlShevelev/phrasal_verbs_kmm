@@ -27,7 +27,7 @@ internal fun LearningFeature(
             Button(
                 onClick = { viewModel.onNextClick() },
             ) {
-                Text("[Learning (${viewModel.id})] Next screen: Edit")
+                Text("[Learning (${viewModel.hashCode()})] Next screen: Edit")
             }
         }
     }

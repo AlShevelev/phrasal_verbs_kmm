@@ -14,11 +14,12 @@ internal object MainMenuKoinScope : KoinScopeDescriptor {
     override val id: String = "4feea9bf-bd98-4af8-887e-00311f3a9417"
 }
 
-val MainMenuKoinModule = module {
+val MainMenuFeatureKoinModule = module {
     scope(MainMenuKoinScope.name) {
         scoped<MainMenuViewModel> {
             MainMenuViewModelImpl(
                 navigation = get(),
+                cardsRepository = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(MainMenuKoinScope)

@@ -1,5 +1,6 @@
 package com.shevelev.phrasalverbs.data.repository.appstorage
 
+import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 import com.shevelev.phrasalverbs.data.api.appstorage.AppStorageDatabase
 import com.shevelev.phrasalverbs.data.api.appstorage.Card_side
 import com.shevelev.phrasalverbs.data.api.appstorage.Card_side_content_item
@@ -8,7 +9,6 @@ import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
-import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -86,6 +86,13 @@ internal class CardsRepositoryImpl(
             Language.ENGLISH.let { createCardSide(it, cardId, card.side[it]) }
             Language.RUSSIAN.let { createCardSide(it, cardId, card.side[it]) }
         }
+    }
+
+    override suspend fun getBunchesCount(): Int = withContext(ioDispatcher) {
+        queries
+            .readAllBunches()
+            .executeAsList()
+            .size
     }
 
     private fun createCardSide(language: Language, cardId: Long, cardSide: CardSide?) {

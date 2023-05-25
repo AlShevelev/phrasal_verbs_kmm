@@ -12,4 +12,6 @@ internal interface CardsRepository {
      * Saves a card in the storage
      */
     suspend fun createCard(card: Card)
+
+    suspend fun getBunchesCount(): Int
 }
