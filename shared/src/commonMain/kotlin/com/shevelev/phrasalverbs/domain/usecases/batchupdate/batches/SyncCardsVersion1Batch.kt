@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches
+package com.shevelev.phrasalverbs.domain.usecases.batchupdate.batches
 
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.domain.entities.Card

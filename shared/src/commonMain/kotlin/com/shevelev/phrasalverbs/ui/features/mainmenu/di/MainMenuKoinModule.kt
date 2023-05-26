@@ -1,10 +1,10 @@
 package com.shevelev.phrasalverbs.ui.features.mainmenu.di
 
-import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
-import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModelImpl
 import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
 import com.shevelev.phrasalverbs.core.koin.closeKoinScope
+import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
+import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModelImpl
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -20,6 +20,7 @@ val MainMenuFeatureKoinModule = module {
             MainMenuViewModelImpl(
                 navigation = get(),
                 cardsRepository = get(),
+                batchCardsUpdate = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(MainMenuKoinScope)

@@ -1,28 +1,21 @@
-package com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage
+package com.shevelev.phrasalverbs.domain.usecases.batchupdate
 
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorage
-import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsBatch
-import com.shevelev.phrasalverbs.domain.usecases.updatecardsstorage.batches.SyncCardsVersion1Batch
+import com.shevelev.phrasalverbs.domain.usecases.batchupdate.batches.SyncCardsBatch
+import com.shevelev.phrasalverbs.domain.usecases.batchupdate.batches.SyncCardsVersion1Batch
 
 private const val LAST_CARDS_BATCH_VERSION = "LAST_CARDS_BATCH_VERSION"
 
-/**
- * This in a logic for create/update card's database
- */
-internal class UpdateCardsStorageUseCaseImpl(
+internal class BatchCardsUpdateUseCaseImpl(
     private val keyValueStorage: KeyValueStorage,
     private val repository: CardsRepository,
-) : UpdateCardsStorageUseCase {
+) : BatchCardsUpdateUseCase {
 
-    private val batches: List<SyncCardsBatch> by lazy {
-        listOf(
-            SyncCardsVersion1Batch(repository),
-        )
-    }
-
-    override suspend fun updateCards() {
+    override suspend fun update() {
         val lastVersion = keyValueStorage.reader.getInt(LAST_CARDS_BATCH_VERSION) ?: 0
+
+        val batches = getBatchesList()
 
         val batchesToProcess = batches.filter { it.version > lastVersion }
 
@@ -34,4 +27,9 @@ internal class UpdateCardsStorageUseCaseImpl(
             }
         }
     }
+
+    private fun getBatchesList(): List<SyncCardsBatch> =
+        listOf(
+            SyncCardsVersion1Batch(repository),
+        )
 }

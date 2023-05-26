@@ -3,6 +3,8 @@ package com.shevelev.phrasalverbs.android
 import android.app.Application
 import com.shevelev.phrasalverbs.data.di.AppStorageDataKoinModule
 import com.shevelev.phrasalverbs.data.di.DatabaseDriverKoinModuleAndroid
+import com.shevelev.phrasalverbs.data.di.KeyValueStorageKoinModule
+import com.shevelev.phrasalverbs.domain.di.DomainCoinModule
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsFeatureKoinModule
 import com.shevelev.phrasalverbs.ui.features.learning.di.LearningKoinFeatureModule
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuFeatureKoinModule
@@ -24,6 +26,9 @@ class PhrasalVerbsApp : Application() {
             modules(
                 AppStorageDataKoinModule,
                 DatabaseDriverKoinModuleAndroid,
+                KeyValueStorageKoinModule,
+
+                DomainCoinModule,
 
                 NavigationKoinModule,
                 EditGroupsFeatureKoinModule,
