@@ -13,6 +13,10 @@ internal class NavigationGraphImpl : NavigationGraph {
         _activeFeature.tryEmit(FeatureParams.EditGroups)
     }
 
+    override fun navigateToWatchAllCards() {
+        _activeFeature.tryEmit(FeatureParams.WatchAllCards)
+    }
+
     override fun navigateToLearning() {
         _activeFeature.tryEmit(FeatureParams.Learning)
     }

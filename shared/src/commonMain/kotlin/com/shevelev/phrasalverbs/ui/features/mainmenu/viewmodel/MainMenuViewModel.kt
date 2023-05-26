@@ -10,5 +10,7 @@ internal interface MainMenuViewModel : ViewModel {
 
     fun onLearnClick()
 
+    fun onWatchAllCardsClick()
+
     fun onSettingsClick()
 }

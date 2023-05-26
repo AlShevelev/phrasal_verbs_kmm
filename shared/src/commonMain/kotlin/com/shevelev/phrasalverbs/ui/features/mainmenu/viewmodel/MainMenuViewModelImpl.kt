@@ -39,6 +39,10 @@ internal class MainMenuViewModelImpl(
         navigation.navigateToLearning()
     }
 
+    override fun onWatchAllCardsClick() {
+        navigation.navigateToWatchAllCards()
+    }
+
     override fun onSettingsClick() {
         navigation.navigateToSettings()
     }

@@ -14,6 +14,7 @@ import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuState
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
 import com.shevelev.phrasalverbs.ui.theme.Dimens
+import dev.icerock.moko.resources.StringResource
 
 @Composable
 internal fun ContentState(
@@ -29,23 +30,42 @@ internal fun ContentState(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Button(
+            MenuButton(
+                text = MR.strings.edit_groups,
                 onClick = { viewModel.onEditClick() },
-            ) {
-                Text(MR.strings.edit_groups.toLocString())
-            }
-            Button(
-                modifier = Modifier.padding(vertical = Dimens.margin),
+            )
+            MenuButton(
+                text = MR.strings.watch_all_cards,
+                modifier = Modifier.padding(top = Dimens.margin),
+                onClick = { viewModel.onWatchAllCardsClick() },
+            )
+            MenuButton(
+                text = MR.strings.learning,
                 enabled = state.isLearningEnabled,
+                modifier = Modifier.padding(top = Dimens.margin),
                 onClick = { viewModel.onLearnClick() },
-            ) {
-                Text(MR.strings.learning.toLocString())
-            }
-            Button(
+            )
+            MenuButton(
+                text = MR.strings.settings,
+                modifier = Modifier.padding(top = Dimens.margin),
                 onClick = { viewModel.onSettingsClick() },
-            ) {
-                Text(MR.strings.settings.toLocString())
-            }
+            )
         }
+    }
+}
+
+@Composable
+private fun MenuButton(
+    text: StringResource,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    onClick: () -> Unit,
+) {
+    Button(
+        modifier = modifier,
+        enabled = enabled,
+        onClick = onClick,
+    ) {
+        Text(text.toLocString())
     }
 }

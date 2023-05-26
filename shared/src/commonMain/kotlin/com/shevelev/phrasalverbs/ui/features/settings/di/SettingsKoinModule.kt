@@ -1,10 +1,10 @@
 package com.shevelev.phrasalverbs.ui.features.settings.di
 
-import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
-import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModelImpl
 import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
 import com.shevelev.phrasalverbs.core.koin.closeKoinScope
+import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
+import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModelImpl
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

@@ -7,6 +7,8 @@ internal interface NavigationGraph {
 
     fun navigateToEditGroups()
 
+    fun navigateToWatchAllCards()
+
     fun navigateToLearning()
 
     fun navigateToMainMenu()
