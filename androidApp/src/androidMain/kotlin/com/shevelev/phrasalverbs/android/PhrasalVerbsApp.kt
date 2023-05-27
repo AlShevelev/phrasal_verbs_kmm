@@ -1,6 +1,7 @@
 package com.shevelev.phrasalverbs.android
 
 import android.app.Application
+import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.data.di.AppStorageDataKoinModule
 import com.shevelev.phrasalverbs.data.di.DatabaseDriverKoinModuleAndroid
 import com.shevelev.phrasalverbs.data.di.KeyValueStorageKoinModule
@@ -19,6 +20,8 @@ import org.koin.core.logger.Level
 class PhrasalVerbsApp : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        Logger.init()
 
         startKoin {
             androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)

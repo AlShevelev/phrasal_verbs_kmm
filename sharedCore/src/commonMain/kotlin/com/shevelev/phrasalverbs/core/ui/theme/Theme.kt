@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.ui.theme
+package com.shevelev.phrasalverbs.core.ui.theme
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Typography
@@ -9,7 +9,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @Composable
-internal fun MainTheme(content: @Composable () -> Unit) {
+fun MainTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colors = lightColors(
             primary = ColorsTheme.Primary,

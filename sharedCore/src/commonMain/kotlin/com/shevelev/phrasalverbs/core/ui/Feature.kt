@@ -13,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
 import com.shevelev.phrasalverbs.core.koin.getKoin
+import com.shevelev.phrasalverbs.core.ui.popup.ErrorPopup
+import com.shevelev.phrasalverbs.core.ui.popup.MessagePopupData
+import com.shevelev.phrasalverbs.core.ui.theme.AnimationTime
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModel
 
 @Composable
@@ -27,8 +30,27 @@ inline fun <reified TVM : ViewModel>Feature(
 
     content(viewModel, modifier.alpha(shutterAlpha))
 
+    var popupData by remember { mutableStateOf<MessagePopupData?>(null) }
+
+    popupData?.let {
+        ErrorPopup(
+            data = it,
+            onComplete = {
+                popupData = null
+            },
+        )
+    }
+
     LaunchedEffect(Unit) {
-        animate(0f, 1f, animationSpec = tween(300)) { value, _ -> shutterAlpha = value }
+        viewModel.messagePopup.collect {
+            popupData = it
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        animate(0f, 1f, animationSpec = tween(AnimationTime.FADE)) { value, _ ->
+            shutterAlpha = value
+        }
     }
 
     DisposableEffect(Unit) {

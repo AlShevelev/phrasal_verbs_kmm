@@ -6,4 +6,5 @@
     <string name="watch_all_cards">Смотреть все карты</string>
     <string name="learning">Обучение</string>
     <string name="settings">Настройки</string>
+    <string name="general_error">Произошла ошибка в процессе обработки данных, извините</string>
 </resources>

@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.ui.compositionlocal.LocalPlatform
 import com.shevelev.phrasalverbs.ui.compositionlocal.PlatformInfo
 import com.shevelev.phrasalverbs.ui.navigation.NavigationHost
-import com.shevelev.phrasalverbs.ui.theme.MainTheme
+import com.shevelev.phrasalverbs.core.ui.theme.MainTheme
 
 @Suppress("LocalVariableName")
 @Composable

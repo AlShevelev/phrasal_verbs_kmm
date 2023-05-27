@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.compositionlocal.LocalPlatform
-import com.shevelev.phrasalverbs.ui.theme.ColorsTheme
+import com.shevelev.phrasalverbs.core.ui.theme.ColorsTheme
 
 @Composable
 internal fun BottomBar() {

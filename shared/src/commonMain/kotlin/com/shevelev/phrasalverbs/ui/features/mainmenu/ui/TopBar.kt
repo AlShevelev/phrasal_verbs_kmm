@@ -8,11 +8,12 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.shevelev.phrasalverbs.core.resource.toLocString
-import com.shevelev.phrasalverbs.resources.MR
+import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
-internal fun TopBar() {
+internal fun TopBar(
+    title: String = ""
+) {
     TopAppBar(
         title = {
             Row(
@@ -20,7 +21,11 @@ internal fun TopBar() {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(MR.strings.app_title.toLocString())
+                Text(
+                    text = title,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                )
             }
         },
     )

@@ -30,6 +30,7 @@ kotlin {
     val androidxActivityVersion = extra["androidx.activity.version"] as String
     val androidxAppcompatVersion = extra["androidx.appcompat.version"] as String
     val androidxCoreKtxVersion = extra["androidx.core-ktx.version"] as String
+    val napierVersion = extra["napier.version"] as String
 
     sourceSets {
         val commonMain by getting {
@@ -40,6 +41,8 @@ kotlin {
 
                 api("dev.icerock.moko:resources:$mokoResourcesVersion")
                 api("dev.icerock.moko:resources-compose:$mokoResourcesVersion")
+
+                implementation("io.github.aakira:napier:$napierVersion")
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)

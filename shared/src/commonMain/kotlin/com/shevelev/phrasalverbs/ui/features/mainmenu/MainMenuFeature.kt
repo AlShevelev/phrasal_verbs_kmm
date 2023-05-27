@@ -5,7 +5,9 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.Feature
+import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuKoinScope
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.BottomBar
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.ContentState
@@ -28,7 +30,7 @@ internal fun MainMenuFeature(
         val state = viewModel.state.collectAsState()
 
         Scaffold(
-            topBar = { TopBar() },
+            topBar = { TopBar(MR.strings.app_title.toLocString()) },
             bottomBar = { BottomBar() },
         ) { contentPadding ->
 

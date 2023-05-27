@@ -1,14 +1,14 @@
-package com.shevelev.phrasalverbs.ui.theme
+package com.shevelev.phrasalverbs.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-internal object ColorsGeneral {
+object ColorsGeneral {
     val Transparent: Color = Color(0x00000000)
     val Black: Color = Color(0xFF21201F)
     val White: Color = Color(0xFFFFFFFF)
 }
 
-internal object ColorsTheme {
+object ColorsTheme {
     val Primary: Color = Color(0xFFFFDF9E)
     val PrimaryVariant = Color(0xFFFFA000)
     val Secondary = Color(0xFFFFE16E)

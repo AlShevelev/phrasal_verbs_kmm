@@ -13,7 +13,7 @@ import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuState
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
-import com.shevelev.phrasalverbs.ui.theme.Dimens
+import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import dev.icerock.moko.resources.StringResource
 
 @Composable
