@@ -6,13 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
-import com.shevelev.phrasalverbs.core.ui.Feature
+import com.shevelev.phrasalverbs.core.ui.feature.Feature
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuKoinScope
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.BottomBar
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.ContentState
-import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.LoadingState
-import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.TopBar
+import com.shevelev.phrasalverbs.core.ui.feature.LoadingState
+import com.shevelev.phrasalverbs.core.ui.elements.TopBar
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuState
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams

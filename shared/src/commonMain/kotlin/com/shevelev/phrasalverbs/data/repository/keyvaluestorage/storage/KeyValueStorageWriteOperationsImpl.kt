@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
+package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
 import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageQueries
 import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator

@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.ui.features.mainmenu.ui
+package com.shevelev.phrasalverbs.core.ui.feature
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.CircularProgressIndicator
@@ -7,7 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-internal fun LoadingState(
+fun LoadingState(
     modifier: Modifier = Modifier
 ) {
     Box(

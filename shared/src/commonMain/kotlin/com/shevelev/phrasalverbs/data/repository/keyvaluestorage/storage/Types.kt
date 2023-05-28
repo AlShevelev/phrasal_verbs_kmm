@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
+package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
 /**
  * Set of constants for supported types

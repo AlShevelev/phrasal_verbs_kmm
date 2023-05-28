@@ -7,4 +7,5 @@
     <string name="learning">Обучение</string>
     <string name="settings">Настройки</string>
     <string name="general_error">Произошла ошибка в процессе обработки данных, извините</string>
+    <string name="russian_side_default">Вначале показывать русскую строну карточки</string>
 </resources>

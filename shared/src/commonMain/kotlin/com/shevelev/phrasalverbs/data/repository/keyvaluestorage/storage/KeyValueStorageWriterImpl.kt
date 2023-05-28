@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
+package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
 /**
  * An implementation for updating data in a key-value storage bases on SQLDelight

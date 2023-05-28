@@ -5,7 +5,7 @@ import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.data.di.AppStorageDataKoinModule
 import com.shevelev.phrasalverbs.data.di.DatabaseDriverKoinModuleAndroid
 import com.shevelev.phrasalverbs.data.di.KeyValueStorageKoinModule
-import com.shevelev.phrasalverbs.domain.di.DomainCoinModule
+import com.shevelev.phrasalverbs.domain.di.DomainKoinModule
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsFeatureKoinModule
 import com.shevelev.phrasalverbs.ui.features.learning.di.LearningKoinFeatureModule
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuFeatureKoinModule
@@ -31,7 +31,7 @@ class PhrasalVerbsApp : Application() {
                 DatabaseDriverKoinModuleAndroid,
                 KeyValueStorageKoinModule,
 
-                DomainCoinModule,
+                DomainKoinModule,
 
                 NavigationKoinModule,
                 EditGroupsFeatureKoinModule,

@@ -19,6 +19,7 @@ val SettingsFeatureKoinModule = module {
         scoped<SettingsViewModel> {
             SettingsViewModelImpl(
                 navigation = get(),
+                keyValueStorageRepository = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(SettingsKoinScope)

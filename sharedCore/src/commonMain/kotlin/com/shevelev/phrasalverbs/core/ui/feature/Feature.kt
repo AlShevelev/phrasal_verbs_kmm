@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.core.ui
+package com.shevelev.phrasalverbs.core.ui.feature
 
 import androidx.compose.animation.core.animate
 import androidx.compose.animation.core.tween

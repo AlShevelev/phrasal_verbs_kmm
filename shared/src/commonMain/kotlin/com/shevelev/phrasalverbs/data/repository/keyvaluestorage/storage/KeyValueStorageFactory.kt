@@ -1,4 +1,4 @@
-package com.shevelev.phrasalverbs.data.repository.keyvaluestorage
+package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
 /**
  * An interface of a factory that creates a key-value storage

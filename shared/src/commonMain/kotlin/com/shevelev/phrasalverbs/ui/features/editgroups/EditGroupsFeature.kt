@@ -6,7 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.shevelev.phrasalverbs.core.ui.Feature
+import com.shevelev.phrasalverbs.core.ui.feature.Feature
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsKoinScope
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
 import com.shevelev.phrasalverbs.ui.navigation.FeatureParams
