@@ -19,6 +19,8 @@ val WatchAllCardsFeatureKoinModule = module {
         scoped<WatchAllCardsViewModel> {
             WatchAllCardsViewModelImpl(
                 navigation = get(),
+                cardsRepository = get(),
+                keyValueStorageRepository = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(WatchAllCardsKoinScope)

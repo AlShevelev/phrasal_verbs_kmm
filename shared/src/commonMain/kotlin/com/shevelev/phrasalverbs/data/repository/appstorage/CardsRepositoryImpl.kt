@@ -27,6 +27,7 @@ internal class CardsRepositoryImpl(
         val cards = queries
             .readAllCards()
             .executeAsList()
+            .sortedBy { it.card_id }
 
         cards.map { dbCard ->
             val dbCardSides = queries

@@ -51,7 +51,6 @@ internal class SettingsViewModelImpl(
                         isRussianSideDefault = value,
                     ),
                 )
-
             } catch (ex: Exception) {
                 Logger.e(ex)
                 showPopup(MR.strings.general_error.toLocString())
