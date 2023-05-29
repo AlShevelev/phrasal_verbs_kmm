@@ -1,34 +1,14 @@
 package com.shevelev.phrasalverbs.data.repository.appstorage
 
-import com.shevelev.phrasalverbs.domain.entities.Color
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
-internal class CardsRepositoryMapperImpl() : CardsRepositoryMapper {
-    override fun colorToDb(color: Color?): Short? =
-        color?.let {
-            when (it) {
-                Color.RED -> 0
-                Color.GREEN -> 1
-                Color.BLUE -> 2
-                Color.YELLOW -> 3
-                Color.GRAY -> 4
-                Color.BROWN -> 5
-            }
-        }
+internal class CardsRepositoryMapperImpl : CardsRepositoryMapper {
+    override fun booleanToDb(value: Boolean): Short = if (value) 1 else 0
 
-    override fun colorFromDb(color: Short?): Color? =
-        color?.let {
-            when (it.toInt()) {
-                0 -> Color.RED
-                1 -> Color.GREEN
-                2 -> Color.BLUE
-                3 -> Color.YELLOW
-                4 -> Color.GRAY
-                5 -> Color.BROWN
-                else -> null
-            }
-        }
+    override fun booleanFromDb(value: Short?): Boolean {
+        return value == 1.toShort()
+    }
 
     override fun contentItemTypeToDb(type: ContentItemType): Short =
         when (type) {

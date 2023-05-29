@@ -1,13 +1,12 @@
 package com.shevelev.phrasalverbs.data.repository.appstorage
 
-import com.shevelev.phrasalverbs.domain.entities.Color
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
 internal interface CardsRepositoryMapper {
-    fun colorToDb(color: Color?): Short?
+    fun booleanToDb(value: Boolean): Short
 
-    fun colorFromDb(color: Short?): Color?
+    fun booleanFromDb(value: Short?): Boolean
 
     fun contentItemTypeToDb(type: ContentItemType): Short
 

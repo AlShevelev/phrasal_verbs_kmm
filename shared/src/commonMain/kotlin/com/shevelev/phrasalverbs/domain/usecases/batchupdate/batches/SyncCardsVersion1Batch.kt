@@ -5,11 +5,12 @@ import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.Language
-import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 
 internal class SyncCardsVersion1Batch(
     private val repository: CardsRepository,
 ) : SyncCardsBatch {
+
+    private var idCounter = 1L
 
     override val version: Int
         get() = 1
@@ -4490,7 +4491,8 @@ internal class SyncCardsVersion1Batch(
     private suspend fun createCard(engSide: CardSide, rusSide: CardSide) =
         repository.createCard(
             Card(
-                id = IdGenerator.newId(),
+                id = idCounter++,
+                isLearnt = false,
                 side = mapOf(
                     Language.ENGLISH to rusSide,
                     Language.RUSSIAN to engSide,

@@ -35,7 +35,7 @@ internal class CardsRepositoryImpl(
 
             Card(
                 id = dbCard.card_id,
-                color = mapper.colorFromDb(dbCard.color),
+                isLearnt = mapper.booleanFromDb(dbCard.is_learnt),
                 side = mapOf(
                     Language.RUSSIAN to dbCardSides.mapFromDb(Language.RUSSIAN),
                     Language.ENGLISH to dbCardSides.mapFromDb(Language.ENGLISH),
@@ -81,7 +81,7 @@ internal class CardsRepositoryImpl(
     override suspend fun createCard(card: Card) = withContext(ioDispatcher) {
         queries.transaction {
             val cardId = IdGenerator.newId()
-            queries.createCard(cardId, mapper.colorToDb(card.color))
+            queries.createCard(cardId, mapper.booleanToDb(card.isLearnt))
 
             Language.ENGLISH.let { createCardSide(it, cardId, card.side[it]) }
             Language.RUSSIAN.let { createCardSide(it, cardId, card.side[it]) }
