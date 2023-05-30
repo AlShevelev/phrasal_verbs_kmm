@@ -23,17 +23,13 @@ internal class SettingsViewModelImpl(
         get() = _state.asStateFlow()
 
     init {
-        viewModelScope.launch {
-            try {
-                _state.emit(
-                    SettingsState.Content(
-                        isRussianSideDefault = keyValueStorageRepository.getIsRussianSideDefault(),
-                    ),
-                )
-            } catch (ex: Exception) {
-                Logger.e(ex)
-                showPopup(MR.strings.general_error.toLocString())
-            }
+        processStandardAction {
+            _state.emit(
+                SettingsState.Content(
+                    isRussianSideDefault = keyValueStorageRepository.getIsRussianSideDefault(),
+                    isInfiniteCardsList = keyValueStorageRepository.getIsInfiniteCardsList(),
+                ),
+            )
         }
     }
 
@@ -42,15 +38,32 @@ internal class SettingsViewModelImpl(
     }
 
     override fun updateIsRussianSideDefault(value: Boolean) {
+        processStandardAction {
+            keyValueStorageRepository.setIsRussianSideDefault(value)
+            updateState {
+                it.copy(isRussianSideDefault = value)
+            }
+        }
+    }
+
+    override fun updateIsIsInfiniteCardsList(value: Boolean) {
+        processStandardAction {
+            keyValueStorageRepository.setIsInfiniteCardsList(value)
+            updateState {
+                it.copy(isInfiniteCardsList = value)
+            }
+        }
+    }
+
+    private suspend fun updateState(action: (SettingsState.Content) -> SettingsState.Content) =
+        (_state.value as? SettingsState.Content)?.let {
+            _state.emit(action(it))
+        }
+
+    private fun processStandardAction(action: suspend () -> Unit) {
         viewModelScope.launch {
             try {
-                keyValueStorageRepository.setIsRussianSideDefault(value)
-
-                _state.emit(
-                    SettingsState.Content(
-                        isRussianSideDefault = value,
-                    ),
-                )
+                action()
             } catch (ex: Exception) {
                 Logger.e(ex)
                 showPopup(MR.strings.general_error.toLocString())

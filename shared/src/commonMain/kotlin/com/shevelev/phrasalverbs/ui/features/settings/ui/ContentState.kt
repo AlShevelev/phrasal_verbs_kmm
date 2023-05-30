@@ -13,6 +13,7 @@ import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsState
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
+import dev.icerock.moko.resources.StringResource
 
 @Composable
 internal fun ContentState(
@@ -24,14 +25,35 @@ internal fun ContentState(
         modifier = modifier
             .padding(all = Dimens.margin),
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Checkbox(
-                checked = state.isRussianSideDefault,
-                onCheckedChange = { viewModel.updateIsRussianSideDefault(it) },
-            )
-            Text(MR.strings.russian_side_default.toLocString())
-        }
+        OneSetting(
+            modifier = Modifier.padding(bottom = Dimens.margin),
+            isChecked = state.isRussianSideDefault,
+            text = MR.strings.russian_side_default,
+            updateCheckAction = { viewModel.updateIsRussianSideDefault(it) },
+        )
+
+        OneSetting(
+            isChecked = state.isInfiniteCardsList,
+            text = MR.strings.infinite_lists,
+            updateCheckAction = { viewModel.updateIsIsInfiniteCardsList(it) },
+        )
+    }
+}
+
+@Composable
+private fun OneSetting(
+    modifier: Modifier = Modifier,
+    isChecked: Boolean,
+    text: StringResource,
+    updateCheckAction: (Boolean) -> Unit,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Checkbox(
+            checked = isChecked,
+            onCheckedChange = updateCheckAction,
+        )
+        Text(text.toLocString())
     }
 }

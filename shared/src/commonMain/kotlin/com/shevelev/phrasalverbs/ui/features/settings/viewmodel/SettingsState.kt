@@ -5,5 +5,6 @@ internal sealed interface SettingsState {
 
     data class Content(
         val isRussianSideDefault: Boolean,
+        val isInfiniteCardsList: Boolean,
     ) : SettingsState
 }

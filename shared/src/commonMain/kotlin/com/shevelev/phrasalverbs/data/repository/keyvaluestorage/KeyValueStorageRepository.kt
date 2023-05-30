@@ -5,6 +5,10 @@ internal interface KeyValueStorageRepository {
 
     suspend fun setIsRussianSideDefault(value: Boolean)
 
+    suspend fun getIsInfiniteCardsList(): Boolean
+
+    suspend fun setIsInfiniteCardsList(value: Boolean)
+
     suspend fun getLastCardsBatchVersion(): Int
 
     suspend fun setLastCardsBatchVersion(value: Int)

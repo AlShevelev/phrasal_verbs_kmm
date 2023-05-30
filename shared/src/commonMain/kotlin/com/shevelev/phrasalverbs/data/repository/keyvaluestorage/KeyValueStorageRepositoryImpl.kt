@@ -14,6 +14,15 @@ internal class KeyValueStorageRepositoryImpl(
         }
     }
 
+    override suspend fun getIsInfiniteCardsList(): Boolean =
+        keyValueStorage.reader.getBoolean(IS_INFINITE_CARDS_LIST) ?: false
+
+    override suspend fun setIsInfiniteCardsList(value: Boolean) {
+        keyValueStorage.writer.update {
+            it.setBoolean(IS_INFINITE_CARDS_LIST, value)
+        }
+    }
+
     override suspend fun getLastCardsBatchVersion(): Int =
         keyValueStorage.reader.getInt(LAST_CARDS_BATCH_VERSION) ?: 0
 
@@ -25,6 +34,7 @@ internal class KeyValueStorageRepositoryImpl(
 
     companion object {
         private const val IS_RUSSIAN_SIDE_DEFAULT = "IS_RUSSIAN_SIDE_DEFAULT"
+        private const val IS_INFINITE_CARDS_LIST = "IS_INFINITE_CARDS_LIST"
         private const val LAST_CARDS_BATCH_VERSION = "LAST_CARDS_BATCH_VERSION"
     }
 }

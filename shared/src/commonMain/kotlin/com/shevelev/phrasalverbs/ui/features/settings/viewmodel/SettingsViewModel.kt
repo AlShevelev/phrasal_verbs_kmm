@@ -9,4 +9,6 @@ internal interface SettingsViewModel : ViewModel {
     fun onBackClick()
 
     fun updateIsRussianSideDefault(value: Boolean)
+
+    fun updateIsIsInfiniteCardsList(value: Boolean)
 }
