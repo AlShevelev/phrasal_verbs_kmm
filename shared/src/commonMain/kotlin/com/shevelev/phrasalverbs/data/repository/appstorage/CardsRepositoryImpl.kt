@@ -81,7 +81,7 @@ internal class CardsRepositoryImpl(
      */
     override suspend fun createCard(card: Card) = withContext(ioDispatcher) {
         queries.transaction {
-            val cardId = IdGenerator.newId()
+            val cardId = card.id
             queries.createCard(cardId, mapper.booleanToDb(card.isLearnt))
 
             Language.ENGLISH.let { createCardSide(it, cardId, card.side[it]) }

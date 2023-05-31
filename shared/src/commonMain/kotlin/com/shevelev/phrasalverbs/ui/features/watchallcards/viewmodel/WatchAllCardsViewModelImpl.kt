@@ -7,6 +7,8 @@ import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorageRepository
 import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.FiniteListCardsProvider
+import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.InfiniteListCardsProvider
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -27,10 +29,18 @@ internal class WatchAllCardsViewModelImpl(
     init {
         viewModelScope.launch {
             try {
+                val allCards = cardsRepository.getAllCards().take(15)
+
+                val cardsProvider = if (keyValueStorageRepository.getIsInfiniteCardsList()) {
+                    InfiniteListCardsProvider(allCards)
+                } else {
+                    FiniteListCardsProvider(allCards)
+                }
+
                 _state.emit(
                     WatchAllCardsState.Content(
                         isRussianSideDefault = keyValueStorageRepository.getIsRussianSideDefault(),
-                        cards = cardsRepository.getAllCards(),
+                        cardsProvider = cardsProvider,
                     ),
                 )
             } catch (ex: Exception) {
