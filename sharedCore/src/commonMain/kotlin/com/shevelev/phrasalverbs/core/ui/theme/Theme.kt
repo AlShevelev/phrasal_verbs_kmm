@@ -31,6 +31,16 @@ fun MainTheme(content: @Composable () -> Unit) {
                 fontWeight = FontWeight.W700,
                 lineHeight = 24.sp,
             ),
+            h4 = TextStyle(
+                fontSize = 22.sp,
+                fontWeight = FontWeight.W700,
+                lineHeight = 22.sp,
+            ),
+            h5 = TextStyle(
+                fontSize = 20.sp,
+                fontWeight = FontWeight.W700,
+                lineHeight = 20.sp,
+            ),
             subtitle1 = TextStyle(
                 fontSize = 16.sp,
                 fontWeight = FontWeight.W700,

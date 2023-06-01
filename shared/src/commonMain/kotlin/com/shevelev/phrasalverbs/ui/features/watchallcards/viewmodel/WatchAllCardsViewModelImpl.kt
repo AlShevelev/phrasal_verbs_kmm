@@ -29,7 +29,7 @@ internal class WatchAllCardsViewModelImpl(
     init {
         viewModelScope.launch {
             try {
-                val allCards = cardsRepository.getAllCards().take(15)
+                val allCards = cardsRepository.getAllCards()
 
                 val cardsProvider = if (keyValueStorageRepository.getIsInfiniteCardsList()) {
                     InfiniteListCardsProvider(allCards)

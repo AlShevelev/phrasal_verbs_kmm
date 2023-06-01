@@ -212,7 +212,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "be after smt",
+                        value = "be after [something]",
                         valueVoicing = "be after something",
                     ),
                 ),
@@ -221,6 +221,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("пытаться что-то заполучить"),
                 ),
@@ -244,6 +245,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("отсутствовать, уехать"),
                 ),
@@ -269,6 +271,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "быть включенным/выключенным",
@@ -288,7 +291,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "be up to smt",
+                        value = "be up to [something]",
                         valueVoicing = "be up to something",
                     ),
                 ),
@@ -297,6 +300,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "замышлять",
@@ -316,7 +320,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "be up to smb",
+                        value = "be up to [somebody]",
                         valueVoicing = "be up to somebody",
                     ),
                 ),
@@ -326,6 +330,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "зависеть от кого-то", description = "о принятии решения"),
                 ),
@@ -342,7 +347,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "be down with smt",
+                        value = "be down with [something]",
                         valueVoicing = "be down with something",
                     ),
                 ),
@@ -351,6 +356,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "приболеть чем-то", description = "несерьезным"),
                 ),
@@ -366,7 +372,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "be fed up with smt",
+                        value = "be fed up with [something]",
                         valueVoicing = "be fed up with something",
                     ),
                 ),
@@ -375,6 +381,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("быть сытым чем-то по горло"),
                 ),
@@ -397,6 +404,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "присутствовать/отсутствовать",
@@ -416,7 +424,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "come across smt",
+                        value = "come across [something]",
                         valueVoicing = "come across something",
                     ),
                 ),
@@ -425,6 +433,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "случайно наткнуться на что-то",
@@ -448,6 +457,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "вернуться",
@@ -471,6 +481,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "быть откуда-то",
@@ -494,6 +505,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("отвалиться"),
                 ),
@@ -515,6 +527,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("развалиться на части"),
                 ),
@@ -530,7 +543,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "come down with smt",
+                        value = "come down with [something]",
                         valueVoicing = "come down with something",
                     ),
                 ),
@@ -539,6 +552,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("начать чем-то болеть"),
                 ),
@@ -560,6 +574,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("входить"),
                 ),
@@ -575,7 +590,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "come up with smt",
+                        value = "come up with [something]",
                         valueVoicing = "come up with something",
                     ),
                 ),
@@ -584,6 +599,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("придумывать что-то, додумываться"),
                 ),
@@ -606,6 +622,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "выходить в свет, раскрываться", description = "о тайне"),
                 ),
@@ -628,6 +645,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("прийти к кому-то"),
                 ),
@@ -649,6 +667,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("Давай! Вперед!"),
                 ),
@@ -670,6 +689,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("прийти в себя"),
                 ),
@@ -685,8 +705,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable or intransitive"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fall through (smt)",
-                        valueVoicing = "fall through (something)",
+                        value = "fall through [something]",
+                        valueVoicing = "fall through something",
                     ),
                 ),
                 examples = listOf(
@@ -695,6 +715,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem("провалиться (буквально)"),
                     CardContentItem("провалиться (о неудаче)"),
@@ -712,7 +733,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fall in with smb",
+                        value = "fall in with [somebody]",
                         valueVoicing = "fall in with somebody",
                     ),
                 ),
@@ -721,6 +742,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "связаться с кем-то",
@@ -746,6 +768,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("разваливаться на части"),
                     CardContentItem(
@@ -772,6 +795,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("упасть"),
                 ),
@@ -786,13 +810,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "fall for smb", valueVoicing = "fall for somebody"),
+                    CardContentItem(
+                        value = "fall for [somebody]",
+                        valueVoicing = "fall for somebody",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("She really fell for you!"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("влюбиться, запасть, втюриться в кого-то"),
                 ),
@@ -808,7 +836,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fall back on smt",
+                        value = "fall back on [something]",
                         valueVoicing = "fall back on something",
                     ),
                 ),
@@ -817,6 +845,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "полагаться, рассчитывать на что-то",
@@ -835,7 +864,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fall for smt",
+                        value = "fall for [something]",
                         valueVoicing = "fall for something",
                     ),
                 ),
@@ -844,6 +873,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "поверить, попасться",
@@ -868,6 +898,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("отставать"),
                 ),
@@ -882,13 +913,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "fall out of smt", valueVoicing = "fall out of something"),
+                    CardContentItem(
+                        value = "fall out of [something]",
+                        valueVoicing = "fall out of something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("The key fell out of my pocket"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("выпасть, вывалиться из чего-то"),
                 ),
@@ -910,6 +945,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "выпадать", description = "о волосах, зубах"),
                 ),
@@ -925,7 +961,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "get along with smb",
+                        value = "get along with [somebody]",
                         valueVoicing = "get along with somebody",
                     ),
                 ),
@@ -934,6 +970,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("ладить с кем-то"),
                 ),
@@ -955,6 +992,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "перемещаться", description = "например, по городу"),
                 ),
@@ -977,6 +1015,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("убежать, скрыться"),
                     CardContentItem("уехать на отдых"),
@@ -994,7 +1033,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "get away with smt",
+                        value = "get away with [something]",
                         valueVoicing = "get away with something",
                     ),
                 ),
@@ -1003,6 +1042,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("избежать наказания за что-то"),
                 ),
@@ -1024,6 +1064,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("вернуться"),
                 ),
@@ -1038,13 +1079,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
-                    CardContentItem(value = "get smt back", valueVoicing = "get something back"),
+                    CardContentItem(
+                        value = "get [something] back",
+                        valueVoicing = "get something back",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("Tomorrow you will get your money back"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("получить что-то обратно, вернуть себе"),
                 ),
@@ -1060,11 +1105,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "get back to smt",
+                        value = "get back to [something]",
                         valueVoicing = "get back to something",
                     ),
                     CardContentItem(
-                        value = "get back into smt",
+                        value = "get back into [something]",
                         valueVoicing = "get back into something",
                     ),
                 ),
@@ -1074,6 +1119,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "вернуться к занятию",
@@ -1100,6 +1146,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("садиться в машину"),
                     CardContentItem("выходить из машины"),
@@ -1124,6 +1171,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "садиться", description = "на самолет, судно, поезд"),
                 ),
@@ -1139,13 +1187,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "get over smt", valueVoicing = "get over something"),
+                    CardContentItem(
+                        value = "get over [something]",
+                        valueVoicing = "get over something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("Don't worry, you'll get over your break up"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("преодолеть трудность и идти дальше"),
                 ),
@@ -1160,13 +1212,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "get over smb", valueVoicing = "get over somebody"),
+                    CardContentItem(
+                        value = "get over [somebody]",
+                        valueVoicing = "get over somebody",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("You need to get over her and continue with your life"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("оставить позади отношения с кем-то"),
                 ),
@@ -1188,6 +1244,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("дозвониться"),
                 ),
@@ -1209,6 +1266,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("встать, подняться"),
                 ),
@@ -1223,13 +1281,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "get down to smt", valueVoicing = "get down to something"),
+                    CardContentItem(
+                        value = "get down to [something]",
+                        valueVoicing = "get down to something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("Let's get down to business"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "перейти к чему-то", description = "задаче"),
                 ),
@@ -1244,7 +1306,10 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
-                    CardContentItem(value = "give smt away", valueVoicing = "give something away"),
+                    CardContentItem(
+                        value = "give [something] away",
+                        valueVoicing = "give something away",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("These are good books, don't give them away"),
@@ -1252,6 +1317,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("раздавать, отдавать даром"),
                     CardContentItem("раскрыть тайну, проговориться"),
@@ -1269,7 +1335,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "give smb/smt back",
+                        value = "give [somebody or something] back",
                         valueVoicing = "give somebody or something back",
                     ),
                 ),
@@ -1278,6 +1344,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("вернуть кому-то, отдать"),
                 ),
@@ -1293,7 +1360,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "give in (to smb)",
+                        value = "give in (to somebody)",
                         valueVoicing = "give in (to somebody)",
                     ),
                 ),
@@ -1302,6 +1369,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem("поддаться, уступить (кому-то)"),
                 ),
@@ -1317,7 +1385,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "give out smt",
+                        value = "give out [something]",
                         valueVoicing = "give out something",
                     ),
                 ),
@@ -1326,6 +1394,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "раздавать", description = "большому кол-ву людей"),
                 ),
@@ -1347,6 +1416,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("сдаваться"),
                 ),
@@ -1361,7 +1431,10 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
-                    CardContentItem(value = "give up smt", valueVoicing = "give up something"),
+                    CardContentItem(
+                        value = "give up [something]",
+                        valueVoicing = "give up something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("I want to give up smoking"),
@@ -1369,6 +1442,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "бросить, завязать",
@@ -1388,7 +1462,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "go after smb/smt",
+                        value = "go after [somebody or something]",
                         valueVoicing = "go after somebody or something",
                     ),
                 ),
@@ -1397,6 +1471,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("преследовать, пытаться заполучить"),
                 ),
@@ -1418,6 +1493,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "вперед, давай", description = "побуждение к действию"),
                 ),
@@ -1439,6 +1515,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("возвращаться, приходить куда-то снова"),
                 ),
@@ -1460,6 +1537,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "зваться", description = "о том, как вас называют"),
                 ),
@@ -1482,6 +1560,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "продолжать", description = "делать что-то"),
                 ),
@@ -1505,6 +1584,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("ходить куда-то, гулять"),
                     CardContentItem(value = "встречаться", description = "об отношениях"),
@@ -1521,7 +1601,10 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "go out with smb", valueVoicing = "go out with somebody"),
+                    CardContentItem(
+                        value = "go out with [somebody]",
+                        valueVoicing = "go out with somebody",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("Jake goes out with Annie"),
@@ -1529,6 +1612,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("встречаться, быть в отношениях"),
                     CardContentItem(value = "гулять, тусить с кем-то"),
@@ -1552,6 +1636,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сработать, издав громкий звук",
@@ -1569,13 +1654,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "go over smt", valueVoicing = "go over something"),
+                    CardContentItem(
+                        value = "go over [something]",
+                        valueVoicing = "go over something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("I went over my notes before the exam"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("просмотреть, повторить"),
                 ),
@@ -1591,7 +1680,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "go well with smt",
+                        value = "go well with [something]",
                         valueVoicing = "go well with something",
                     ),
                 ),
@@ -1600,6 +1689,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "подходить к чему-то", description = "об одежде, еде"),
                 ),
@@ -1615,7 +1705,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "go without smt",
+                        value = "go without [something]",
                         valueVoicing = "go without something",
                     ),
                 ),
@@ -1624,6 +1714,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("обходиться без чего-то"),
                 ),
@@ -1645,6 +1736,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("идти не так, не по плану"),
                 ),
@@ -1667,6 +1759,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("перемещаться вверх / вниз"),
                 ),
@@ -1689,6 +1782,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("сдерживаться, не делать что-то"),
                 ),
@@ -1704,7 +1798,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "hold smt / smb back",
+                        value = "hold [somebody or something] back",
                         valueVoicing = "hold something or somebody back",
                     ),
                 ),
@@ -1713,6 +1807,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("сдерживать кого-то, что-то"),
                 ),
@@ -1735,6 +1830,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("подождать немного"),
                     CardContentItem("держаться, не сдаваться"),
@@ -1751,13 +1847,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
-                    CardContentItem(value = "hold on to smt", valueVoicing = "hold on to something"),
+                    CardContentItem(
+                        value = "hold on to [something]",
+                        valueVoicing = "hold on to something",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("The road is bumpy, hold on to something!"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("держаться, вцепиться во что-то"),
                 ),
@@ -1772,13 +1872,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
-                    CardContentItem(value = "hold smb down", valueVoicing = "hold somebody down"),
+                    CardContentItem(
+                        value = "hold [somebody] down",
+                        valueVoicing = "hold somebody down",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("You are late, what held you down?"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("задерживать, замедлять"),
                 ),
@@ -1793,13 +1897,17 @@ internal class SyncCardsVersion1Batch(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
-                    CardContentItem(value = "hold smb up", valueVoicing = "hold somebody up"),
+                    CardContentItem(
+                        value = "hold [somebody] up",
+                        valueVoicing = "hold somebody up",
+                    ),
                 ),
                 examples = listOf(
                     CardContentItem("Did you see the face of the guy who held you up?"),
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("грабить"),
                 ),
@@ -1815,7 +1923,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "hold it against smb",
+                        value = "hold it against [somebody]",
                         valueVoicing = "hold it against somebody",
                     ),
                 ),
@@ -1824,6 +1932,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("держать зло на кого-то"),
                 ),
@@ -1839,7 +1948,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "keep doing smt",
+                        value = "keep doing [something]",
                         valueVoicing = "keep doing something",
                     ),
                 ),
@@ -1848,6 +1957,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("продолжать делать что-то"),
                 ),
@@ -1863,7 +1973,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "keep smt away from smb",
+                        value = "keep [something] away from [somebody]",
                         valueVoicing = "keep something away from somebody",
                     ),
                 ),
@@ -1872,6 +1982,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("держать что-то подальше от кого-то"),
                 ),
@@ -1887,7 +1998,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "keep from doing smt",
+                        value = "keep from doing [something]",
                         valueVoicing = "keep from doing something",
                     ),
                 ),
@@ -1896,6 +2007,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("сдерживаться, не делать что-то"),
                 ),
@@ -1911,7 +2023,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "keep smb out (of smt)",
+                        value = "keep [somebody] out (of something)",
                         valueVoicing = "keep somebody out (of something)",
                     ),
                 ),
@@ -1920,6 +2032,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem("не впускать кого-то, не давать подойти"),
                 ),
@@ -1941,6 +2054,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem("не отставать"),
                 ),
@@ -1956,8 +2070,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look after smt (or smb)",
-                        valueVoicing = "look after something (or somebody)",
+                        value = "look after [somebody or something]",
+                        valueVoicing = "look after somebody (or something)",
                     ),
                 ),
                 examples = listOf(
@@ -1965,6 +2079,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("присматривать за чем-то (кем-то)"),
                 ),
@@ -1980,8 +2095,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look down on smb (or smt)",
-                        valueVoicing = "look down on somebody (or something)",
+                        value = "look down on [somebody or something]",
+                        valueVoicing = "look down on somebody or something",
                     ),
                 ),
                 examples = listOf(
@@ -1989,6 +2104,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("смотреть свысока, относиться снисходительно"),
                 ),
@@ -2011,6 +2127,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("искать что-то (или кого-то)"),
                 ),
@@ -2027,11 +2144,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look forward to smt",
+                        value = "look forward to [something]",
                         valueVoicing = "look forward to something",
                     ),
                     CardContentItem(
-                        value = "look forward to doing smt",
+                        value = "look forward to doing [something]",
                         valueVoicing = "look forward to doing something",
                     ),
                 ),
@@ -2040,6 +2157,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("ждать чего-то с нетерпением"),
                 ),
@@ -2056,7 +2174,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look into smt",
+                        value = "look into [something]",
                         valueVoicing = "look into something",
                     ),
                 ),
@@ -2065,6 +2183,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("изучить, разобраться, проверить что-то"),
                 ),
@@ -2087,6 +2206,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("Берегись!"),
                 ),
@@ -2103,7 +2223,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look out for smb",
+                        value = "look out for [somebody]",
                         valueVoicing = "look out for somebody",
                     ),
                 ),
@@ -2113,6 +2233,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("заботиться, присматривать"),
                     CardContentItem("опасаться, быть настороже"),
@@ -2130,7 +2251,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look smt up",
+                        value = "look [something] up",
                         valueVoicing = "look something up",
                     ),
                 ),
@@ -2139,6 +2260,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("посмотреть что-то в словаре, интернете и т. д."),
                 ),
@@ -2154,7 +2276,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look up to smb",
+                        value = "look up to [somebody]",
                         valueVoicing = "look up to somebody",
                     ),
                 ),
@@ -2163,6 +2285,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("равняться на кого-то, брать пример"),
                 ),
@@ -2178,7 +2301,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "look through smt",
+                        value = "look through [something]",
                         valueVoicing = "look through something",
                     ),
                 ),
@@ -2187,6 +2310,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "бегло просмотреть", description = "обычно текст"),
                 ),
@@ -2208,6 +2332,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "\"бегать\", быть занятым"),
                 ),
@@ -2229,6 +2354,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(value = "убегать", description = "от кого-то"),
                 ),
@@ -2244,7 +2370,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run after smb/smt",
+                        value = "run after [somebody or something]",
                         valueVoicing = "run after somebody of something",
                     ),
                 ),
@@ -2254,6 +2380,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("гнаться, преследовать кого-то, что-то"),
                     CardContentItem("\"бегать\" за кем-то, добиваясь романтического внимания"),
@@ -2271,11 +2398,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run into smb",
+                        value = "run into [somebody]",
                         valueVoicing = "run into somebody",
                     ),
                     CardContentItem(
-                        value = "run across smb",
+                        value = "run across [somebody]",
                         valueVoicing = "run across somebody",
                     ),
                 ),
@@ -2284,6 +2411,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("случайно наткнуться на кого-то"),
                 ),
@@ -2299,7 +2427,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run smb/smt down",
+                        value = "run [somebody or something] down",
                         valueVoicing = "run somebody (or something) down",
                     ),
                 ),
@@ -2308,6 +2436,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("сбить кого-то (что-то) на машине"),
                 ),
@@ -2323,7 +2452,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run smb/smt over",
+                        value = "run [somebody or something] over",
                         valueVoicing = "run somebody (or something) over",
                     ),
                 ),
@@ -2332,6 +2461,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem("переехать кого-то (что-то)"),
                 ),
@@ -2347,11 +2477,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run over smt",
+                        value = "run over [something]",
                         valueVoicing = "run over something",
                     ),
                     CardContentItem(
-                        value = "run through smt",
+                        value = "run through [something]",
                         valueVoicing = "run through something",
                     ),
                 ),
@@ -2360,6 +2490,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "порепетировать, повторить",
@@ -2384,6 +2515,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem("сбежать, убежать откуда-то"),
                 ),
@@ -2399,8 +2531,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run for smt/smb",
-                        valueVoicing = "run for something (or somebody)",
+                        value = "run for [somebody or something]",
+                        valueVoicing = "run for somebody or something",
                     ),
                 ),
                 examples = listOf(
@@ -2408,6 +2540,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("гнаться за чем-то, кем-то"),
                 ),
@@ -2429,6 +2562,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(value = "участвовать в выборах", description = "как кандидат"),
                 ),
@@ -2444,7 +2578,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run on smt",
+                        value = "run on [something]",
                         valueVoicing = "run on something",
                     ),
                 ),
@@ -2453,6 +2587,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "работать на чем-то",
@@ -2471,7 +2606,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run out of smt",
+                        value = "run out of [something]",
                         valueVoicing = "run out of something",
                     ),
                 ),
@@ -2480,6 +2615,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem("что-то заканчивается"),
                 ),
@@ -2495,7 +2631,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take after smb",
+                        value = "take after [somebody]",
                         valueVoicing = "take after somebody",
                     ),
                 ),
@@ -2504,6 +2640,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "быть похожим на кого-то",
@@ -2522,7 +2659,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smt apart",
+                        value = "take [something] apart",
                         valueVoicing = "take something apart",
                     ),
                 ),
@@ -2531,6 +2668,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "разбирать что-то на части",
@@ -2548,8 +2686,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smt/smb away",
-                        valueVoicing = "take something or somebody away",
+                        value = "take [somebody or something] away",
+                        valueVoicing = "take somebody or something away",
                     ),
                 ),
                 examples = listOf(
@@ -2557,6 +2695,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "удалить, убрать что-то, кого-то",
@@ -2574,7 +2713,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smt back",
+                        value = "take [something] back",
                         valueVoicing = "take something back",
                     ),
                 ),
@@ -2583,6 +2722,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "вернуть что-то, забрать",
@@ -2610,6 +2750,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "взлететь",
@@ -2633,7 +2774,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smt off",
+                        value = "take [something] off",
                         valueVoicing = "take something off",
                     ),
                 ),
@@ -2642,6 +2783,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "снять что-то",
@@ -2659,7 +2801,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "put smt on",
+                        value = "put [something] on",
                         valueVoicing = "put something on",
                     ),
                 ),
@@ -2668,6 +2810,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "надеть что-то",
@@ -2685,7 +2828,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable (always)"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smb out",
+                        value = "take [somebody] out",
                         valueVoicing = "take somebody out",
                     ),
                 ),
@@ -2694,6 +2837,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сводить куда-то кого-то",
@@ -2720,6 +2864,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выгулять домашнее животное",
@@ -2746,6 +2891,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "занимать место или время",
@@ -2764,7 +2910,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take up smt",
+                        value = "take up [something]",
                         valueVoicing = "take up something",
                     ),
                 ),
@@ -2773,6 +2919,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "начать чем-то заниматься",
@@ -2791,7 +2938,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable (always)"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take smb for smb",
+                        value = "take [somebody] for [somebody]",
                         valueVoicing = "take somebody for somebody",
                     ),
                 ),
@@ -2800,6 +2947,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "принимать кого-то за кого-то другого",
@@ -2817,8 +2965,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn (smt) around",
-                        valueVoicing = "turn (something) around",
+                        value = "turn [something] around",
+                        valueVoicing = "turn something around",
                     ),
                 ),
                 examples = listOf(
@@ -2827,6 +2975,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "разворачивать (-ся)",
@@ -2845,7 +2994,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn (smt) away",
+                        value = "turn [something] away",
                         valueVoicing = "turn (something) away",
                     ),
                 ),
@@ -2855,6 +3004,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "отвернуть (-ся)",
@@ -2873,7 +3023,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn smt up",
+                        value = "turn [something] up",
                         valueVoicing = "turn something up",
                     ),
                 ),
@@ -2882,6 +3032,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "делать громче",
@@ -2899,7 +3050,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn smt down",
+                        value = "turn [something] down",
                         valueVoicing = "turn something down",
                     ),
                 ),
@@ -2909,6 +3060,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "делать тише",
@@ -2930,7 +3082,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn smt on/off",
+                        value = "turn [something] on/off",
                         valueVoicing = "turn something on or off",
                     ),
                 ),
@@ -2940,6 +3092,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "включать/выключать что-то",
@@ -2958,7 +3111,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "switch smt on/off",
+                        value = "switch  on/off",
                         valueVoicing = "switch something on or off",
                     ),
                 ),
@@ -2968,6 +3121,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "включать/выключать что-то",
@@ -2986,8 +3140,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn into smt/smb",
-                        valueVoicing = "turn into something or somebody",
+                        value = "turn into [somebody or something]",
+                        valueVoicing = "turn into somebody or something",
                     ),
                 ),
                 examples = listOf(
@@ -2995,6 +3149,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "превращаться во что-то, в кого-то",
@@ -3012,7 +3167,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable (always)"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn smt into smt",
+                        value = "turn [something] into [something]",
                         valueVoicing = "turn something into something",
                     ),
                 ),
@@ -3021,6 +3176,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "превращать что-то во что-то",
@@ -3046,6 +3202,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "завалиться спать",
@@ -3063,11 +3220,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn in smt",
+                        value = "turn in [something]",
                         valueVoicing = "turn in something",
                     ),
                     CardContentItem(
-                        value = "hand in smt",
+                        value = "hand in [something]",
                         valueVoicing = "hand in something",
                     ),
                 ),
@@ -3076,6 +3233,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сдать работу",
@@ -3094,7 +3252,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn smb in",
+                        value = "turn [somebody] in",
                         valueVoicing = "turn somebody in",
                     ),
                 ),
@@ -3103,6 +3261,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сдать, заложить кого-то",
@@ -3121,8 +3280,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "turn out to be smt/smb",
-                        valueVoicing = "turn out to be something or somebody",
+                        value = "turn out to be [somebody or something]",
+                        valueVoicing = "turn out to be somebody or something",
                     ),
                 ),
                 examples = listOf(
@@ -3130,6 +3289,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "оказаться кем-то, чем-то",
@@ -3155,6 +3315,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "Оказалось, что...",
@@ -3180,6 +3341,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "складываться",
@@ -3198,7 +3360,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable (always)"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "ask smb out",
+                        value = "ask [somebody] out",
                         valueVoicing = "ask somebody out",
                     ),
                 ),
@@ -3207,6 +3369,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "пригласить сходить куда-нибудь",
@@ -3233,6 +3396,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сломаться",
@@ -3251,7 +3415,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "break smt down",
+                        value = "break [something] down",
                         valueVoicing = "break something down",
                     ),
                 ),
@@ -3261,6 +3425,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "сломать",
@@ -3282,7 +3447,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable or intransitive"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "break up (with smb)",
+                        value = "break up (with somebody)",
                         valueVoicing = "break up (with somebody)",
                     ),
                 ),
@@ -3292,6 +3457,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "расставаться",
@@ -3311,7 +3477,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "bring smt up",
+                        value = "bring [something] up",
                         valueVoicing = "bring something up",
                     ),
                 ),
@@ -3320,6 +3486,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "упоминать что-то, поднять тему",
@@ -3338,7 +3505,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "bring smb up",
+                        value = "bring [somebody] up",
                         valueVoicing = "bring somebody up",
                     ),
                 ),
@@ -3347,6 +3514,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "воспитывать",
@@ -3365,7 +3533,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "call smb back",
+                        value = "call [somebody] back",
                         valueVoicing = "call somebody back",
                     ),
                 ),
@@ -3374,6 +3542,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "перезванивать кому-то",
@@ -3391,7 +3560,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "calm (smb) down",
+                        value = "calm [somebody] down",
                         valueVoicing = "calm somebody down",
                     ),
                 ),
@@ -3401,6 +3570,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "успокоить (-ся)",
@@ -3429,6 +3599,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "регистироваться в гостинице/выписываться",
@@ -3447,8 +3618,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "check out smt/smb",
-                        valueVoicing = "check out something of somebody",
+                        value = "check out [somebody or something]",
+                        valueVoicing = "check out somebody or something",
                     ),
                 ),
                 examples = listOf(
@@ -3456,6 +3627,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "\"заценить\" что-то, кого-то",
@@ -3473,11 +3645,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "count on smb",
+                        value = "count on [somebody]",
                         valueVoicing = "count on somebody",
                     ),
                     CardContentItem(
-                        value = "rely on smb",
+                        value = "rely on [somebody]",
                         valueVoicing = "rely on somebody",
                     ),
                 ),
@@ -3486,6 +3658,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "полагаться на кого-то",
@@ -3511,6 +3684,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "нарядиться, официально одеться",
@@ -3528,7 +3702,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "dress up as smb",
+                        value = "dress up as [somebody]",
                         valueVoicing = "dress up as somebody",
                     ),
                 ),
@@ -3537,6 +3711,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "нарядиться кем-то, переодеться",
@@ -3554,7 +3729,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "end up doing smt",
+                        value = "end up doing [something]",
                         valueVoicing = "end up doing something",
                     ),
                 ),
@@ -3563,6 +3738,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "в итоге делать что-то",
@@ -3583,7 +3759,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "find smt out",
+                        value = "find [something] out",
                         valueVoicing = "find something out",
                     ),
                 ),
@@ -3592,6 +3768,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выяснить, узнать что-то",
@@ -3609,7 +3786,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "figure smt out",
+                        value = "figure [something] out",
                         valueVoicing = "figure something out",
                     ),
                 ),
@@ -3619,6 +3796,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выяснить, разобраться в чем-то",
@@ -3637,7 +3815,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fill smt in/out",
+                        value = "fill [something] in/out",
                         valueVoicing = "fill something in or out",
                     ),
                 ),
@@ -3647,6 +3825,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "заполнять бланки, бумаг",
@@ -3664,7 +3843,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fill in for smb",
+                        value = "fill in for [somebody]",
                         valueVoicing = "fill in for somebody",
                     ),
                 ),
@@ -3673,6 +3852,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "подменить кого-то на работе",
@@ -3698,6 +3878,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выражать сильные эмоции",
@@ -3716,7 +3897,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "freak smb out",
+                        value = "freak [somebody] out",
                         valueVoicing = "freak somebody out",
                     ),
                 ),
@@ -3725,6 +3906,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "напугать, вывести из себя, нагнать жути, заставлять нервничать",
@@ -3750,6 +3932,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "расти",
@@ -3767,7 +3950,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "hang out (with smb)",
+                        value = "hang out (with somebody)",
                         valueVoicing = "hang out (with somebody)",
                     ),
                 ),
@@ -3776,6 +3959,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "тусоваться, проводить время с кем-то",
@@ -3801,6 +3985,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "поднять трубку, отвечать на звонок",
@@ -3826,6 +4011,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "повесить трубку",
@@ -3843,7 +4029,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "pick smt up",
+                        value = "pick [something] up",
                         valueVoicing = "pick something up",
                     ),
                 ),
@@ -3852,6 +4038,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "поднять что-то",
@@ -3877,6 +4064,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "держаться, не сдаваться",
@@ -3894,7 +4082,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "help smb out",
+                        value = "help [somebody] out",
                         valueVoicing = "help somebody out",
                     ),
                 ),
@@ -3903,6 +4091,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выручить, помочь кому-то",
@@ -3920,7 +4109,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "let smb in/out",
+                        value = "let [somebody] in/out",
                         valueVoicing = "let somebody in or out",
                     ),
                 ),
@@ -3930,6 +4119,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "впускать/выпускать кого-то",
@@ -3948,7 +4138,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "make smt up",
+                        value = "make [something] up",
                         valueVoicing = "make something up",
                     ),
                 ),
@@ -3957,6 +4147,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "выдумать что-то",
@@ -3984,6 +4175,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "заехать/съехать",
@@ -4003,7 +4195,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "pick smb up",
+                        value = "pick [somebody] up",
                         valueVoicing = "pick somebody up",
                     ),
                 ),
@@ -4012,6 +4204,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "взять пассажира",
@@ -4030,7 +4223,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "drop smb off",
+                        value = "drop [somebody] off",
                         valueVoicing = "drop somebody off",
                     ),
                 ),
@@ -4039,6 +4232,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "высадить пассажира",
@@ -4067,6 +4261,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "остановить машину у дороги",
@@ -4084,7 +4279,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "pull smb over",
+                        value = "pull [somebody] over",
                         valueVoicing = "pull somebody over",
                     ),
                 ),
@@ -4093,6 +4288,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "остановить машину, заставить остановиться у дороги",
@@ -4111,7 +4307,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "try smt on",
+                        value = "try [something] on",
                         valueVoicing = "try something on",
                     ),
                 ),
@@ -4120,6 +4316,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "примерить что-то",
@@ -4148,6 +4345,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "облажаться",
@@ -4165,11 +4363,11 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "screw smt up",
+                        value = "screw [something] up",
                         valueVoicing = "screw something up",
                     ),
                     CardContentItem(
-                        value = "mess smt up",
+                        value = "mess [something] up",
                         valueVoicing = "mess something up",
                     ),
                 ),
@@ -4178,6 +4376,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "испортить, запороть, закосячить что-то",
@@ -4204,6 +4403,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "прийти",
@@ -4235,6 +4435,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "замедляться",
@@ -4260,6 +4461,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "ускоряться",
@@ -4277,7 +4479,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "slow smt down",
+                        value = "slow [something] down",
                         valueVoicing = "slow something down",
                     ),
                 ),
@@ -4286,6 +4488,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "замедлять",
@@ -4303,7 +4506,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "speed smt up",
+                        value = "speed [something] up",
                         valueVoicing = "speed something up",
                     ),
                 ),
@@ -4312,6 +4515,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "ускорять",
@@ -4329,8 +4533,8 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("intransitive or separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "wake (smb) up",
-                        valueVoicing = "wake (somebody) up",
+                        value = "wake [somebody] up",
+                        valueVoicing = "wake somebody up",
                     ),
                 ),
                 examples = listOf(
@@ -4339,6 +4543,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый или непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "проснуться, разбудить кого-то",
@@ -4365,6 +4570,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "разогреться",
@@ -4383,7 +4589,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "warm smt up",
+                        value = "warm [something] up",
                         valueVoicing = "warm something up",
                     ),
                 ),
@@ -4392,6 +4598,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "разогреть что-то",
@@ -4419,6 +4626,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "заниматься спортом, тренироваться",
@@ -4448,6 +4656,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "записывать что-то",
@@ -4465,7 +4674,7 @@ internal class SyncCardsVersion1Batch(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "zoom smt in/out",
+                        value = "zoom [something] in/out",
                         valueVoicing = "zoom something in or out",
                     ),
                 ),
@@ -4475,6 +4684,7 @@ internal class SyncCardsVersion1Batch(
                 ),
             ),
             rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
                         value = "приближать/отдалять изображение",
@@ -4494,8 +4704,8 @@ internal class SyncCardsVersion1Batch(
                 id = idCounter++,
                 isLearnt = false,
                 side = mapOf(
-                    Language.ENGLISH to rusSide,
-                    Language.RUSSIAN to engSide,
+                    Language.RUSSIAN to rusSide,
+                    Language.ENGLISH to engSide,
                 ),
             ),
         )
