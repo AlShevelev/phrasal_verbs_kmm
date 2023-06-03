@@ -4,7 +4,6 @@ import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -33,6 +33,7 @@ import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.Language
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun CardFull(
     modifier: Modifier = Modifier,
@@ -41,6 +42,12 @@ internal fun CardFull(
 ) {
     val startLanguage = if (isRussianSideDefault) Language.RUSSIAN else Language.ENGLISH
     var language by remember { mutableStateOf(startLanguage) }
+    var initialLanguage by remember { mutableStateOf(startLanguage) }
+
+    if (startLanguage != initialLanguage) {
+        initialLanguage = startLanguage
+        language = startLanguage
+    }
 
     // This easing speeds up quickly and slows down gradually
     val slowOutFastInEasing: Easing = CubicBezierEasing(1.0f, 0.2f, 0f, 0.4f)
@@ -67,12 +74,10 @@ internal fun CardFull(
             .graphicsLayer {
                 rotationY = rotation
                 cameraDistance = 8 * density
-            }
-            .clickable {
-                language = if (language == Language.RUSSIAN) Language.ENGLISH else Language.RUSSIAN
             },
         elevation = Dimens.elevation,
         shape = RoundedCornerShape(15.dp),
+        onClick = { language = if (language == Language.RUSSIAN) Language.ENGLISH else Language.RUSSIAN },
     ) {
         CardSide(
             side = card.side[language]!!,
@@ -93,7 +98,7 @@ private fun CardSide(
 ) {
     Column(
         modifier = modifier
-            .padding(all = Dimens.margin),
+            .padding(all = Dimens.padding),
     ) {
         Clarification(
             item = side.clarification,
@@ -145,7 +150,7 @@ private fun MainItems(
                 text = item.value,
                 style = MaterialTheme.typography.h4,
                 modifier = Modifier
-                    .padding(top = if (index > 0) Dimens.marginSmall else 0.dp),
+                    .padding(top = if (index > 0) Dimens.paddingSmall else 0.dp),
                 textAlign = TextAlign.Center,
             )
 
@@ -176,7 +181,7 @@ private fun Examples(
                 style = MaterialTheme.typography.subtitle2,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .padding(top = if (index > 0) Dimens.marginSmall else 0.dp),
+                    .padding(top = if (index > 0) Dimens.paddingSmall else 0.dp),
             )
         }
     }

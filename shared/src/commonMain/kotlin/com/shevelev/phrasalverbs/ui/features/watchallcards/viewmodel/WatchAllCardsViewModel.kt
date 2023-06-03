@@ -7,4 +7,6 @@ internal interface WatchAllCardsViewModel : ViewModel {
     val state: StateFlow<WatchAllCardsState>
 
     fun onBackClick()
+
+    fun onSwitchLanguageClick()
 }

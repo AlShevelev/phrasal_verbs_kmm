@@ -41,11 +41,11 @@ fun ErrorPopup(
             border = BorderStroke(Dimens.border, ColorsTheme.OnError),
             modifier = Modifier
                 .padding(bottom = 64.dp)
-                .padding(horizontal = Dimens.margin)
+                .padding(horizontal = Dimens.padding)
                 .alpha(shutterAlpha),
         ) {
             Text(
-                modifier = Modifier.padding(Dimens.margin),
+                modifier = Modifier.padding(Dimens.padding),
                 text = data.text,
                 color = ColorsTheme.OnError,
                 textAlign = TextAlign.Center,

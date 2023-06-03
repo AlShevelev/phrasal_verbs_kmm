@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.backaction.BackActionHandler
 import com.shevelev.phrasalverbs.core.ui.elements.TopBar
+import com.shevelev.phrasalverbs.core.ui.elements.TopBarAction
 import com.shevelev.phrasalverbs.core.ui.feature.Feature
 import com.shevelev.phrasalverbs.core.ui.feature.LoadingState
 import com.shevelev.phrasalverbs.resources.MR
@@ -33,8 +34,10 @@ internal fun SettingsFeature(
             topBar = {
                 TopBar(
                     title = MR.strings.settings.toLocString(),
-                    navigationButton = painterResource(MR.images.arrow_back),
-                    onNavigationButtonClick = { viewModel.onBackClick() },
+                    navigation = TopBarAction(
+                        icon = painterResource(MR.images.arrow_back),
+                        onClick = { viewModel.onBackClick() },
+                    ),
                 )
             },
         ) { contentPadding ->

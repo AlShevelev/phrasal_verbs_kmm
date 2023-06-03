@@ -36,18 +36,18 @@ internal fun ContentState(
             )
             MenuButton(
                 text = MR.strings.watch_all_cards,
-                modifier = Modifier.padding(top = Dimens.margin),
+                modifier = Modifier.padding(top = Dimens.padding),
                 onClick = { viewModel.onWatchAllCardsClick() },
             )
             MenuButton(
                 text = MR.strings.learning,
                 enabled = state.isLearningEnabled,
-                modifier = Modifier.padding(top = Dimens.margin),
+                modifier = Modifier.padding(top = Dimens.padding),
                 onClick = { viewModel.onLearnClick() },
             )
             MenuButton(
                 text = MR.strings.settings,
-                modifier = Modifier.padding(top = Dimens.margin),
+                modifier = Modifier.padding(top = Dimens.padding),
                 onClick = { viewModel.onSettingsClick() },
             )
         }

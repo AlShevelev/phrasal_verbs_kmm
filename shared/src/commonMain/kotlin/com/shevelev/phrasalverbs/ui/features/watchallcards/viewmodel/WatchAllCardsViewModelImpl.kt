@@ -52,4 +52,12 @@ internal class WatchAllCardsViewModelImpl(
     override fun onBackClick() {
         navigation.navigateToMainMenu()
     }
+
+    override fun onSwitchLanguageClick() {
+        (_state.value as? WatchAllCardsState.Content)?.let {
+            _state.tryEmit(
+                it.copy(isRussianSideDefault = !it.isRussianSideDefault),
+            )
+        }
+    }
 }

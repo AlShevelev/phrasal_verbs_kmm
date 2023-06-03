@@ -64,7 +64,8 @@ internal class SyncCardsVersion1Batch(
         createCard42()
         createCard43()
         createCard44()
-        createCard45And46()
+        createCard45()
+        createCard46()
         createCard47()
         createCard48()
         createCard49()
@@ -87,7 +88,8 @@ internal class SyncCardsVersion1Batch(
         createCard64()
         createCard65()
         createCard66()
-        createCard67And68()
+        createCard67()
+        createCard68()
         createCard69()
         createCard70()
 
@@ -111,8 +113,9 @@ internal class SyncCardsVersion1Batch(
         createCard87()
         createCard88()
         createCard89()
-        createCard90And91()
+        createCard90()
 
+        createCard91()
         createCard92()
         createCard93()
         createCard94()
@@ -127,9 +130,9 @@ internal class SyncCardsVersion1Batch(
         createCard102()
         createCard103()
         createCard104()
-        createCard105And106()
+        createCard105()
+        createCard106()
         createCard107()
-        createCard107Case2()
         createCard108()
         createCard109()
         createCard110()
@@ -141,7 +144,6 @@ internal class SyncCardsVersion1Batch(
         createCard115()
         createCard116()
         createCard117()
-        createCard117Case2()
         createCard118()
         createCard119()
         createCard120()
@@ -194,19 +196,72 @@ internal class SyncCardsVersion1Batch(
         createCard162()
         createCard163()
         createCard164()
-        createCard164Case2()
         createCard165()
-        createCard165Case2()
         createCard166()
         createCard167()
         createCard168()
-        createCard169And170()
+        createCard169()
+        createCard170()
 
         createCard171()
-        createCard172()
     }
 
     private suspend fun createCard1() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "add up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Your story is impressive but it doesn't add up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "складываться",
+                        description = "о фактах, истории",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Твоя история впечатляет, но что-то в ней не складывается"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard2() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable (always)"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "ask [somebody] out",
+                        valueVoicing = "ask somebody out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I asked her out and she said yes"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "пригласить сходить куда-нибудь",
+                        description = "обычно о свидании",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я пригласил ее на свидание, и она сказала \"да\""),
+                ),
+            ),
+        )
+
+    private suspend fun createCard3() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -231,7 +286,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard2() =
+    private suspend fun createCard4() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -255,7 +310,84 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard3() =
+    private suspend fun createCard5() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "be down with [something]",
+                        valueVoicing = "be down with something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I can't go to school, I'm down with the cold"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(value = "приболеть чем-то", description = "несерьезным"),
+                ),
+                examples = listOf(
+                    CardContentItem("Я не могу пойти в школу я приболел простудой (простудился)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard6() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "be fed up with [something]",
+                        valueVoicing = "be fed up with something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("We are fed up with your lies!"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("быть сытым чем-то по горло"),
+                ),
+                examples = listOf(
+                    CardContentItem("Мы сыты по горло твоей ложью!"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard7() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(value = "be in/out", valueVoicing = "be in or out"),
+                ),
+                examples = listOf(
+                    CardContentItem("Someone is in"),
+                    CardContentItem("He is out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "присутствовать/отсутствовать",
+                        description = "обычно дома или на работе",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Кто-то (есть) дома"),
+                    CardContentItem("Его (здесь) нет"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard8() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -285,7 +417,34 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard4() =
+    private suspend fun createCard9() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "be up to [somebody]",
+                        valueVoicing = "be up to somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("It's up to you to decide"),
+                    CardContentItem("It's up to the captain to make the final decision"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(value = "зависеть от кого-то", description = "о принятии решения"),
+                ),
+                examples = listOf(
+                    CardContentItem("Это тебе решать"),
+                    CardContentItem("Финальное решение за капитаном (он решает)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard10() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -314,111 +473,264 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard5() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "be up to [somebody]",
-                        valueVoicing = "be up to somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("It's up to you to decide"),
-                    CardContentItem("It's up to the captain to make the final decision"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(value = "зависеть от кого-то", description = "о принятии решения"),
-                ),
-                examples = listOf(
-                    CardContentItem("Это тебе решать"),
-                    CardContentItem("Финальное решение за капитаном (он решает)"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard6() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "be down with [something]",
-                        valueVoicing = "be down with something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I can't go to school, I'm down with the cold"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(value = "приболеть чем-то", description = "несерьезным"),
-                ),
-                examples = listOf(
-                    CardContentItem("Я не могу пойти в школу я приболел простудой (простудился)"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard7() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "be fed up with [something]",
-                        valueVoicing = "be fed up with something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("We are fed up with your lies!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("быть сытым чем-то по горло"),
-                ),
-                examples = listOf(
-                    CardContentItem("Мы сыты по горло твоей ложью!"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard8() =
+    private suspend fun createCard11() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem(value = "be in/out", valueVoicing = "be in or out"),
+                    CardContentItem(
+                        value = "break down",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("Someone is in"),
-                    CardContentItem("He is out"),
+                    CardContentItem("Sorry, I'm late, my car broke down"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "присутствовать/отсутствовать",
-                        description = "обычно дома или на работе",
+                        value = "сломаться",
+                        description = "о машине, механизме",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Кто-то (есть) дома"),
-                    CardContentItem("Его (здесь) нет"),
+                    CardContentItem("Извините за опоздание, моя машина сломалась"),
                 ),
             ),
         )
 
-    private suspend fun createCard9() =
+    private suspend fun createCard12() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "break [something] down",
+                        valueVoicing = "break something down",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("You broke down my glasses"),
+                    CardContentItem("Let's break down this text"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "сломать",
+                    ),
+                    CardContentItem(
+                        value = "объяснить, разобрать",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Вы сломали мои очки"),
+                    CardContentItem("Давайте разберем этот текст"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard13() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable or intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "break up (with somebody)",
+                        valueVoicing = "break up (with somebody)",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("We broke up"),
+                    CardContentItem("Larry and Jane broke up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "расставаться",
+                        description = "об отношениях",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Мы расстались"),
+                    CardContentItem("Ларри и Джейн расстались"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard14() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "bring [somebody] up",
+                        valueVoicing = "bring somebody up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("They have no idea how to bring up children"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "воспитывать",
+                        description = "о воспитании детей",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Они понятия не имеют, как воспитывать детей"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard15() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "bring [something] up",
+                        valueVoicing = "bring something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Please, don't bring up business at lunch"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "упоминать что-то, поднять тему",
+                        description = "в разговоре",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Пожалуйста, не говорите о бизнесе за обедом"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard16() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "call [somebody] back",
+                        valueVoicing = "call somebody back",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Thank you for coming, we'll call you back"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "перезванивать кому-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Спасибо, что пришли, мы вам перезвоним"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard17() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "calm [somebody] down",
+                        valueVoicing = "calm somebody down",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Calm down!"),
+                    CardContentItem("Could you calm your dog down, please?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "успокоить (-ся)",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Успокойся!"),
+                    CardContentItem("Не могли бы вы успокоить свою собаку, пожалуйста?"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard18() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "check in/out",
+                        valueVoicing = "check in or check out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I'll check in at front desk and get our key"),
+                    CardContentItem("We check out at 10 a.m."),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "регистироваться в гостинице/выписываться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я зарегистрируюсь в приемной и возьму наш ключ"),
+                    CardContentItem("Мы уезжаем (выселяемся) в 10 утра"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard19() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "check out [somebody or something]",
+                        valueVoicing = "check out somebody or something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Check out my new phone"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "\"заценить\" что-то, кого-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Зацени мой новый телефон"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard20() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -445,7 +757,29 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard10() =
+    private suspend fun createCard21() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come apart"),
+                ),
+                examples = listOf(
+                    CardContentItem("Your boots are coming apart"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("развалиться на части"),
+                ),
+                examples = listOf(
+                    CardContentItem("Твои ботинки разваливаются"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard22() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -469,75 +803,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard11() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come from"),
-                ),
-                examples = listOf(
-                    CardContentItem("Where do you come from?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "быть откуда-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Откуда ты?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard12() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come off"),
-                ),
-                examples = listOf(
-                    CardContentItem("The door knob came off"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("отвалиться"),
-                ),
-                examples = listOf(
-                    CardContentItem("Дверная ручка отвалилась"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard13() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come apart"),
-                ),
-                examples = listOf(
-                    CardContentItem("Your boots are coming apart"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("развалиться на части"),
-                ),
-                examples = listOf(
-                    CardContentItem("Твои ботинки разваливаются"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard14() =
+    private suspend fun createCard23() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -562,7 +828,31 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard15() =
+    private suspend fun createCard24() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come from"),
+                ),
+                examples = listOf(
+                    CardContentItem("Where do you come from?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "быть откуда-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Откуда ты?"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard25() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -584,7 +874,119 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard16() =
+    private suspend fun createCard26() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come off"),
+                ),
+                examples = listOf(
+                    CardContentItem("The door knob came off"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("отвалиться"),
+                ),
+                examples = listOf(
+                    CardContentItem("Дверная ручка отвалилась"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard27() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("Come on!"),
+                ),
+                examples = listOf(
+                    CardContentItem("Come on! You can do it!"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("Давай! Вперед!"),
+                ),
+                examples = listOf(
+                    CardContentItem("Давай! Ты можешь это сделать!"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard28() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come out"),
+                ),
+                examples = listOf(
+                    CardContentItem("That movie is coming out in March"),
+                    CardContentItem("His secrets came out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(value = "выходить в свет, раскрываться", description = "о тайне"),
+                ),
+                examples = listOf(
+                    CardContentItem("Этот фильм выходит в марте"),
+                    CardContentItem("Его секреты стали известны"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard29() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come over"),
+                ),
+                examples = listOf(
+                    CardContentItem("I'm gonna need your help. Can you come over?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("прийти к кому-то"),
+                ),
+                examples = listOf(
+                    CardContentItem("Мне понадобится твоя помощь. Можешь зайти?"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard30() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("come round (around)", valueVoicing = "come round"),
+                ),
+                examples = listOf(
+                    CardContentItem("The patient came round"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("прийти в себя"),
+                ),
+                examples = listOf(
+                    CardContentItem("Пациент пришел в себя"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard31() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -609,153 +1011,148 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard17() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come out"),
-                ),
-                examples = listOf(
-                    CardContentItem("That movie is coming out in March"),
-                    CardContentItem("His secrets came out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(value = "выходить в свет, раскрываться", description = "о тайне"),
-                ),
-                examples = listOf(
-                    CardContentItem("Этот фильм выходит в марте"),
-                    CardContentItem("Его секреты стали известны"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard18() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come over"),
-                ),
-                examples = listOf(
-                    CardContentItem("I'm gonna need your help. Can you come over?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("прийти к кому-то"),
-                ),
-                examples = listOf(
-                    CardContentItem("Мне понадобится твоя помощь. Можешь зайти?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard19() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("Come on!"),
-                ),
-                examples = listOf(
-                    CardContentItem("Come on! You can do it!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("Давай! Вперед!"),
-                ),
-                examples = listOf(
-                    CardContentItem("Давай! Ты можешь это сделать!"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard20() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("come round (around)", valueVoicing = "come round"),
-                ),
-                examples = listOf(
-                    CardContentItem("The patient came round"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("прийти в себя"),
-                ),
-                examples = listOf(
-                    CardContentItem("Пациент пришел в себя"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard21() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable or intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "fall through [something]",
-                        valueVoicing = "fall through something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I fell through the roof"),
-                    CardContentItem("My weekend plans fell through"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый или непереходный"),
-                mainItems = listOf(
-                    CardContentItem("провалиться (буквально)"),
-                    CardContentItem("провалиться (о неудаче)"),
-                ),
-                examples = listOf(
-                    CardContentItem("Я провалился сквозь крышу"),
-                    CardContentItem("Мои планы на выходные провалились"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard22() =
+    private suspend fun createCard32() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "fall in with [somebody]",
-                        valueVoicing = "fall in with somebody",
+                        value = "count on [somebody]",
+                        valueVoicing = "count on somebody",
+                    ),
+                    CardContentItem(
+                        value = "rely on [somebody]",
+                        valueVoicing = "rely on somebody",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("The boy fell in with bad guys"),
+                    CardContentItem("You can always count on me"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "связаться с кем-то",
-                        description = "обычно о плохой компании",
+                        value = "полагаться на кого-то",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Мальчик связался с плохими парнями"),
+                    CardContentItem("Ты всегда можешь на меня положиться"),
                 ),
             ),
         )
 
-    private suspend fun createCard23() =
+    private suspend fun createCard33() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "dress up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("This is a formal event, you'll need to dress up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "нарядиться, официально одеться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Это официальное мероприятие, тебе нужно будет одеться подобающе (нарядиться)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard34() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "dress up as [somebody]",
+                        valueVoicing = "dress up as somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("She dressed up as a witch for Halloween"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "нарядиться кем-то, переодеться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Она нарядилась ведьмой на Хеллоуин"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard35() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "drop [somebody] off",
+                        valueVoicing = "drop somebody off",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Drop me off by that building, please"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "высадить пассажира",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Остановите (чтобы я вышел) у того здания, пожалуйста"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard36() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "end up [doing something]",
+                        valueVoicing = "end up doing something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I wanted to become a famous artist, but ended up drawing comic books"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "в итоге делать что-то",
+                    ),
+                    CardContentItem(
+                        value = "закончить тем, что делать что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я хотел стать знаменитым художником, а закончил тем, что рисую комиксы"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard37() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -783,54 +1180,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard24() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("fall down"),
-                ),
-                examples = listOf(
-                    CardContentItem("The tree fell down"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("упасть"),
-                ),
-                examples = listOf(
-                    CardContentItem("Дерево упало"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard25() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "fall for [somebody]",
-                        valueVoicing = "fall for somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("She really fell for you!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("влюбиться, запасть, втюриться в кого-то"),
-                ),
-                examples = listOf(
-                    CardContentItem("Она реально на тебя запала!"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard26() =
+    private suspend fun createCard38() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -858,7 +1208,76 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard27() =
+    private suspend fun createCard39() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("fall behind"),
+                ),
+                examples = listOf(
+                    CardContentItem("I fell behind and got lost"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("отставать"),
+                ),
+                examples = listOf(
+                    CardContentItem("Я отстал и заблудился"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard40() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("fall down"),
+                ),
+                examples = listOf(
+                    CardContentItem("The tree fell down"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("упасть"),
+                ),
+                examples = listOf(
+                    CardContentItem("Дерево упало"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard41() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "fall for [somebody]",
+                        valueVoicing = "fall for somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("She really fell for you!"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("влюбиться, запасть, втюриться в кого-то"),
+                ),
+                examples = listOf(
+                    CardContentItem("Она реально на тебя запала!"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard42() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -886,29 +1305,57 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard28() =
+    private suspend fun createCard43() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "fall in with [somebody]",
+                        valueVoicing = "fall in with somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The boy fell in with bad guys"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "связаться с кем-то",
+                        description = "обычно о плохой компании",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Мальчик связался с плохими парнями"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard44() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem("fall behind"),
+                    CardContentItem("fall out"),
                 ),
                 examples = listOf(
-                    CardContentItem("I fell behind and got lost"),
+                    CardContentItem("My dog's teeth are falling out"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem("отставать"),
+                    CardContentItem(value = "выпадать", description = "о волосах, зубах"),
                 ),
                 examples = listOf(
-                    CardContentItem("Я отстал и заблудился"),
+                    CardContentItem("У моей собаки выпадают зубы"),
                 ),
             ),
         )
 
-    private suspend fun createCard29() =
+    private suspend fun createCard45() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -933,29 +1380,200 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard30() =
+    private suspend fun createCard46() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable or intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "fall through [something]",
+                        valueVoicing = "fall through something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I fell through the roof"),
+                    CardContentItem("My weekend plans fell through"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
+                mainItems = listOf(
+                    CardContentItem("провалиться (буквально)"),
+                    CardContentItem("провалиться (о неудаче)"),
+                ),
+                examples = listOf(
+                    CardContentItem("Я провалился сквозь крышу"),
+                    CardContentItem("Мои планы на выходные провалились"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard47() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "figure [something] out",
+                        valueVoicing = "figure something out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I don't know the answer yet, but I'll figure it out"),
+                    CardContentItem("Let's figure out how it works"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "выяснить, разобраться в чем-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я еще не знаю ответ, но я выясню"),
+                    CardContentItem("Let's figure out how it works"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard48() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "fill [something] in/out",
+                        valueVoicing = "fill something in or out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Fill in this form, please"),
+                    CardContentItem("Fill out this form, please"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "заполнять бланки, бумаг",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Заполните этот бланк, пожалуйста"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard49() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "fill in for [somebody]",
+                        valueVoicing = "fill in for somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Can you fill in for me tomorrow?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "подменить кого-то на работе",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Ты можешь меня завтра подменить?"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard50() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "find [something] out",
+                        valueVoicing = "find something out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I don't know what you're going to do, but I will find it out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "выяснить, узнать что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я не знаю, что ты собираешься сделать, но я выясню это"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard51() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem("fall out"),
+                    CardContentItem(
+                        value = "freak out",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("My dog's teeth are falling out"),
+                    CardContentItem("Tell me the bad news, I promise you I'll not freak out"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem(value = "выпадать", description = "о волосах, зубах"),
+                    CardContentItem(
+                        value = "выражать сильные эмоции",
+                        description = "психовать, кричать, радоваться, паниковать и т. д.",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("У моей собаки выпадают зубы"),
+                    CardContentItem("Расскажи мне плохие новости, обещаю, что не буду сходить с ума"),
                 ),
             ),
         )
 
-    private suspend fun createCard31() =
+    private suspend fun createCard52() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "freak [somebody] out",
+                        valueVoicing = "freak somebody out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Stop speaking like a movie villain, you're freaking me out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "напугать, вывести из себя, нагнать жути, заставлять нервничать",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Перестань говорить, как злодей из фильмов, ты заставляешь меня нервничать"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard53() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -980,7 +1598,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard32() =
+    private suspend fun createCard54() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1002,7 +1620,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard33() =
+    private suspend fun createCard55() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1027,7 +1645,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard34() =
+    private suspend fun createCard56() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1052,7 +1670,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard35() =
+    private suspend fun createCard57() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1074,7 +1692,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard36() =
+    private suspend fun createCard58() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1099,7 +1717,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard37() =
+    private suspend fun createCard59() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1132,7 +1750,32 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard38() =
+    private suspend fun createCard60() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "get down to [something]",
+                        valueVoicing = "get down to something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Let's get down to business"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(value = "перейти к чему-то", description = "задаче"),
+                ),
+                examples = listOf(
+                    CardContentItem("Давайте перейдем к делу"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard61() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1158,7 +1801,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard39() =
+    private suspend fun createCard62() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or inseparable"),
@@ -1182,32 +1825,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard40() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "get over [something]",
-                        valueVoicing = "get over something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Don't worry, you'll get over your break up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("преодолеть трудность и идти дальше"),
-                ),
-                examples = listOf(
-                    CardContentItem("Не переживай, ты переживешь (преодолеешь) ваше расставание"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard41() =
+    private suspend fun createCard63() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1232,7 +1850,32 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard42() =
+    private suspend fun createCard64() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "get over [something]",
+                        valueVoicing = "get over something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Don't worry, you'll get over your break up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("преодолеть трудность и идти дальше"),
+                ),
+                examples = listOf(
+                    CardContentItem("Не переживай, ты переживешь (преодолеешь) ваше расставание"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard65() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1254,7 +1897,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard43() =
+    private suspend fun createCard66() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1276,32 +1919,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard44() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "get down to [something]",
-                        valueVoicing = "get down to something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Let's get down to business"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(value = "перейти к чему-то", description = "задаче"),
-                ),
-                examples = listOf(
-                    CardContentItem("Давайте перейдем к делу"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard45And46() =
+    private suspend fun createCard67() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1329,7 +1947,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard47() =
+    private suspend fun createCard68() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1354,7 +1972,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard48() =
+    private suspend fun createCard69() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or inseparable"),
@@ -1379,7 +1997,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard49() =
+    private suspend fun createCard70() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1404,7 +2022,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard50() =
+    private suspend fun createCard71() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1426,7 +2044,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard51() =
+    private suspend fun createCard72() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1456,7 +2074,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard52() =
+    private suspend fun createCard73() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1481,7 +2099,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard53() =
+    private suspend fun createCard74() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1503,7 +2121,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard54() =
+    private suspend fun createCard75() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1525,7 +2143,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard55() =
+    private suspend fun createCard76() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1547,7 +2165,32 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard56() =
+    private suspend fun createCard77() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("go off"),
+                ),
+                examples = listOf(
+                    CardContentItem("The alarm went off"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "сработать, издав громкий звук",
+                        description = "о сигнализации, будильнике",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Сигнализация сработала"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard78() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or inseparable"),
@@ -1571,7 +2214,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard57() =
+    private suspend fun createCard79() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1596,7 +2239,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard58() =
+    private suspend fun createCard80() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1624,32 +2267,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard59() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("go off"),
-                ),
-                examples = listOf(
-                    CardContentItem("The alarm went off"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "сработать, издав громкий звук",
-                        description = "о сигнализации, будильнике",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Сигнализация сработала"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard60() =
+    private suspend fun createCard81() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1674,7 +2292,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard61() =
+    private suspend fun createCard82() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1699,7 +2317,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard62() =
+    private suspend fun createCard83() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1724,7 +2342,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard63() =
+    private suspend fun createCard84() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1746,7 +2364,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard64() =
+    private suspend fun createCard85() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1770,7 +2388,139 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard65() =
+    private suspend fun createCard86() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "grow up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("He was born in Scotland but grew up in England"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "расти",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Он родился в Шотландии, но вырос в Англии"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard87() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "hang in there",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I'm coming to help you! Hang in there!"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "держаться, не сдаваться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я иду на помощь! Держись!"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard88() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive or inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "hang out (with somebody)",
+                        valueVoicing = "hang out (with somebody)",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("My boss hangs out in that bar, we're not going there"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый или непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "тусоваться, проводить время с кем-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Мой босс тусуется в этом баре, мы туда не пойдем"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard89() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "hang up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I lost my temper and hung up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "повесить трубку",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я вышел из себя и повесил трубку"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard90() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "help [somebody] out",
+                        valueVoicing = "help somebody out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Thank you for your advice, you really helped me out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "выручить, помочь кому-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Спасибо за твой совет, ты действительно меня выручил"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard91() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -1792,7 +2542,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard66() =
+    private suspend fun createCard92() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1817,57 +2567,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard67And68() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem("hold on"),
-                ),
-                examples = listOf(
-                    CardContentItem("Hold on, I'm writing it down"),
-                    CardContentItem("Hold on, we are coming to save you"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem("подождать немного"),
-                    CardContentItem("держаться, не сдаваться"),
-                ),
-                examples = listOf(
-                    CardContentItem("Подожди, я записываю"),
-                    CardContentItem("Держитесь, мы уже идем, чтобы спасти вас"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard69() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "hold on to [something]",
-                        valueVoicing = "hold on to something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The road is bumpy, hold on to something!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("держаться, вцепиться во что-то"),
-                ),
-                examples = listOf(
-                    CardContentItem("Дорога неровная, держитесь за что-нибудь"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard70() =
+    private suspend fun createCard93() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1892,32 +2592,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard71() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "hold [somebody] up",
-                        valueVoicing = "hold somebody up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Did you see the face of the guy who held you up?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem("грабить"),
-                ),
-                examples = listOf(
-                    CardContentItem("Вы видели лицо парня, который вас ограбил?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard72() =
+    private suspend fun createCard94() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -1942,32 +2617,82 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard73() =
+    private suspend fun createCard95() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("hold on"),
+                ),
+                examples = listOf(
+                    CardContentItem("Hold on, I'm writing it down"),
+                    CardContentItem("Hold on, we are coming to save you"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem("подождать немного"),
+                    CardContentItem("держаться, не сдаваться"),
+                ),
+                examples = listOf(
+                    CardContentItem("Подожди, я записываю"),
+                    CardContentItem("Держитесь, мы уже идем, чтобы спасти вас"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard96() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "keep doing [something]",
-                        valueVoicing = "keep doing something",
+                        value = "hold on to [something]",
+                        valueVoicing = "hold on to something",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Keep learning phrasal verbs"),
+                    CardContentItem("The road is bumpy, hold on to something!"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("неразделяемый"),
                 mainItems = listOf(
-                    CardContentItem("продолжать делать что-то"),
+                    CardContentItem("держаться, вцепиться во что-то"),
                 ),
                 examples = listOf(
-                    CardContentItem("Продолжайте учить фразовые глаголы"),
+                    CardContentItem("Дорога неровная, держитесь за что-нибудь"),
                 ),
             ),
         )
 
-    private suspend fun createCard74() =
+    private suspend fun createCard97() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "hold [somebody] up",
+                        valueVoicing = "hold somebody up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Did you see the face of the guy who held you up?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem("грабить"),
+                ),
+                examples = listOf(
+                    CardContentItem("Вы видели лицо парня, который вас ограбил?"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard98() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -1992,7 +2717,32 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard75() =
+    private suspend fun createCard99() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "keep doing [something]",
+                        valueVoicing = "keep doing something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Keep learning phrasal verbs"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("продолжать делать что-то"),
+                ),
+                examples = listOf(
+                    CardContentItem("Продолжайте учить фразовые глаголы"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard100() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2017,7 +2767,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard76() =
+    private suspend fun createCard101() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or separable"),
@@ -2042,7 +2792,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard77() =
+    private suspend fun createCard102() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or separable"),
@@ -2064,7 +2814,36 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard78() =
+    private suspend fun createCard103() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "let [somebody] in/out",
+                        valueVoicing = "let somebody in or out",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Could you let me in?"),
+                    CardContentItem("Let the cat out"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "впускать/выпускать кого-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Не могли бы вы меня впустить?"),
+                    CardContentItem("Выпустите кота"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard104() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2089,7 +2868,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard79() =
+    private suspend fun createCard105() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2114,7 +2893,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard80() =
+    private suspend fun createCard106() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2138,7 +2917,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard81() =
+    private suspend fun createCard107() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2168,7 +2947,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard82() =
+    private suspend fun createCard108() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2194,7 +2973,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard83() =
+    private suspend fun createCard109() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -2217,7 +2996,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard84() =
+    private suspend fun createCard110() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2245,57 +3024,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard85() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "look [something] up",
-                        valueVoicing = "look something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I know how to spell this word, I looked it up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem("посмотреть что-то в словаре, интернете и т. д."),
-                ),
-                examples = listOf(
-                    CardContentItem("Я знаю, как пишется это слово, я посмотрел (в каком-то источнике)"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard86() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "look up to [somebody]",
-                        valueVoicing = "look up to somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The boy looks up to his brother"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("равняться на кого-то, брать пример"),
-                ),
-                examples = listOf(
-                    CardContentItem("Мальчик берет пример со своего брата"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard87() =
+    private suspend fun createCard111() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2320,51 +3049,279 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard88() =
+    private suspend fun createCard112() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "look [something] up",
+                        valueVoicing = "look something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I know how to spell this word, I looked it up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem("посмотреть что-то в словаре, интернете и т. д."),
+                ),
+                examples = listOf(
+                    CardContentItem("Я знаю, как пишется это слово, я посмотрел (в каком-то источнике)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard113() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "look up to [somebody]",
+                        valueVoicing = "look up to somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The boy looks up to his brother"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("равняться на кого-то, брать пример"),
+                ),
+                examples = listOf(
+                    CardContentItem("Мальчик берет пример со своего брата"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard114() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "make [something] up",
+                        valueVoicing = "make something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I don't believe you, you made it up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "выдумать что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я тебе не верю, ты это выдумал"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard115() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem("run around"),
+                    CardContentItem(
+                        value = "move in/out",
+                        valueVoicing = "move in or out",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("I'm so tired, I've been running around all day"),
+                    CardContentItem("I'm your new neighbor, we just moved in"),
+                    CardContentItem("She doesn't live here, she moved out"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem(value = "\"бегать\", быть занятым"),
+                    CardContentItem(
+                        value = "заехать/съехать",
+                        description = "о жилье",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("Я так устал, я был занят весь день"),
+                    CardContentItem("Я ваш новый сосед, мы только заехали"),
+                    CardContentItem("Она здесь не живет, она съехала"),
                 ),
             ),
         )
 
-    private suspend fun createCard89() =
+    private suspend fun createCard116() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "pick up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Don't pick it up, it's my boss calling"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "поднять трубку, отвечать на звонок",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Не отвечай на звонок, это мой начальник звонит"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard117() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "pick [somebody] up",
+                        valueVoicing = "pick somebody up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I'll pick you up at ten"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "взять пассажира",
+                        description = "заехать за кем-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я заеду за тобой в десять"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard118() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "pick [something] up",
+                        valueVoicing = "pick something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The boy picked up a coin"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "поднять что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Мальчик подобрал монетку"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard119() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem("run away", description = "from somebody"),
+                    CardContentItem(
+                        value = "pull off",
+                    ),
+                    CardContentItem(
+                        value = "pull over",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("The rabbit was able to run away (from the fox)"),
+                    CardContentItem("My passenger asked me to pull off, he wanted to stretch his legs"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem(value = "убегать", description = "от кого-то"),
+                    CardContentItem(
+                        value = "остановить машину у дороги",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("Кролик сумел сбежать (от лисы)"),
+                    CardContentItem("Мой пассажир попросил остановиться, он хотел размять ноги"),
                 ),
             ),
         )
 
-    private suspend fun createCard90And91() =
+    private suspend fun createCard120() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "pull [somebody] over",
+                        valueVoicing = "pull somebody over",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The police pulled me over"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "остановить машину, заставить остановиться у дороги",
+                        description = "обычно о полиции",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Меня (машину) остановила полиция"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard121() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "put [something] on",
+                        valueVoicing = "put something on",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Put on this hat"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "надеть что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Надень эту шляпу"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard122() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2392,7 +3349,126 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard92() =
+    private suspend fun createCard123() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem("run around"),
+                ),
+                examples = listOf(
+                    CardContentItem("I'm so tired, I've been running around all day"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(value = "\"бегать\", быть занятым"),
+                ),
+                examples = listOf(
+                    CardContentItem("Я так устал, я был занят весь день"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard124() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "run away",
+                        description = "from somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The rabbit was able to run away (from the fox)"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(value = "убегать", description = "от кого-то"),
+                ),
+                examples = listOf(
+                    CardContentItem("Кролик сумел сбежать (от лисы)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard125() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "run [somebody or something] down",
+                        valueVoicing = "run somebody (or something) down",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("He was driving fast and ran someone down"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem("сбить кого-то (что-то) на машине"),
+                ),
+                examples = listOf(
+                    CardContentItem("Он быстро ехал и сбил кого-то"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard126() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem("run for (position)"),
+                ),
+                examples = listOf(
+                    CardContentItem("He ran for President in 1988"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(value = "участвовать в выборах", description = "как кандидат"),
+                ),
+                examples = listOf(
+                    CardContentItem("Он участвовал в президентских выборах в 1988"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard127() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "run for [somebody or something]",
+                        valueVoicing = "run for somebody or something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Don't run for the bus, it's dangerous"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("гнаться за чем-то, кем-то"),
+                ),
+                examples = listOf(
+                    CardContentItem("Не гонись за автобусом, это опасно"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard128() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2421,32 +3497,82 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard93() =
+    private suspend fun createCard129() =
         createCard(
             engSide = CardSide(
-                clarification = CardContentItem("separable"),
+                clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem(
-                        value = "run [somebody or something] down",
-                        valueVoicing = "run somebody (or something) down",
-                    ),
+                    CardContentItem("run off"),
                 ),
                 examples = listOf(
-                    CardContentItem("He was driving fast and ran someone down"),
+                    CardContentItem("This party is boring, I'm going to run off"),
                 ),
             ),
             rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem("сбить кого-то (что-то) на машине"),
+                    CardContentItem("сбежать, убежать откуда-то"),
                 ),
                 examples = listOf(
-                    CardContentItem("Он быстро ехал и сбил кого-то"),
+                    CardContentItem("Эта вечеринка скучная, я собираюсь сбежать"),
                 ),
             ),
         )
 
-    private suspend fun createCard94() =
+    private suspend fun createCard130() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "run on [something]",
+                        valueVoicing = "run on something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("My car runs on gas"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "работать на чем-то",
+                        description = "об источнике энергии",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Моя машина работает на бензине"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard131() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "run out of [something]",
+                        valueVoicing = "run out of something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("We ran out of toilet paper"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem("что-то заканчивается"),
+                ),
+                examples = listOf(
+                    CardContentItem("У нас закончилась туалетная бумага"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard132() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2471,7 +3597,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard95() =
+    private suspend fun createCard133() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2503,129 +3629,235 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard96() =
+    private suspend fun createCard134() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
-                    CardContentItem("run off"),
+                    CardContentItem(
+                        value = "screw up",
+                    ),
+                    CardContentItem(
+                        value = "mess up",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("This party is boring, I'm going to run off"),
+                    CardContentItem("The date was terrible, I screwed up"),
                 ),
             ),
             rusSide = CardSide(
                 clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem("сбежать, убежать откуда-то"),
-                ),
-                examples = listOf(
-                    CardContentItem("Эта вечеринка скучная, я собираюсь сбежать"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard97() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
                     CardContentItem(
-                        value = "run for [somebody or something]",
-                        valueVoicing = "run for somebody or something",
+                        value = "облажаться",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Don't run for the bus, it's dangerous"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem("гнаться за чем-то, кем-то"),
-                ),
-                examples = listOf(
-                    CardContentItem("Не гонись за автобусом, это опасно"),
+                    CardContentItem("Свидание было ужасным, я облажался"),
                 ),
             ),
         )
 
-    private suspend fun createCard98() =
+    private suspend fun createCard135() =
         createCard(
             engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem("run for (position)"),
-                ),
-                examples = listOf(
-                    CardContentItem("He ran for President in 1988"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(value = "участвовать в выборах", description = "как кандидат"),
-                ),
-                examples = listOf(
-                    CardContentItem("Он участвовал в президентских выборах в 1988"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard99() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
+                clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run on [something]",
-                        valueVoicing = "run on something",
+                        value = "screw [something] up",
+                        valueVoicing = "screw something up",
+                    ),
+                    CardContentItem(
+                        value = "mess [something] up",
+                        valueVoicing = "mess something up",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("My car runs on gas"),
+                    CardContentItem("The show went well, but we screwed up the last scene"),
                 ),
             ),
             rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "работать на чем-то",
-                        description = "об источнике энергии",
+                        value = "испортить, запороть, закосячить что-то",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Моя машина работает на бензине"),
+                    CardContentItem("Шоу прошло хорошо, но мы запороли последнюю сцену"),
                 ),
             ),
         )
 
-    private suspend fun createCard100() =
+    private suspend fun createCard136() =
         createCard(
             engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
+                clarification = CardContentItem("intransitive"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "run out of [something]",
-                        valueVoicing = "run out of something",
+                        value = "show up",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("We ran out of toilet paper"),
+                    CardContentItem("I waited for my friend but he didn't show up"),
+                    CardContentItem("You can't just show up here at 6 a.m.!"),
                 ),
             ),
             rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
+                clarification = CardContentItem("непереходный"),
                 mainItems = listOf(
-                    CardContentItem("что-то заканчивается"),
+                    CardContentItem(
+                        value = "прийти",
+                        description = "когда ждут",
+                    ),
+                    CardContentItem(
+                        value = "заявиться",
+                        description = "когда не ждут",
+                    ),
                 ),
                 examples = listOf(
-                    CardContentItem("У нас закончилась туалетная бумага"),
+                    CardContentItem("Я ждал друга, но он не пришел"),
+                    CardContentItem("Ты не можешь так просто заявиться сюда в 6 утра!"),
                 ),
             ),
         )
 
-    private suspend fun createCard101() =
+    private suspend fun createCard137() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "slow down",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Slow down, you're speaking foo fast"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "замедляться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Сбавь скорость, ты говоришь слишком быстро"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard138() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "slow [something] down",
+                        valueVoicing = "slow something down",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Slow down the car"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "замедлять",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Снизьте скорость машины"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard139() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("intransitive"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "speed up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The car speeded up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("непереходный"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "ускоряться",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Машина прибавила скорости"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard140() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "speed [something] up",
+                        valueVoicing = "speed something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Can you speed up the train?"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "ускорять",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Вы можете сделать так, чтобы поезд ехал быстрее? (ускорить поезд)"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard141() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "switch  on/off",
+                        valueVoicing = "switch something on or off",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Switch the lights on"),
+                    CardContentItem("Switch the coffee machine off, please"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "включать/выключать что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Включите свет"),
+                    CardContentItem("Выключите кофеварку, пожалуйста"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard142() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -2653,7 +3885,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard102() =
+    private suspend fun createCard143() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2680,7 +3912,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard103() =
+    private suspend fun createCard144() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2707,7 +3939,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard104() =
+    private suspend fun createCard145() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -2734,7 +3966,34 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard105And106() =
+    private suspend fun createCard146() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable (always)"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "take [somebody] for [somebody]",
+                        valueVoicing = "take somebody for somebody",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("I took you for your sister"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "принимать кого-то за кого-то другого",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Я принял тебя за твою сестру"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard147() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -2768,7 +4027,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard107() =
+    private suspend fun createCard148() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2795,34 +4054,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard107Case2() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "put [something] on",
-                        valueVoicing = "put something on",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Put on this hat"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "надеть что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Надень эту шляпу"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard108() =
+    private suspend fun createCard149() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable (always)"),
@@ -2850,13 +4082,14 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard109() =
+    private suspend fun createCard150() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take (a pet) out",
+                        value = "take [a pet] out",
+                        valueVoicing = "take a pet out",
                     ),
                 ),
                 examples = listOf(
@@ -2876,7 +4109,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard110() =
+    private suspend fun createCard151() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2904,7 +4137,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard111() =
+    private suspend fun createCard152() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -2932,34 +4165,34 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard112() =
+    private suspend fun createCard153() =
         createCard(
             engSide = CardSide(
-                clarification = CardContentItem("separable (always)"),
+                clarification = CardContentItem("separable"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "take [somebody] for [somebody]",
-                        valueVoicing = "take somebody for somebody",
+                        value = "try [something] on",
+                        valueVoicing = "try something on",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("I took you for your sister"),
+                    CardContentItem("May I try on these shoes?"),
                 ),
             ),
             rusSide = CardSide(
-                clarification = CardContentItem("всегда разделяемый"),
+                clarification = CardContentItem("разделяемый"),
                 mainItems = listOf(
                     CardContentItem(
-                        value = "принимать кого-то за кого-то другого",
+                        value = "примерить что-то",
                     ),
                 ),
                 examples = listOf(
-                    CardContentItem("Я принял тебя за твою сестру"),
+                    CardContentItem("Можно я примерю эти туфли?"),
                 ),
             ),
         )
 
-    private suspend fun createCard113() =
+    private suspend fun createCard154() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or separable"),
@@ -2988,7 +4221,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard114() =
+    private suspend fun createCard155() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive or separable"),
@@ -3017,34 +4250,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard115() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "turn [something] up",
-                        valueVoicing = "turn something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Turn the radio up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "делать громче",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Сделайте радио погромче"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard116() =
+    private suspend fun createCard156() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -3076,119 +4282,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard117() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "turn [something] on/off",
-                        valueVoicing = "turn something on or off",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Turn the lights on"),
-                    CardContentItem("Turn the coffee machine off, please"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "включать/выключать что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Включите свет"),
-                    CardContentItem("Выключите кофеварку, пожалуйста"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard117Case2() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "switch  on/off",
-                        valueVoicing = "switch something on or off",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Switch the lights on"),
-                    CardContentItem("Switch the coffee machine off, please"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "включать/выключать что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Включите свет"),
-                    CardContentItem("Выключите кофеварку, пожалуйста"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard118() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "turn into [somebody or something]",
-                        valueVoicing = "turn into somebody or something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The frog turned into a beautiful princess"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "превращаться во что-то, в кого-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Лягушка превратилась в красивую принцессу"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard119() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable (always)"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "turn [something] into [something]",
-                        valueVoicing = "turn something into something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("He turned his hobby into work"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("всегда разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "превращать что-то во что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Он превратил свое хобби в работу"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard120() =
+    private suspend fun createCard157() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -3214,7 +4308,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard121() =
+    private suspend fun createCard158() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -3246,7 +4340,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard122() =
+    private suspend fun createCard159() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -3274,7 +4368,90 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard123() =
+    private suspend fun createCard160() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("inseparable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "turn into [somebody or something]",
+                        valueVoicing = "turn into somebody or something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("The frog turned into a beautiful princess"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("неразделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "превращаться во что-то, в кого-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Лягушка превратилась в красивую принцессу"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard161() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable (always)"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "turn [something] into [something]",
+                        valueVoicing = "turn something into something",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("He turned his hobby into work"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("всегда разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "превращать что-то во что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Он превратил свое хобби в работу"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard162() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "turn [something] on/off",
+                        valueVoicing = "turn something on or off",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Turn the lights on"),
+                    CardContentItem("Turn the coffee machine off, please"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "включать/выключать что-то",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Включите свет"),
+                    CardContentItem("Выключите кофеварку, пожалуйста"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard163() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -3301,7 +4478,34 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard124() =
+    private suspend fun createCard164() =
+        createCard(
+            engSide = CardSide(
+                clarification = CardContentItem("separable"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "turn [something] up",
+                        valueVoicing = "turn something up",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Turn the radio up"),
+                ),
+            ),
+            rusSide = CardSide(
+                clarification = CardContentItem("разделяемый"),
+                mainItems = listOf(
+                    CardContentItem(
+                        value = "делать громче",
+                    ),
+                ),
+                examples = listOf(
+                    CardContentItem("Сделайте радио погромче"),
+                ),
+            ),
+        )
+
+    private suspend fun createCard165() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("inseparable"),
@@ -3323,1206 +4527,6 @@ internal class SyncCardsVersion1Batch(
                 ),
                 examples = listOf(
                     CardContentItem("Оказалось, что твой план был не таким уж плохим"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard125() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "add up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Your story is impressive but it doesn't add up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "складываться",
-                        description = "о фактах, истории",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Твоя история впечатляет, но что-то в ней не складывается"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard126() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable (always)"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "ask [somebody] out",
-                        valueVoicing = "ask somebody out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I asked her out and she said yes"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("всегда разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "пригласить сходить куда-нибудь",
-                        description = "обычно о свидании",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я пригласил ее на свидание, и она сказала \"да\""),
-                ),
-            ),
-        )
-
-    private suspend fun createCard127() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "break down",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Sorry, I'm late, my car broke down"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "сломаться",
-                        description = "о машине, механизме",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Извините за опоздание, моя машина сломалась"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard128() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "break [something] down",
-                        valueVoicing = "break something down",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("You broke down my glasses"),
-                    CardContentItem("Let's break down this text"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "сломать",
-                    ),
-                    CardContentItem(
-                        value = "объяснить, разобрать",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Вы сломали мои очки"),
-                    CardContentItem("Давайте разберем этот текст"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard129() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable or intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "break up (with somebody)",
-                        valueVoicing = "break up (with somebody)",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("We broke up"),
-                    CardContentItem("Larry and Jane broke up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый или непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "расставаться",
-                        description = "об отношениях",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Мы расстались"),
-                    CardContentItem("Ларри и Джейн расстались"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard130() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "bring [something] up",
-                        valueVoicing = "bring something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Please, don't bring up business at lunch"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "упоминать что-то, поднять тему",
-                        description = "в разговоре",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Пожалуйста, не говорите о бизнесе за обедом"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard131() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "bring [somebody] up",
-                        valueVoicing = "bring somebody up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("They have no idea how to bring up children"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "воспитывать",
-                        description = "о воспитании детей",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Они понятия не имеют, как воспитывать детей"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard132() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "call [somebody] back",
-                        valueVoicing = "call somebody back",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Thank you for coming, we'll call you back"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "перезванивать кому-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Спасибо, что пришли, мы вам перезвоним"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard133() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "calm [somebody] down",
-                        valueVoicing = "calm somebody down",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Calm down!"),
-                    CardContentItem("Could you calm your dog down, please?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "успокоить (-ся)",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Успокойся!"),
-                    CardContentItem("Не могли бы вы успокоить свою собаку, пожалуйста?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard134() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "check in/out",
-                        valueVoicing = "check in or check out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I'll check in at front desk and get our key"),
-                    CardContentItem("We check out at 10 a.m."),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "регистироваться в гостинице/выписываться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я зарегистрируюсь в приемной и возьму наш ключ"),
-                    CardContentItem("Мы уезжаем (выселяемся) в 10 утра"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard135() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "check out [somebody or something]",
-                        valueVoicing = "check out somebody or something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Check out my new phone"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "\"заценить\" что-то, кого-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Зацени мой новый телефон"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard136() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "count on [somebody]",
-                        valueVoicing = "count on somebody",
-                    ),
-                    CardContentItem(
-                        value = "rely on [somebody]",
-                        valueVoicing = "rely on somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("You can always count on me"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "полагаться на кого-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Ты всегда можешь на меня положиться"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard137() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "dress up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("This is a formal event, you'll need to dress up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "нарядиться, официально одеться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Это официальное мероприятие, тебе нужно будет одеться подобающе (нарядиться)"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard138() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "dress up as [somebody]",
-                        valueVoicing = "dress up as somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("She dressed up as a witch for Halloween"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "нарядиться кем-то, переодеться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Она нарядилась ведьмой на Хеллоуин"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard139() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "end up doing [something]",
-                        valueVoicing = "end up doing something",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I wanted to become a famous artist, but ended up drawing comic books"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "в итоге делать что-то",
-                    ),
-                    CardContentItem(
-                        value = "закончить тем, что делать что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я хотел стать знаменитым художником, а закончил тем, что рисую комиксы"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard140() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "find [something] out",
-                        valueVoicing = "find something out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I don't know what you're going to do, but I will find it out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "выяснить, узнать что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я не знаю, что ты собираешься сделать, но я выясню это"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard141() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "figure [something] out",
-                        valueVoicing = "figure something out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I don't know the answer yet, but I'll figure it out"),
-                    CardContentItem("Let's figure out how it works"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "выяснить, разобраться в чем-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я еще не знаю ответ, но я выясню"),
-                    CardContentItem("Let's figure out how it works"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard142() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "fill [something] in/out",
-                        valueVoicing = "fill something in or out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Fill in this form, please"),
-                    CardContentItem("Fill out this form, please"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "заполнять бланки, бумаг",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Заполните этот бланк, пожалуйста"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard143() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "fill in for [somebody]",
-                        valueVoicing = "fill in for somebody",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Can you fill in for me tomorrow?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "подменить кого-то на работе",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Ты можешь меня завтра подменить?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard144() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "freak out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Tell me the bad news, I promise you I'll not freak out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "выражать сильные эмоции",
-                        description = "психовать, кричать, радоваться, паниковать и т. д.",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Расскажи мне плохие новости, обещаю, что не буду сходить с ума"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard145() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "freak [somebody] out",
-                        valueVoicing = "freak somebody out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Stop speaking like a movie villain, you're freaking me out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "напугать, вывести из себя, нагнать жути, заставлять нервничать",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Перестань говорить, как злодей из фильмов, ты заставляешь меня нервничать"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard146() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "grow up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("He was born in Scotland but grew up in England"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "расти",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Он родился в Шотландии, но вырос в Англии"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard147() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive or inseparable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "hang out (with somebody)",
-                        valueVoicing = "hang out (with somebody)",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("My boss hangs out in that bar, we're not going there"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("неразделяемый или непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "тусоваться, проводить время с кем-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Мой босс тусуется в этом баре, мы туда не пойдем"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard148() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "pick up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Don't pick it up, it's my boss calling"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "поднять трубку, отвечать на звонок",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Не отвечай на звонок, это мой начальник звонит"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard149() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "hang up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I lost my temper and hung up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "повесить трубку",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я вышел из себя и повесил трубку"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard150() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "pick [something] up",
-                        valueVoicing = "pick something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The boy picked up a coin"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "поднять что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Мальчик подобрал монетку"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard151() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "hang in there",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I'm coming to help you! Hang in there!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "держаться, не сдаваться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я иду на помощь! Держись!"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard152() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "help [somebody] out",
-                        valueVoicing = "help somebody out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Thank you for your advice, you really helped me out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "выручить, помочь кому-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Спасибо за твой совет, ты действительно меня выручил"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard153() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "let [somebody] in/out",
-                        valueVoicing = "let somebody in or out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Could you let me in?"),
-                    CardContentItem("Let the cat out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "впускать/выпускать кого-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Не могли бы вы меня впустить?"),
-                    CardContentItem("Выпустите кота"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard154() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "make [something] up",
-                        valueVoicing = "make something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I don't believe you, you made it up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "выдумать что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я тебе не верю, ты это выдумал"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard155() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "move in/out",
-                        valueVoicing = "move in or out",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I'm your new neighbor, we just moved in"),
-                    CardContentItem("She doesn't live here, she moved out"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "заехать/съехать",
-                        description = "о жилье",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я ваш новый сосед, мы только заехали"),
-                    CardContentItem("Она здесь не живет, она съехала"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard156() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "pick [somebody] up",
-                        valueVoicing = "pick somebody up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I'll pick you up at ten"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "взять пассажира",
-                        description = "заехать за кем-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я заеду за тобой в десять"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard157() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "drop [somebody] off",
-                        valueVoicing = "drop somebody off",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Drop me off by that building, please"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "высадить пассажира",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Остановите (чтобы я вышел) у того здания, пожалуйста"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard158() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "pull off",
-                    ),
-                    CardContentItem(
-                        value = "pull over",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("My passenger asked me to pull off, he wanted to stretch his legs"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "остановить машину у дороги",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Мой пассажир попросил остановиться, он хотел размять ноги"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard159() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "pull [somebody] over",
-                        valueVoicing = "pull somebody over",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The police pulled me over"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "остановить машину, заставить остановиться у дороги",
-                        description = "обычно о полиции",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Меня (машину) остановила полиция"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard160() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "try [something] on",
-                        valueVoicing = "try something on",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("May I try on these shoes?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "примерить что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Можно я примерю эти туфли?"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard161() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "screw up",
-                    ),
-                    CardContentItem(
-                        value = "mess up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The date was terrible, I screwed up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "облажаться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Свидание было ужасным, я облажался"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard162() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "screw [something] up",
-                        valueVoicing = "screw something up",
-                    ),
-                    CardContentItem(
-                        value = "mess [something] up",
-                        valueVoicing = "mess something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The show went well, but we screwed up the last scene"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "испортить, запороть, закосячить что-то",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Шоу прошло хорошо, но мы запороли последнюю сцену"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard163() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "show up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("I waited for my friend but he didn't show up"),
-                    CardContentItem("You can't just show up here at 6 a.m.!"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "прийти",
-                        description = "когда ждут",
-                    ),
-                    CardContentItem(
-                        value = "заявиться",
-                        description = "когда не ждут",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Я ждал друга, но он не пришел"),
-                    CardContentItem("Ты не можешь так просто заявиться сюда в 6 утра!"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard164() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "slow down",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Slow down, you're speaking foo fast"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "замедляться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Сбавь скорость, ты говоришь слишком быстро"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard164Case2() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("intransitive"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "speed up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("The car speeded up"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("непереходный"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "ускоряться",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Машина прибавила скорости"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard165() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "slow [something] down",
-                        valueVoicing = "slow something down",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Slow down the car"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "замедлять",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Снизьте скорость машины"),
-                ),
-            ),
-        )
-
-    private suspend fun createCard165Case2() =
-        createCard(
-            engSide = CardSide(
-                clarification = CardContentItem("separable"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "speed [something] up",
-                        valueVoicing = "speed something up",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Can you speed up the train?"),
-                ),
-            ),
-            rusSide = CardSide(
-                clarification = CardContentItem("разделяемый"),
-                mainItems = listOf(
-                    CardContentItem(
-                        value = "ускорять",
-                    ),
-                ),
-                examples = listOf(
-                    CardContentItem("Вы можете сделать так, чтобы поезд ехал быстрее? (ускорить поезд)"),
                 ),
             ),
         )
@@ -4611,7 +4615,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard169And170() =
+    private suspend fun createCard169() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("intransitive"),
@@ -4642,7 +4646,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard171() =
+    private suspend fun createCard170() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),
@@ -4668,7 +4672,7 @@ internal class SyncCardsVersion1Batch(
             ),
         )
 
-    private suspend fun createCard172() =
+    private suspend fun createCard171() =
         createCard(
             engSide = CardSide(
                 clarification = CardContentItem("separable"),

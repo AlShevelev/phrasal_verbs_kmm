@@ -23,10 +23,10 @@ internal fun ContentState(
 ) {
     Column(
         modifier = modifier
-            .padding(all = Dimens.margin),
+            .padding(all = Dimens.padding),
     ) {
         OneSetting(
-            modifier = Modifier.padding(bottom = Dimens.margin),
+            modifier = Modifier.padding(bottom = Dimens.padding),
             isChecked = state.isRussianSideDefault,
             text = MR.strings.russian_side_default,
             updateCheckAction = { viewModel.updateIsRussianSideDefault(it) },

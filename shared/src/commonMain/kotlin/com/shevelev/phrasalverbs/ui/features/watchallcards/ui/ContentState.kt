@@ -19,7 +19,7 @@ internal fun ContentState(
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
-            .padding(horizontal = Dimens.margin),
+            .padding(horizontal = Dimens.padding),
     ) {
         items(
             count = state.cardsProvider.count,
@@ -28,8 +28,8 @@ internal fun ContentState(
             val card = state.cardsProvider.getItem(index)
             CardFull(
                 modifier = Modifier
-                    .padding(bottom = Dimens.margin)
-                    .padding(top = if (index == 0) Dimens.margin else 0.dp),
+                    .padding(bottom = Dimens.padding)
+                    .padding(top = if (index == 0) Dimens.padding else 0.dp),
                 card = card,
                 isRussianSideDefault = state.isRussianSideDefault,
             )
