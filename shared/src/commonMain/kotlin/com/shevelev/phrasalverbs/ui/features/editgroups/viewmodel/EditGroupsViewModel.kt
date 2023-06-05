@@ -1,7 +1,10 @@
 package com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel
 
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModel
+import kotlinx.coroutines.flow.StateFlow
 
 internal interface EditGroupsViewModel : ViewModel {
-    fun onNextClick()
+    val state: StateFlow<EditGroupsState>
+
+    fun onBackClick()
 }

@@ -19,6 +19,7 @@ val EditGroupsFeatureKoinModule = module {
         scoped<EditGroupsViewModel> {
             EditGroupsViewModelImpl(
                 navigation = get(),
+                cardsRepository = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(EditGroupsKoinScope)

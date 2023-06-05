@@ -49,6 +49,7 @@ internal class WatchAllCardsViewModelImpl(
             }
         }
     }
+
     override fun onBackClick() {
         navigation.navigateToMainMenu()
     }
