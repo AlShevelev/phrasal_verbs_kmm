@@ -28,8 +28,7 @@ internal fun CardsBriefList(
 
                 is CardsListItem.CardItem -> {
                     CardBrief(
-                        card = item.card,
-                        modifier = Modifier.fillMaxWidth(),
+                        item = item,
                     )
                 }
             }

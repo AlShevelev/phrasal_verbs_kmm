@@ -30,6 +30,3 @@ internal fun CardSeparator(
             ),
     )
 }
-/*
-Card - an issue with several items (verbs)
-*/

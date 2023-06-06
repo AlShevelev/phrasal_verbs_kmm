@@ -7,6 +7,7 @@ object ColorsGeneral {
     val Black: Color = Color(0xFF21201F)
     val White: Color = Color(0xFFFFFFFF)
     val Green: Color = Color(0xFF00FF00)
+    val LightGray: Color = Color(0xFFDDDDDD)
 }
 
 object ColorsTheme {

@@ -8,6 +8,7 @@ import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.data.CardsListItem
+import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.data.DropTargetType
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -33,8 +34,8 @@ internal class EditGroupsViewModelImpl(
 
                 _state.emit(
                     EditGroupsState.Content(
-                        mainList = getMainList(allCards),
-                        groupList = mutableListOf(
+                        sourceList = getSourceList(allCards),
+                        groupList = listOf(
                             CardsListItem.SeparatorItem(
                                 itemId = --separatorIdCounter,
                                 selected = false,
@@ -53,26 +54,62 @@ internal class EditGroupsViewModelImpl(
         navigation.navigateToMainMenu()
     }
 
-    private fun getMainList(allCards: List<Card>): List<CardsListItem> {
-        val result = mutableListOf<CardsListItem>()
+    override fun onDropCard(card: Card, target: DropTargetType) {
+        val newState = (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            val sourceList = activeState.sourceList.toMutableList()
+            val groupList = activeState.groupList.toMutableList()
 
-        allCards.forEach {
-            result.add(
-                CardsListItem.SeparatorItem(
-                    itemId = --separatorIdCounter,
-                    selected = false,
-                ),
-            )
-            result.add(CardsListItem.CardItem(card = it))
+            when (target) {
+                DropTargetType.GroupListGeneral -> {
+                    val index = removeCard(sourceList, card)
+                    removeItem(sourceList, index)
+
+                    addCard(groupList, card)
+                    addSeparator(groupList)
+                }
+
+                else -> throw UnsupportedOperationException()
+            }
+
+            activeState.copy(sourceList = sourceList, groupList = groupList)
         }
 
-        result.add(
+        newState?.let { _state.tryEmit(it) }
+    }
+
+    private fun getSourceList(allCards: List<Card>): List<CardsListItem> {
+        val result = mutableListOf<CardsListItem>()
+
+        addSeparator(result)
+
+        allCards.forEach {
+            addCard(result, it)
+            addSeparator(result)
+        }
+
+        return result
+    }
+
+    private fun addSeparator(listToAdd: MutableList<CardsListItem>) =
+        listToAdd.add(
             CardsListItem.SeparatorItem(
                 itemId = --separatorIdCounter,
                 selected = false,
             ),
         )
 
-        return result
+    private fun addCard(listToAdd: MutableList<CardsListItem>, card: Card) =
+        listToAdd.add(CardsListItem.CardItem(card = card))
+
+    private fun removeCard(listToRemove: MutableList<CardsListItem>, card: Card): Int {
+        val index = listToRemove.indexOfFirst {
+            it is CardsListItem.CardItem && it.card.id == card.id
+        }
+        listToRemove.removeAt(index)
+
+        return index
     }
+
+    private fun removeItem(listToRemove: MutableList<CardsListItem>, index: Int) =
+        listToRemove.removeAt(index)
 }

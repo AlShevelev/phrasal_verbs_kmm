@@ -6,7 +6,7 @@ internal sealed interface EditGroupsState {
     object Loading : EditGroupsState
 
     data class Content(
-        val mainList: List<CardsListItem>,
+        val sourceList: List<CardsListItem>,
         val groupList: List<CardsListItem>,
     ) : EditGroupsState
 }
