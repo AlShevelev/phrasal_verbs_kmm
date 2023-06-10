@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.shevelev.phrasalverbs.core.ui.theme.ColorsGeneral
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import com.shevelev.phrasalverbs.domain.entities.Language
-import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.data.CardsListItem
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardsListItem
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -32,7 +32,7 @@ internal fun CardBrief(
         dataToDrop = item.card,
     ) { contentModifier ->
         Card(
-            modifier = contentModifier.height(120.dp),
+            modifier = contentModifier.height(CardListDimens.cardHeight),
             elevation = Dimens.elevation,
             shape = RoundedCornerShape(7.dp),
             border = BorderStroke(

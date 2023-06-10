@@ -1,12 +1,16 @@
 package com.shevelev.phrasalverbs.ui.features.editgroups.di
 
-import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
-import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModelImpl
 import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
 import com.shevelev.phrasalverbs.core.koin.closeKoinScope
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacadeImpl
+import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
+import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModelImpl
+import org.koin.core.module.dsl.factoryOf
 import org.koin.core.qualifier.StringQualifier
 import org.koin.core.qualifier.named
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 internal object EditGroupsKoinScope : KoinScopeDescriptor {
@@ -19,7 +23,7 @@ val EditGroupsFeatureKoinModule = module {
         scoped<EditGroupsViewModel> {
             EditGroupsViewModelImpl(
                 navigation = get(),
-                cardsRepository = get(),
+                cardListsLogicFacade = get(),
                 scopeClosable = object : KoinScopeClosable {
                     override fun closeScope() {
                         closeKoinScope(EditGroupsKoinScope)
@@ -28,4 +32,6 @@ val EditGroupsFeatureKoinModule = module {
             )
         }
     }
+
+    factoryOf(::CardListsLogicFacadeImpl) bind CardListsLogicFacade::class
 }

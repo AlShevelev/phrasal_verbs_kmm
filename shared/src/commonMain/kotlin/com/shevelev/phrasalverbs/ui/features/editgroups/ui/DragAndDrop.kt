@@ -95,7 +95,7 @@ fun <T> DragTarget(
 
 @Composable
 fun <T> DropTarget(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     onDrop: (T) -> Unit,
     content: @Composable() (BoxScope.(isInBound: Boolean) -> Unit),
 ) {

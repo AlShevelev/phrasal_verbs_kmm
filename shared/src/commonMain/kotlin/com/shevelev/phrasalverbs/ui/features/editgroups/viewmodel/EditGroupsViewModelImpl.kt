@@ -4,11 +4,9 @@ import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
-import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
-import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.resources.MR
-import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.data.CardsListItem
-import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.data.DropTargetType
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -17,11 +15,9 @@ import kotlinx.coroutines.launch
 
 internal class EditGroupsViewModelImpl(
     private val navigation: NavigationGraph,
-    private val cardsRepository: CardsRepository,
+    private val cardListsLogicFacade: CardListsLogicFacade,
     scopeClosable: KoinScopeClosable,
 ) : ViewModelBase(scopeClosable), EditGroupsViewModel {
-
-    private var separatorIdCounter = -1L
 
     private val _state = MutableStateFlow<EditGroupsState>(EditGroupsState.Loading)
     override val state: StateFlow<EditGroupsState>
@@ -30,17 +26,12 @@ internal class EditGroupsViewModelImpl(
     init {
         viewModelScope.launch {
             try {
-                val allCards = cardsRepository.getAllCards()
+                val lists = cardListsLogicFacade.getStartLists()
 
                 _state.emit(
                     EditGroupsState.Content(
-                        sourceList = getSourceList(allCards),
-                        groupList = listOf(
-                            CardsListItem.SeparatorItem(
-                                itemId = --separatorIdCounter,
-                                selected = false,
-                            ),
-                        ),
+                        sourceList = lists.sourceList,
+                        groupList = lists.groupList,
                     ),
                 )
             } catch (ex: Exception) {
@@ -54,62 +45,21 @@ internal class EditGroupsViewModelImpl(
         navigation.navigateToMainMenu()
     }
 
-    override fun onDropCard(card: Card, target: DropTargetType) {
+    override fun onDropCard(cardId: Long, separatorId: Long) {
         val newState = (_state.value as? EditGroupsState.Content)?.let { activeState ->
-            val sourceList = activeState.sourceList.toMutableList()
-            val groupList = activeState.groupList.toMutableList()
+            val lists = CardLists(
+                sourceList = activeState.sourceList,
+                groupList = activeState.groupList,
+            )
 
-            when (target) {
-                DropTargetType.GroupListGeneral -> {
-                    val index = removeCard(sourceList, card)
-                    removeItem(sourceList, index)
+            val processingResult = cardListsLogicFacade.processDropCard(lists, cardId, separatorId)
 
-                    addCard(groupList, card)
-                    addSeparator(groupList)
-                }
-
-                else -> throw UnsupportedOperationException()
-            }
-
-            activeState.copy(sourceList = sourceList, groupList = groupList)
+            activeState.copy(
+                sourceList = processingResult.sourceList,
+                groupList = processingResult.groupList,
+            )
         }
 
         newState?.let { _state.tryEmit(it) }
     }
-
-    private fun getSourceList(allCards: List<Card>): List<CardsListItem> {
-        val result = mutableListOf<CardsListItem>()
-
-        addSeparator(result)
-
-        allCards.forEach {
-            addCard(result, it)
-            addSeparator(result)
-        }
-
-        return result
-    }
-
-    private fun addSeparator(listToAdd: MutableList<CardsListItem>) =
-        listToAdd.add(
-            CardsListItem.SeparatorItem(
-                itemId = --separatorIdCounter,
-                selected = false,
-            ),
-        )
-
-    private fun addCard(listToAdd: MutableList<CardsListItem>, card: Card) =
-        listToAdd.add(CardsListItem.CardItem(card = card))
-
-    private fun removeCard(listToRemove: MutableList<CardsListItem>, card: Card): Int {
-        val index = listToRemove.indexOfFirst {
-            it is CardsListItem.CardItem && it.card.id == card.id
-        }
-        listToRemove.removeAt(index)
-
-        return index
-    }
-
-    private fun removeItem(listToRemove: MutableList<CardsListItem>, index: Int) =
-        listToRemove.removeAt(index)
 }
