@@ -83,9 +83,11 @@ fun <T> DragTarget(
                 }, onDragEnd = {
                     currentState.isDragging = false
                     currentState.dragOffset = Offset.Zero
+                    currentState.draggableComposable = null
                 }, onDragCancel = {
                     currentState.dragOffset = Offset.Zero
                     currentState.isDragging = false
+                    currentState.draggableComposable = null
                 })
             },
     ) {
@@ -117,6 +119,7 @@ fun <T> DropTarget(
         if (isInBound && !dragInfo.isDragging) {
             @Suppress("UNCHECKED_CAST")
             (dragInfo.dataToDrop as? T)?.let {
+                dragInfo.dataToDrop = null
                 onDrop(it)
             }
         }
