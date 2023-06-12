@@ -15,7 +15,7 @@ import com.shevelev.phrasalverbs.core.koin.KoinScopeDescriptor
 import com.shevelev.phrasalverbs.core.koin.getKoin
 import com.shevelev.phrasalverbs.core.ui.popup.ErrorPopup
 import com.shevelev.phrasalverbs.core.ui.popup.MessagePopupData
-import com.shevelev.phrasalverbs.core.ui.theme.AnimationTime
+import com.shevelev.phrasalverbs.core.ui.theme.AnimationValues
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModel
 
 @Composable
@@ -48,7 +48,7 @@ inline fun <reified TVM : ViewModel>Feature(
     }
 
     LaunchedEffect(Unit) {
-        animate(0f, 1f, animationSpec = tween(AnimationTime.FADE)) { value, _ ->
+        animate(0f, 1f, animationSpec = tween(AnimationValues.FADE)) { value, _ ->
             shutterAlpha = value
         }
     }

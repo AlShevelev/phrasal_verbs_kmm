@@ -1,7 +1,5 @@
 package com.shevelev.phrasalverbs.ui.features.watchallcards.ui
 
-import androidx.compose.animation.core.CubicBezierEasing
-import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
@@ -26,7 +24,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.shevelev.phrasalverbs.core.ui.theme.AnimationTime
+import com.shevelev.phrasalverbs.core.ui.theme.AnimationValues
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.domain.entities.CardContentItem
@@ -49,22 +47,25 @@ internal fun CardFull(
         language = startLanguage
     }
 
-    // This easing speeds up quickly and slows down gradually
-    val slowOutFastInEasing: Easing = CubicBezierEasing(1.0f, 0.2f, 0f, 0.4f)
-
     val rotation by animateFloatAsState(
         targetValue = if (language != startLanguage) 180f else 0f,
-        animationSpec = tween(AnimationTime.CARD_ROTATION),
+        animationSpec = tween(AnimationValues.CARD_ROTATION),
     )
 
     val animateFront by animateFloatAsState(
         targetValue = if (language != startLanguage) 1f else 0f,
-        animationSpec = tween(AnimationTime.CARD_ROTATION, easing = slowOutFastInEasing),
+        animationSpec = tween(
+            durationMillis = AnimationValues.CARD_ROTATION,
+            easing = AnimationValues.slowOutFastInEasing,
+        ),
     )
 
     val animateBack by animateFloatAsState(
         targetValue = if (language == startLanguage) 1f else 0f,
-        animationSpec = tween(AnimationTime.CARD_ROTATION, easing = slowOutFastInEasing),
+        animationSpec = tween(
+            durationMillis = AnimationValues.CARD_ROTATION,
+            easing = AnimationValues.slowOutFastInEasing,
+        ),
     )
 
     Card(
@@ -77,7 +78,13 @@ internal fun CardFull(
             },
         elevation = Dimens.elevation,
         shape = RoundedCornerShape(15.dp),
-        onClick = { language = if (language == Language.RUSSIAN) Language.ENGLISH else Language.RUSSIAN },
+        onClick = {
+            language = if (language == Language.RUSSIAN) {
+                Language.ENGLISH
+            } else {
+                Language.RUSSIAN
+            }
+        },
     ) {
         CardSide(
             side = card.side[language]!!,

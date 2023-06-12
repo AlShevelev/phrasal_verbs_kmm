@@ -19,7 +19,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
-import com.shevelev.phrasalverbs.core.ui.theme.AnimationTime
+import com.shevelev.phrasalverbs.core.ui.theme.AnimationValues
 import com.shevelev.phrasalverbs.core.ui.theme.ColorsTheme
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import kotlinx.coroutines.delay
@@ -54,13 +54,13 @@ fun ErrorPopup(
     }
 
     LaunchedEffect(data.key) {
-        animate(0f, 1f, animationSpec = tween(AnimationTime.FADE)) { value, _ ->
+        animate(0f, 1f, animationSpec = tween(AnimationValues.FADE)) { value, _ ->
             shutterAlpha = value
         }
 
-        delay(AnimationTime.POPUP.toLong())
+        delay(AnimationValues.POPUP.toLong())
 
-        animate(1f, 0f, animationSpec = tween(AnimationTime.FADE)) { value, _ ->
+        animate(1f, 0f, animationSpec = tween(AnimationValues.FADE)) { value, _ ->
             shutterAlpha = value
         }
         onComplete()
