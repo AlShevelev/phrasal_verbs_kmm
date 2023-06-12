@@ -82,11 +82,13 @@ fun <T> DragTarget(
                     currentState.dragOffset += Offset(dragAmount.x, dragAmount.y)
                 }, onDragEnd = {
                     currentState.isDragging = false
+                    currentState.dragPosition = Offset.Zero
                     currentState.dragOffset = Offset.Zero
                     currentState.draggableComposable = null
                 }, onDragCancel = {
-                    currentState.dragOffset = Offset.Zero
                     currentState.isDragging = false
+                    currentState.dragPosition = Offset.Zero
+                    currentState.dragOffset = Offset.Zero
                     currentState.draggableComposable = null
                 })
             },
