@@ -14,31 +14,78 @@ internal object CardDragResultCalculator {
         val dragStart = getInListPosition(lists, cardId)
         val dragEnd = getInListPosition(lists, separatorId)
 
+        return if (dragStart.list == dragEnd.list) {
+            processSameLists(lists, dragStart, dragEnd)
+        } else {
+            processDifferentLists(lists, dragStart, dragEnd)
+        }
+    }
+
+    private fun getInListPosition(lists: CardLists, id: Long): InListPosition {
+        val index = lists.sourceList.indexOfFirst { it.id == id }
+        if (index != -1) {
+            return InListPosition(
+                list = lists.sourceList,
+                index = index,
+            )
+        }
+
+        return InListPosition(
+            list = lists.groupList,
+            index = lists.groupList.indexOfFirst { it.id == id },
+        )
+    }
+
+    private fun processSameLists(
+        lists: CardLists,
+        dragStart: InListPosition,
+        dragEnd: InListPosition,
+    ): CardLists {
+        if ((dragStart.index - dragEnd.index).absoluteValue == 1) {
+            return lists
+        }
+
+        val dragStartListEditor = CardListEditor(dragStart.list)
+
+        val card = dragStartListEditor.removeAndGetCard(dragStart.index) // Card
+        dragStartListEditor.remove(dragStart.index) // Separator
+
+        val indexToAdd = if (dragEnd.index < dragStart.index) {
+            dragEnd.index
+        } else {
+            dragEnd.index - 2
+        }
+
+        dragStartListEditor.addSeparatorAndCard(indexToAdd, card)
+
+        return if (dragStart.list == lists.sourceList) {
+            CardLists(
+                sourceList = dragStartListEditor.result,
+                groupList = lists.groupList,
+            )
+        } else {
+            CardLists(
+                sourceList = lists.sourceList,
+                groupList = dragStartListEditor.result,
+            )
+        }
+    }
+
+    private fun processDifferentLists(
+        lists: CardLists,
+        dragStart: InListPosition,
+        dragEnd: InListPosition,
+    ): CardLists {
         val dragStartListEditor = CardListEditor(dragStart.list)
         val dragEndListEditor = CardListEditor(dragEnd.list)
 
-        if (dragStart.list == dragEnd.list) { // the same lists
-            if ((dragStart.index - dragEnd.index).absoluteValue > 1) {
-                val card = dragStartListEditor.removeAndGetCard(dragStart.index) // Card
-                dragStartListEditor.remove(dragStart.index) // Separator
+        val card = dragStartListEditor.removeAndGetCard(dragStart.index) // Card
 
-                val indexToAdd = if (dragEnd.index < dragStart.index) {
-                    dragEnd.index
-                } else {
-                    dragEnd.index - 2
-                }
-
-                dragStartListEditor.addSeparatorAndCard(indexToAdd, card)
-            }
-        } else { // lists are different
-            val card = dragStartListEditor.removeAndGetCard(dragStart.index) // Card
-
-            if (dragStartListEditor.size > 1) {
-                dragStartListEditor.remove(dragStart.index) // Separator
-            }
-
-            dragEndListEditor.addSeparatorAndCard(dragEnd.index, card)
+        if (dragStartListEditor.size > 1) {
+            dragStartListEditor.remove(dragStart.index) // Separator
         }
+
+        dragEndListEditor.addSeparatorAndCard(dragEnd.index, card)
 
         val resultSourceList = if (dragStart.list == lists.sourceList) {
             dragStartListEditor.result
@@ -55,21 +102,6 @@ internal object CardDragResultCalculator {
         return CardLists(
             sourceList = resultSourceList,
             groupList = resultGroupsList,
-        )
-    }
-
-    private fun getInListPosition(lists: CardLists, id: Long): InListPosition {
-        val index = lists.sourceList.indexOfFirst { it.id == id }
-        if (index != -1) {
-            return InListPosition(
-                list = lists.sourceList,
-                index = index,
-            )
-        }
-
-        return InListPosition(
-            list = lists.groupList,
-            index = lists.groupList.indexOfFirst { it.id == id },
         )
     }
 }
