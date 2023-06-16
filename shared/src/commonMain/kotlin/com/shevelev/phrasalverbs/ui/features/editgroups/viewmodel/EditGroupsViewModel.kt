@@ -9,4 +9,8 @@ internal interface EditGroupsViewModel : ViewModel {
     fun onBackClick()
 
     fun onDropCard(cardId: Long, separatorId: Long)
+
+    fun onSaveClick()
+
+    fun onNameDialogClose(value: String?, isConfirmed: Boolean)
 }

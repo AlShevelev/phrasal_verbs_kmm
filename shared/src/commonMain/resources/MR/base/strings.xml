@@ -9,4 +9,8 @@
     <string name="general_error">Произошла ошибка в процессе обработки данных, извините</string>
     <string name="russian_side_default">Вначале показывать русскую строну карточки</string>
     <string name="infinite_lists">Бесконечные списки карточек</string>
+    <string name="cant_save_empty_group">Нельзя сохранять пустую группу</string>
+    <string name="enter_group_name">Имя группы</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>

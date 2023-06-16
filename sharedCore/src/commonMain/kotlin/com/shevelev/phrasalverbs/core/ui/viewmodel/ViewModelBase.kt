@@ -1,7 +1,9 @@
 package com.shevelev.phrasalverbs.core.ui.viewmodel
 
 import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
+import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.popup.MessagePopupData
+import dev.icerock.moko.resources.StringResource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -27,6 +29,8 @@ abstract class ViewModelBase(
     protected fun showPopup(message: String) {
         _messagePopup.tryEmit(MessagePopupData(message))
     }
+
+    protected fun showPopup(message: StringResource) = showPopup(message.toLocString())
 
     override fun close() {
         viewModelJob.cancel()

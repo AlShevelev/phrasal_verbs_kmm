@@ -8,7 +8,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.shevelev.phrasalverbs.core.log.Logger
+import com.shevelev.phrasalverbs.core.resource.toLocString
+import com.shevelev.phrasalverbs.core.ui.dialogs.EditTextAlertDialog
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
+import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsState
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
 
@@ -46,5 +50,17 @@ internal fun ContentState(
                 onDrop = { card, separatorId -> viewModel.onDropCard(card.id, separatorId) },
             )
         }
+    }
+
+    if(state.isNameDialogShown) {
+        EditTextAlertDialog(
+            titleText = MR.strings.enter_group_name.toLocString(),
+            startText = state.name,
+            confirmButtonText = MR.strings.ok.toLocString(),
+            cancelButtonText = MR.strings.cancel.toLocString(),
+            onConfirm = { viewModel.onNameDialogClose(it, isConfirmed = true) },
+            onDismiss = { viewModel.onNameDialogClose(null, isConfirmed = false) },
+            onCancel = { viewModel.onNameDialogClose(null, isConfirmed = false) },
+        )
     }
 }

@@ -7,6 +7,7 @@ import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardsListItem
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -61,5 +62,38 @@ internal class EditGroupsViewModelImpl(
         }
 
         newState?.let { _state.tryEmit(it) }
+    }
+
+    override fun onSaveClick() {
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            if (!activeState.groupList.any { it is CardsListItem.CardItem }) {
+                showPopup(MR.strings.cant_save_empty_group)
+                return
+            }
+
+            if (activeState.name.isNullOrBlank()) {
+                _state.tryEmit(activeState.copy(isNameDialogShown = true))
+            } else {
+                // save here
+            }
+        }
+    }
+
+    override fun onNameDialogClose(value: String?, isConfirmed: Boolean) {
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            val newState = activeState.copy(
+                isNameDialogShown = false,
+                name = if (value.isNullOrBlank()) activeState.name else value,
+            )
+            _state.tryEmit(newState)
+
+            if (!isConfirmed) {
+                return
+            }
+
+            if (!value.isNullOrBlank()) {
+                // save here
+            }
+        }
     }
 }

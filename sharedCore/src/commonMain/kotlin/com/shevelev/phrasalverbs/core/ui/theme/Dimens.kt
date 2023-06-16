@@ -10,4 +10,7 @@ object Dimens {
     val elevation = 2.dp
 
     val border = 1.dp
+
+    val dialogCorner = 5.dp
+    val dialogMinButtonWidth = 100.dp
 }
