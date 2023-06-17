@@ -5,7 +5,6 @@ import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
-import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
@@ -46,7 +45,11 @@ internal class EditGroupsViewModelImpl(
     }
 
     override fun onBackClick() {
-        navigation.navigateToMainMenu()
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            if (!activeState.isNameDialogShown) {
+                navigation.navigateToMainMenu()
+            }
+        }
     }
 
     override fun onDropCard(cardId: Long, separatorId: Long) {
@@ -77,7 +80,7 @@ internal class EditGroupsViewModelImpl(
             if (activeState.name.isNullOrBlank()) {
                 _state.tryEmit(activeState.copy(isNameDialogShown = true))
             } else {
-                // save here
+                save(activeState.name, activeState.groupList)
             }
         }
     }
@@ -95,17 +98,18 @@ internal class EditGroupsViewModelImpl(
             }
 
             if (!value.isNullOrBlank()) {
-                val allCards = newState.groupList
-                    .mapNotNull { (it as? CardsListItem.CardItem)?.card }
-                save(value, allCards)
+                save(value, newState.groupList)
             }
         }
     }
 
-    private fun save(name: String, cards: List<Card>) {
+    private fun save(name: String, cardsOnView: List<CardsListItem>) {
         viewModelScope.launch {
             try {
-                cardsRepository.createGroup(name, cards)
+                val allCards = cardsOnView.mapNotNull { (it as? CardsListItem.CardItem)?.card }
+
+                cardsRepository.createGroup(name, allCards)
+
                 onBackClick()
             } catch (ex: Exception) {
                 Logger.e(ex)
