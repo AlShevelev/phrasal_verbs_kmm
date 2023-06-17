@@ -14,4 +14,6 @@ internal interface CardsRepository {
     suspend fun createCard(card: Card)
 
     suspend fun getBunchesCount(): Int
+
+    suspend fun createGroup(name: String, cards: List<Card>)
 }

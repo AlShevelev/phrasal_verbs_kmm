@@ -96,6 +96,17 @@ internal class CardsRepositoryImpl(
             .size
     }
 
+    override suspend fun createGroup(name: String, cards: List<Card>) {
+        queries.transaction {
+            val groupId = IdGenerator.newId()
+            queries.createBunch(groupId, name)
+
+            cards.forEachIndexed { index, card ->
+                queries.createCardBunch(card.id, groupId, index.toShort())
+            }
+        }
+    }
+
     private fun createCardSide(language: Language, cardId: Long, cardSide: CardSide?) {
         if (cardSide != null) {
             val cardSideId = IdGenerator.newId()

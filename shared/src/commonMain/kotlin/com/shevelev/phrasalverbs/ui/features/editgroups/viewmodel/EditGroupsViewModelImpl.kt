@@ -4,6 +4,8 @@ import com.shevelev.phrasalverbs.core.koin.KoinScopeClosable
 import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
+import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
+import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
@@ -17,6 +19,7 @@ import kotlinx.coroutines.launch
 internal class EditGroupsViewModelImpl(
     private val navigation: NavigationGraph,
     private val cardListsLogicFacade: CardListsLogicFacade,
+    private val cardsRepository: CardsRepository,
     scopeClosable: KoinScopeClosable,
 ) : ViewModelBase(scopeClosable), EditGroupsViewModel {
 
@@ -92,7 +95,21 @@ internal class EditGroupsViewModelImpl(
             }
 
             if (!value.isNullOrBlank()) {
-                // save here
+                val allCards = newState.groupList
+                    .mapNotNull { (it as? CardsListItem.CardItem)?.card }
+                save(value, allCards)
+            }
+        }
+    }
+
+    private fun save(name: String, cards: List<Card>) {
+        viewModelScope.launch {
+            try {
+                cardsRepository.createGroup(name, cards)
+                onBackClick()
+            } catch (ex: Exception) {
+                Logger.e(ex)
+                showPopup(MR.strings.general_error.toLocString())
             }
         }
     }
