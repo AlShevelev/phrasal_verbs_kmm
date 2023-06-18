@@ -10,4 +10,6 @@ internal sealed interface FeatureParams {
     object MainMenu : FeatureParams
 
     object Settings : FeatureParams
+
+    object SelectGroup : FeatureParams
 }

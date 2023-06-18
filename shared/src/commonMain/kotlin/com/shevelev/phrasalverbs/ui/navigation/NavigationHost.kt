@@ -7,6 +7,7 @@ import com.shevelev.phrasalverbs.core.koin.getKoin
 import com.shevelev.phrasalverbs.ui.features.editgroups.EditGroupsFeature
 import com.shevelev.phrasalverbs.ui.features.learning.LearningFeature
 import com.shevelev.phrasalverbs.ui.features.mainmenu.MainMenuFeature
+import com.shevelev.phrasalverbs.ui.features.selectgroup.SelectGroupFeature
 import com.shevelev.phrasalverbs.ui.features.settings.SettingsFeature
 import com.shevelev.phrasalverbs.ui.features.watchallcards.WatchAllCardsFeature
 
@@ -45,6 +46,13 @@ internal fun NavigationHost(
 
         is FeatureParams.WatchAllCards -> {
             WatchAllCardsFeature(
+                params = params,
+                modifier = modifier,
+            )
+        }
+
+        is FeatureParams.SelectGroup -> {
+            SelectGroupFeature(
                 params = params,
                 modifier = modifier,
             )

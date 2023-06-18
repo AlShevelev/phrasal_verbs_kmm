@@ -10,10 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
+import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuState
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
-import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import dev.icerock.moko.resources.StringResource
 
 @Composable
