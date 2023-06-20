@@ -6,6 +6,7 @@ import com.shevelev.phrasalverbs.data.api.appstorage.Card_side
 import com.shevelev.phrasalverbs.data.api.appstorage.Card_side_content_item
 import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.domain.entities.CardContentItem
+import com.shevelev.phrasalverbs.domain.entities.CardGroup
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
@@ -89,7 +90,7 @@ internal class CardsRepositoryImpl(
         }
     }
 
-    override suspend fun getBunchesCount(): Int = withContext(ioDispatcher) {
+    override suspend fun getGroupsCount(): Int = withContext(ioDispatcher) {
         queries
             .readAllBunches()
             .executeAsList()
@@ -106,6 +107,12 @@ internal class CardsRepositoryImpl(
             }
         }
     }
+
+    override suspend fun getAllGroups(): List<CardGroup> =
+        queries
+            .readAllBunches()
+            .executeAsList()
+            .map { CardGroup(it.bunch_id, it.title) }
 
     private fun createCardSide(language: Language, cardId: Long, cardSide: CardSide?) {
         if (cardSide != null) {

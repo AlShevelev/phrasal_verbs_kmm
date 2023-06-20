@@ -10,6 +10,6 @@ internal class LearningViewModelImpl(
 ) : ViewModelBase(scopeClosable), LearningViewModel {
 
     override fun onNextClick() {
-        navigation.navigateToEditGroups()
+        //navigation.navigateToEditGroups()
     }
 }

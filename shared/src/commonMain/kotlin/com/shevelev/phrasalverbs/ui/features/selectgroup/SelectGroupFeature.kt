@@ -3,6 +3,7 @@ package com.shevelev.phrasalverbs.ui.features.selectgroup
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
@@ -61,5 +62,9 @@ internal fun SelectGroupFeature(
         BackActionHandler(
             onBackClick = { viewModel.onBackClick() },
         )
+
+        LaunchedEffect(Unit) {
+            viewModel.init(params.isAddNewButtonVisible)
+        }
     }
 }

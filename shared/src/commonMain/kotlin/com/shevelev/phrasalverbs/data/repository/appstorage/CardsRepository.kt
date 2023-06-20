@@ -1,6 +1,7 @@
 package com.shevelev.phrasalverbs.data.repository.appstorage
 
 import com.shevelev.phrasalverbs.domain.entities.Card
+import com.shevelev.phrasalverbs.domain.entities.CardGroup
 
 internal interface CardsRepository {
     /**
@@ -13,7 +14,9 @@ internal interface CardsRepository {
      */
     suspend fun createCard(card: Card)
 
-    suspend fun getBunchesCount(): Int
+    suspend fun getGroupsCount(): Int
 
     suspend fun createGroup(name: String, cards: List<Card>)
+
+    suspend fun getAllGroups(): List<CardGroup>
 }

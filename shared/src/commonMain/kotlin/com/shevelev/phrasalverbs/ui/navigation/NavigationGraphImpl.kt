@@ -9,8 +9,12 @@ internal class NavigationGraphImpl : NavigationGraph {
     override val activeFeature: StateFlow<FeatureParams>
         get() = _activeFeature.asStateFlow()
 
-    override fun navigateToEditGroups() {
-        _activeFeature.tryEmit(FeatureParams.EditGroups)
+    override fun navigateToEditGroups(groupId: Long?) {
+        _activeFeature.tryEmit(FeatureParams.EditGroups(groupId))
+    }
+
+    override fun navigateToSelectGroup(isAddNewButtonVisible: Boolean) {
+        _activeFeature.tryEmit(FeatureParams.SelectGroup(isAddNewButtonVisible))
     }
 
     override fun navigateToWatchAllCards() {

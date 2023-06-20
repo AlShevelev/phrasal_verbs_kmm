@@ -28,7 +28,7 @@ internal class MainMenuViewModelImpl(
         viewModelScope.launch {
             try {
                 batchCardsUpdate.update()
-                val bunchesCount = cardsRepository.getBunchesCount()
+                val bunchesCount = cardsRepository.getGroupsCount()
 
                 _state.emit(
                     MainMenuState.Content(
@@ -43,7 +43,7 @@ internal class MainMenuViewModelImpl(
     }
 
     override fun onEditClick() {
-        navigation.navigateToEditGroups()
+        navigation.navigateToSelectGroup(isAddNewButtonVisible = true)
     }
 
     override fun onLearnClick() {

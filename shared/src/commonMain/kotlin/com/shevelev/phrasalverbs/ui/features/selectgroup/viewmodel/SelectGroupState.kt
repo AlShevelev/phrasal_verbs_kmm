@@ -4,6 +4,6 @@ internal sealed interface SelectGroupState {
     object Loading : SelectGroupState
 
     data class Content(
-        val isNewVisible: Boolean,
+        val items: List<SelectGroupItem>,
     ) : SelectGroupState
 }

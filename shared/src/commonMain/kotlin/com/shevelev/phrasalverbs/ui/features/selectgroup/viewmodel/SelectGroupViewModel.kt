@@ -6,6 +6,8 @@ import kotlinx.coroutines.flow.StateFlow
 internal interface SelectGroupViewModel : ViewModel {
     val state: StateFlow<SelectGroupState>
 
+    fun init(isAddNewButtonVisible: Boolean)
+
     fun onBackClick()
 
     fun onNewGroupClick()

@@ -26,6 +26,7 @@ fun EditTextAlertDialog(
     startText: String? = null,
     confirmButtonText: String,
     cancelButtonText: String? = null,
+    maxLen: Int = 32,
     onConfirm: (String?) -> Unit,
     onDismiss: () -> Unit = { },
     onCancel: () -> Unit = { },
@@ -49,8 +50,10 @@ fun EditTextAlertDialog(
                 .fillMaxWidth(),
             value = value,
             onValueChange = {
-                value = it
-                onValueChange(it)
+                if(it.length <= maxLen) {
+                    value = it
+                    onValueChange(it)
+                }
             },
             textStyle = MaterialTheme.typography.body1,
             keyboardOptions = KeyboardOptions(

@@ -1,7 +1,12 @@
 package com.shevelev.phrasalverbs.ui.navigation
 
 internal sealed interface FeatureParams {
-    object EditGroups : FeatureParams
+    /**
+     * @property groupId if the parameter is null - it means we should create a new one
+     */
+    data class EditGroups(
+        val groupId: Long?,
+    ) : FeatureParams
 
     object WatchAllCards : FeatureParams
 
@@ -11,5 +16,7 @@ internal sealed interface FeatureParams {
 
     object Settings : FeatureParams
 
-    object SelectGroup : FeatureParams
+    data class SelectGroup(
+        val isAddNewButtonVisible: Boolean,
+    ) : FeatureParams
 }

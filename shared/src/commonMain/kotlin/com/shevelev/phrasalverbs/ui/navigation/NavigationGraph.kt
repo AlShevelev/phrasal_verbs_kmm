@@ -5,7 +5,9 @@ import kotlinx.coroutines.flow.StateFlow
 internal interface NavigationGraph {
     val activeFeature: StateFlow<FeatureParams>
 
-    fun navigateToEditGroups()
+    fun navigateToEditGroups(groupId: Long?)
+
+    fun navigateToSelectGroup(isAddNewButtonVisible: Boolean)
 
     fun navigateToWatchAllCards()
 
