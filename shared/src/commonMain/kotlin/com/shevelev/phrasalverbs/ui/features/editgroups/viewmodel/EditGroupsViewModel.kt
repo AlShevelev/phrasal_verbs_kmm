@@ -6,6 +6,8 @@ import kotlinx.coroutines.flow.StateFlow
 internal interface EditGroupsViewModel : ViewModel {
     val state: StateFlow<EditGroupsState>
 
+    fun init(groupId: Long?)
+
     fun onBackClick()
 
     fun onDropCard(cardId: Long, separatorId: Long)

@@ -26,7 +26,7 @@ internal class EditGroupsViewModelImpl(
     override val state: StateFlow<EditGroupsState>
         get() = _state.asStateFlow()
 
-    init {
+    override fun init(groupId: Long?) {
         viewModelScope.launch {
             try {
                 val lists = cardListsLogicFacade.getStartLists()
