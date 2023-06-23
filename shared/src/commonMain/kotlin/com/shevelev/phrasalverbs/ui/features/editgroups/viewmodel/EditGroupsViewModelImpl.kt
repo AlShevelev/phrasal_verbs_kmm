@@ -7,6 +7,8 @@ import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CreateCardListsLogicFacade
+import com.shevelev.phrasalverbs.ui.features.editgroups.domain.UpdateCardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardsListItem
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
@@ -17,7 +19,6 @@ import kotlinx.coroutines.launch
 
 internal class EditGroupsViewModelImpl(
     private val navigation: NavigationGraph,
-    private val cardListsLogicFacade: CardListsLogicFacade,
     private val cardsRepository: CardsRepository,
     scopeClosable: KoinScopeClosable,
 ) : ViewModelBase(scopeClosable), EditGroupsViewModel {
@@ -26,13 +27,30 @@ internal class EditGroupsViewModelImpl(
     override val state: StateFlow<EditGroupsState>
         get() = _state.asStateFlow()
 
+    private var groupId: Long? = null
+
+    private lateinit var cardListsLogicFacade: CardListsLogicFacade
+
+    private val isEdit: Boolean
+        get() = groupId != null
+
     override fun init(groupId: Long?) {
+        this.groupId = groupId
+
+        cardListsLogicFacade = if (isEdit) {
+            UpdateCardListsLogicFacade(cardsRepository, groupId!!)
+        } else {
+            CreateCardListsLogicFacade(cardsRepository)
+        }
+
         viewModelScope.launch {
             try {
                 val lists = cardListsLogicFacade.getStartLists()
+                val groupName = groupId?.let { cardsRepository.getGroupBrief(it) }?.name
 
                 _state.emit(
                     EditGroupsState.Content(
+                        name = groupName,
                         sourceList = lists.sourceList,
                         groupList = lists.groupList,
                     ),
@@ -77,28 +95,26 @@ internal class EditGroupsViewModelImpl(
                 return
             }
 
-            if (activeState.name.isNullOrBlank()) {
-                _state.tryEmit(activeState.copy(isNameDialogShown = true))
-            } else {
-                save(activeState.name, activeState.groupList)
-            }
+            _state.tryEmit(activeState.copy(isNameDialogShown = true))
         }
     }
 
     override fun onNameDialogClose(value: String?, isConfirmed: Boolean) {
         (_state.value as? EditGroupsState.Content)?.let { activeState ->
-            val newState = activeState.copy(
-                isNameDialogShown = false,
-                name = if (value.isNullOrBlank()) activeState.name else value,
-            )
-            _state.tryEmit(newState)
+            if (!isConfirmed || value.isNullOrBlank()) {
+                val newState = activeState.copy(
+                    isNameDialogShown = false,
+                )
+                _state.tryEmit(newState)
+            } else {
+                val newState = activeState.copy(
+                    isNameDialogShown = false,
+                    name = value,
+                )
+                _state.tryEmit(newState)
 
-            if (!isConfirmed) {
-                return
-            }
-
-            if (!value.isNullOrBlank()) {
                 save(value, newState.groupList)
+                onBackClick()
             }
         }
     }
@@ -108,9 +124,11 @@ internal class EditGroupsViewModelImpl(
             try {
                 val allCards = cardsOnView.mapNotNull { (it as? CardsListItem.CardItem)?.card }
 
-                cardsRepository.createGroup(name, allCards)
-
-                onBackClick()
+                if (isEdit) {
+                    cardsRepository.updateGroup(groupId!!, name, allCards)
+                } else {
+                    cardsRepository.createGroup(name = name, cards = allCards)
+                }
             } catch (ex: Exception) {
                 Logger.e(ex)
                 showPopup(MR.strings.general_error.toLocString())

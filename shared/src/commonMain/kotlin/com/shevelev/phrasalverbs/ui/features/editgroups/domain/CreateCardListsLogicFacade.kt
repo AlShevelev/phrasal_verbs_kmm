@@ -5,36 +5,28 @@ import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardLists
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.entities.CardsListItem
 
-internal class CardListsLogicFacadeImpl(
-    private val cardsRepository: CardsRepository,
+internal open class CreateCardListsLogicFacade(
+    protected val cardsRepository: CardsRepository,
 ) : CardListsLogicFacade {
 
     override suspend fun getStartLists(): CardLists =
         CardLists(
-            sourceList = getSourceList(cardsRepository.getAllCards()),
-            groupList = getGroupsList(),
+            sourceList = getList(cardsRepository.getAllCards()),
+            groupList = getList(emptyList()),
         )
 
     override fun processDropCard(lists: CardLists, cardId: Long, separatorId: Long): CardLists =
         CardDragResultCalculator.calculateUpdates(lists, cardId, separatorId)
 
-    private fun getSourceList(allCards: List<Card>): List<CardsListItem> {
+    protected fun getList(cards: List<Card>): List<CardsListItem> {
         val editor = CardListEditor()
 
         editor.addSeparator()
 
-        allCards.forEach {
+        cards.forEach {
             editor.addCard(it)
             editor.addSeparator()
         }
-
-        return editor.result
-    }
-
-    private fun getGroupsList(): List<CardsListItem> {
-        val editor = CardListEditor()
-
-        editor.addSeparator()
 
         return editor.result
     }

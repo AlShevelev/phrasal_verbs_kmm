@@ -73,6 +73,9 @@ VALUES (?, ?);
 readAllBunches:
 SELECT *  FROM bunch;
 
+readBunch:
+SELECT *  FROM bunch WHERE bunch_id = ?;
+
 updateBunchTitle:
 UPDATE bunch SET title = ? WHERE bunch_id = ?;
 
@@ -88,7 +91,7 @@ CREATE TABLE card_bunch (
     sort_order INTEGER AS Short NOT NULL
 );
 
-CREATE INDEX card_bunch_index ON card_bunch(card_id, bunch_id);
+CREATE INDEX card_bunch_index ON card_bunch(bunch_id);
 
 createCardBunch:
 INSERT INTO card_bunch(card_id, bunch_id, sort_order)
@@ -97,8 +100,11 @@ VALUES (?, ?, ?);
 readAllCardBunchs:
 SELECT *  FROM card_bunch;
 
+readCardBunch:
+SELECT *  FROM card_bunch WHERE bunch_id = ?;
+
 deleteCardBunch:
-DELETE FROM card_bunch WHERE card_id = ? AND bunch_id = ?;
+DELETE FROM card_bunch WHERE bunch_id = ?;
 
 updateCardBunchSortOrder:
 UPDATE card_bunch SET sort_order = ? WHERE card_id = ? AND bunch_id = ?;

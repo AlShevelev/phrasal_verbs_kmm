@@ -1,6 +1,7 @@
 package com.shevelev.phrasalverbs.data.repository.appstorage
 
 import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
+import com.shevelev.phrasalverbs.core.innerJoin
 import com.shevelev.phrasalverbs.data.api.appstorage.AppStorageDatabase
 import com.shevelev.phrasalverbs.data.api.appstorage.Card_side
 import com.shevelev.phrasalverbs.data.api.appstorage.Card_side_content_item
@@ -25,12 +26,94 @@ internal class CardsRepositoryImpl(
      * Returns all cards in random order
      */
     override suspend fun getAllCards(): List<Card> = withContext(ioDispatcher) {
+        getAllCardsInternal()
+    }
+
+    /**
+     * Saves a card in the storage
+     */
+    override suspend fun createCard(card: Card) = withContext(ioDispatcher) {
+        queries.transaction {
+            val cardId = card.id
+            queries.createCard(cardId, mapper.booleanToDb(card.isLearnt))
+
+            Language.ENGLISH.let { createCardSide(it, cardId, card.side[it]) }
+            Language.RUSSIAN.let { createCardSide(it, cardId, card.side[it]) }
+        }
+    }
+
+    override suspend fun getGroupsCount(): Int = withContext(ioDispatcher) {
+        queries
+            .readAllBunches()
+            .executeAsList()
+            .size
+    }
+
+    override suspend fun createGroup(name: String, cards: List<Card>) =
+        withContext(ioDispatcher) {
+            queries.transaction {
+                createGroupInternal(null, name, cards)
+            }
+        }
+
+    override suspend fun getAllGroups(): List<CardGroup> = withContext(ioDispatcher) {
+        queries
+            .readAllBunches()
+            .executeAsList()
+            .map { CardGroup(it.bunch_id, it.title) }
+    }
+
+    override suspend fun getGroup(groupId: Long): CardGroup = withContext(ioDispatcher) {
+        queries.transactionWithResult {
+            val group = queries.readBunch(groupId).executeAsOne()
+            val cardGroupLink = queries.readCardBunch(groupId).executeAsList()
+            val allCards = getAllCardsInternal()
+
+            val cards = cardGroupLink
+                .innerJoin(allCards) { g, c -> g.card_id == c.id }
+                .map { it.second }
+
+            CardGroup(
+                id = groupId,
+                name = group.title,
+                cards = cards,
+            )
+        }
+    }
+
+    override suspend fun getGroupBrief(groupId: Long): CardGroup = withContext(ioDispatcher) {
+        val group = queries.readBunch(groupId).executeAsOne()
+
+        CardGroup(
+            id = groupId,
+            name = group.title,
+        )
+    }
+
+    override suspend fun deleteGroup(groupId: Long) = withContext(ioDispatcher) {
+        queries.transaction {
+            deleteGroupInternal(groupId)
+        }
+    }
+
+    override suspend fun updateGroup(groupId: Long, name: String, cards: List<Card>) =
+        withContext(ioDispatcher) {
+            queries.transaction {
+                deleteGroupInternal(groupId)
+                createGroupInternal(groupId, name, cards)
+            }
+        }
+
+    /**
+     * Returns all cards in random order
+     */
+    private fun getAllCardsInternal(): List<Card> {
         val cards = queries
             .readAllCards()
             .executeAsList()
             .sortedBy { it.card_id }
 
-        cards.map { dbCard ->
+        return cards.map { dbCard ->
             val dbCardSides = queries
                 .readCardSide(dbCard.card_id)
                 .executeAsList()
@@ -77,42 +160,23 @@ internal class CardsRepositoryImpl(
             description = description,
         )
 
-    /**
-     * Saves a card in the storage
-     */
-    override suspend fun createCard(card: Card) = withContext(ioDispatcher) {
-        queries.transaction {
-            val cardId = card.id
-            queries.createCard(cardId, mapper.booleanToDb(card.isLearnt))
+    private fun createGroupInternal(groupId: Long?, name: String, cards: List<Card>) {
+        val dbGroupId = groupId ?: IdGenerator.newId()
+        queries.createBunch(dbGroupId, name)
 
-            Language.ENGLISH.let { createCardSide(it, cardId, card.side[it]) }
-            Language.RUSSIAN.let { createCardSide(it, cardId, card.side[it]) }
+        cards.forEachIndexed { index, card ->
+            queries.createCardBunch(
+                card.id,
+                dbGroupId,
+                index.toShort(),
+            )
         }
     }
 
-    override suspend fun getGroupsCount(): Int = withContext(ioDispatcher) {
-        queries
-            .readAllBunches()
-            .executeAsList()
-            .size
+    private fun deleteGroupInternal(groupId: Long) {
+        queries.deleteCardBunch(groupId)
+        queries.deleteBunch(groupId)
     }
-
-    override suspend fun createGroup(name: String, cards: List<Card>) {
-        queries.transaction {
-            val groupId = IdGenerator.newId()
-            queries.createBunch(groupId, name)
-
-            cards.forEachIndexed { index, card ->
-                queries.createCardBunch(card.id, groupId, index.toShort())
-            }
-        }
-    }
-
-    override suspend fun getAllGroups(): List<CardGroup> =
-        queries
-            .readAllBunches()
-            .executeAsList()
-            .map { CardGroup(it.bunch_id, it.title) }
 
     private fun createCardSide(language: Language, cardId: Long, cardSide: CardSide?) {
         if (cardSide != null) {

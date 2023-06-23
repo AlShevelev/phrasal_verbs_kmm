@@ -19,4 +19,12 @@ internal interface CardsRepository {
     suspend fun createGroup(name: String, cards: List<Card>)
 
     suspend fun getAllGroups(): List<CardGroup>
+
+    suspend fun getGroup(groupId: Long): CardGroup
+
+    suspend fun getGroupBrief(groupId: Long): CardGroup
+
+    suspend fun deleteGroup(groupId: Long)
+
+    suspend fun updateGroup(groupId: Long, name: String, cards: List<Card>)
 }
