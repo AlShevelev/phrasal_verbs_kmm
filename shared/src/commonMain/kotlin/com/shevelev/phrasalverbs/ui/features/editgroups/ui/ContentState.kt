@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.dialogs.EditTextAlertDialog
 import com.shevelev.phrasalverbs.core.ui.dialogs.StaticTextAlertDialog
@@ -74,6 +73,18 @@ internal fun ContentState(
             onConfirm = { viewModel.onDeleteDialogClose(isConfirmed = true) },
             onDismiss = { viewModel.onDeleteDialogClose(isConfirmed = false) },
             onCancel = { viewModel.onDeleteDialogClose(isConfirmed = false) },
+        )
+    }
+
+    if (state.isCancelConfirmationDialogShown) {
+        StaticTextAlertDialog(
+            titleText = MR.strings.cancel_group_title.toLocString(),
+            text = MR.strings.cancel_group_request.toLocString(),
+            confirmButtonText = MR.strings.yes.toLocString(),
+            cancelButtonText = MR.strings.cancel.toLocString(),
+            onConfirm = { viewModel.onCancelConfirmationDialogClose(isConfirmed = true) },
+            onDismiss = { viewModel.onCancelConfirmationDialogClose(isConfirmed = false) },
+            onCancel = { viewModel.onCancelConfirmationDialogClose(isConfirmed = false) },
         )
     }
 }

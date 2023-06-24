@@ -7,10 +7,18 @@ internal sealed interface EditGroupsState {
 
     data class Content(
         val name: String? = null,
+
         val isNameDialogShown: Boolean = false,
         val isDeleteDialogShown: Boolean = false,
+        val isCancelConfirmationDialogShown: Boolean = false,
+
         val isDeleteButtonShown: Boolean,
+
         val sourceList: List<CardsListItem>,
         val groupList: List<CardsListItem>,
-    ) : EditGroupsState
+    ) : EditGroupsState {
+
+        val isDialogShown: Boolean
+            get() = isNameDialogShown || isDeleteDialogShown || isCancelConfirmationDialogShown
+    }
 }

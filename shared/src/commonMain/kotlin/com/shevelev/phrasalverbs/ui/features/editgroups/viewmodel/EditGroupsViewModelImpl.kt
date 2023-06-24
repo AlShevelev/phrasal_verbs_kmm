@@ -31,6 +31,8 @@ internal class EditGroupsViewModelImpl(
 
     private lateinit var cardListsLogicFacade: CardListsLogicFacade
 
+    private var wasUserAction = false
+
     private val isEdit: Boolean
         get() = groupId != null
 
@@ -65,8 +67,12 @@ internal class EditGroupsViewModelImpl(
 
     override fun onBackClick() {
         (_state.value as? EditGroupsState.Content)?.let { activeState ->
-            if (!activeState.isNameDialogShown) {
-                navigation.navigateToSelectGroup(isAddNewButtonVisible = true)
+            if (!activeState.isDialogShown) {
+                if (wasUserAction) {
+                    _state.tryEmit(activeState.copy(isCancelConfirmationDialogShown = true))
+                } else {
+                    navigateBack()
+                }
             }
         }
     }
@@ -79,6 +85,8 @@ internal class EditGroupsViewModelImpl(
             )
 
             val processingResult = cardListsLogicFacade.processDropCard(lists, cardId, separatorId)
+
+            wasUserAction = true
 
             activeState.copy(
                 sourceList = processingResult.sourceList,
@@ -121,7 +129,7 @@ internal class EditGroupsViewModelImpl(
                 _state.tryEmit(newState)
 
                 save(value, newState.groupList)
-                onBackClick()
+                navigateBack()
             }
         }
     }
@@ -133,8 +141,18 @@ internal class EditGroupsViewModelImpl(
             if (isConfirmed) {
                 viewModelScope.launch {
                     cardsRepository.deleteGroup(groupId!!)
-                    onBackClick()
+                    navigateBack()
                 }
+            }
+        }
+    }
+
+    override fun onCancelConfirmationDialogClose(isConfirmed: Boolean) {
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            _state.tryEmit(activeState.copy(isCancelConfirmationDialogShown = false))
+
+            if (isConfirmed) {
+                navigateBack()
             }
         }
     }
@@ -154,5 +172,9 @@ internal class EditGroupsViewModelImpl(
                 showPopup(MR.strings.general_error.toLocString())
             }
         }
+    }
+
+    private fun navigateBack() {
+        navigation.navigateToSelectGroup(isAddNewButtonVisible = true)
     }
 }

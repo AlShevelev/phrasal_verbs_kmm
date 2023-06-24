@@ -19,4 +19,6 @@ internal interface EditGroupsViewModel : ViewModel {
     fun onNameDialogClose(value: String?, isConfirmed: Boolean)
 
     fun onDeleteDialogClose(isConfirmed: Boolean)
+
+    fun onCancelConfirmationDialogClose(isConfirmed: Boolean)
 }

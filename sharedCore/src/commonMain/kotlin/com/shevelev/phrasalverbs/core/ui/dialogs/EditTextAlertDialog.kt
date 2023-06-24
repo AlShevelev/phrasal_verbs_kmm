@@ -45,12 +45,14 @@ fun EditTextAlertDialog(
 
         var value by remember { mutableStateOf(startText.orEmpty()) }
 
+        onValueChange(value)
+
         TextField(
             modifier = modifier
                 .fillMaxWidth(),
             value = value,
             onValueChange = {
-                if(it.length <= maxLen) {
+                if (it.length <= maxLen) {
                     value = it
                     onValueChange(it)
                 }
