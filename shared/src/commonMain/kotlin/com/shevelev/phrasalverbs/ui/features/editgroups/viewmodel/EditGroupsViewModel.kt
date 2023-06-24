@@ -14,5 +14,9 @@ internal interface EditGroupsViewModel : ViewModel {
 
     fun onSaveClick()
 
+    fun onDeleteClick()
+
     fun onNameDialogClose(value: String?, isConfirmed: Boolean)
+
+    fun onDeleteDialogClose(isConfirmed: Boolean)
 }

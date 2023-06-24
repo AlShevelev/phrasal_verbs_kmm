@@ -13,7 +13,10 @@
     <string name="cant_save_empty_group">Нельзя сохранять пустую группу</string>
     <string name="enter_group_name">Имя группы</string>
     <string name="ok">Ok</string>
+    <string name="yes">Да</string>
     <string name="cancel">Cancel</string>
     <string name="create">Создать новую</string>
     <string name="select_group">Выберите группу</string>
+    <string name="delete_group_title">Подтвердите удаление</string>
+    <string name="delete_group_request">Действительно удалить группу?</string>
 </resources>

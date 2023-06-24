@@ -16,6 +16,32 @@ fun TopBar(
     navigation: TopBarAction? = null,
     vararg action: TopBarAction,
 ) {
+    TopBarInternal(
+        title = title,
+        navigation = navigation,
+        actions = action,
+    )
+}
+
+@Composable
+fun TopBar(
+    title: String = "",
+    navigation: TopBarAction? = null,
+    actions: List<TopBarAction>,
+) {
+    TopBarInternal(
+        title = title,
+        navigation = navigation,
+        actions = actions.toTypedArray()
+    )
+}
+
+@Composable
+private fun TopBarInternal(
+    title: String = "",
+    navigation: TopBarAction? = null,
+    actions: Array<out TopBarAction>,
+) {
     TopAppBar(
         title = {
             Text(
@@ -30,7 +56,7 @@ fun TopBar(
             }
         },
         actions = {
-            action.forEach {
+            actions.forEach {
                 TopBarIcon(it)
             }
         },

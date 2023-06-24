@@ -39,10 +39,25 @@ internal fun EditGroupsFeature(
                         icon = painterResource(MR.images.arrow_back),
                         onClick = { viewModel.onBackClick() },
                     ),
-                    TopBarAction(
-                        icon = painterResource(MR.images.save),
-                        onClick = { viewModel.onSaveClick() },
-                    ),
+                    actions = buildList {
+                        if (state.value is EditGroupsState.Content) {
+                            add(
+                                TopBarAction(
+                                    icon = painterResource(MR.images.save),
+                                    onClick = { viewModel.onSaveClick() },
+                                ),
+                            )
+                        }
+
+                        if ((state.value as? EditGroupsState.Content)?.isDeleteButtonShown == true) {
+                            add(
+                                TopBarAction(
+                                    icon = painterResource(MR.images.delete),
+                                    onClick = { viewModel.onDeleteClick() },
+                                ),
+                            )
+                        }
+                    },
                 )
             },
         ) { contentPadding ->

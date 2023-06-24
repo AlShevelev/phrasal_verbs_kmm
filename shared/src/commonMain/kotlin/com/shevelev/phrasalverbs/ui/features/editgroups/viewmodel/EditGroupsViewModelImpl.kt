@@ -51,6 +51,7 @@ internal class EditGroupsViewModelImpl(
                 _state.emit(
                     EditGroupsState.Content(
                         name = groupName,
+                        isDeleteButtonShown = isEdit,
                         sourceList = lists.sourceList,
                         groupList = lists.groupList,
                     ),
@@ -65,7 +66,7 @@ internal class EditGroupsViewModelImpl(
     override fun onBackClick() {
         (_state.value as? EditGroupsState.Content)?.let { activeState ->
             if (!activeState.isNameDialogShown) {
-                navigation.navigateToMainMenu()
+                navigation.navigateToSelectGroup(isAddNewButtonVisible = true)
             }
         }
     }
@@ -99,6 +100,12 @@ internal class EditGroupsViewModelImpl(
         }
     }
 
+    override fun onDeleteClick() {
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            _state.tryEmit(activeState.copy(isDeleteDialogShown = true))
+        }
+    }
+
     override fun onNameDialogClose(value: String?, isConfirmed: Boolean) {
         (_state.value as? EditGroupsState.Content)?.let { activeState ->
             if (!isConfirmed || value.isNullOrBlank()) {
@@ -115,6 +122,19 @@ internal class EditGroupsViewModelImpl(
 
                 save(value, newState.groupList)
                 onBackClick()
+            }
+        }
+    }
+
+    override fun onDeleteDialogClose(isConfirmed: Boolean) {
+        (_state.value as? EditGroupsState.Content)?.let { activeState ->
+            _state.tryEmit(activeState.copy(isDeleteDialogShown = false))
+
+            if (isConfirmed) {
+                viewModelScope.launch {
+                    cardsRepository.deleteGroup(groupId!!)
+                    onBackClick()
+                }
             }
         }
     }

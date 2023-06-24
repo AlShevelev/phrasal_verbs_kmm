@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.dialogs.EditTextAlertDialog
+import com.shevelev.phrasalverbs.core.ui.dialogs.StaticTextAlertDialog
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsState
@@ -52,7 +53,7 @@ internal fun ContentState(
         }
     }
 
-    if(state.isNameDialogShown) {
+    if (state.isNameDialogShown) {
         EditTextAlertDialog(
             titleText = MR.strings.enter_group_name.toLocString(),
             startText = state.name,
@@ -61,6 +62,18 @@ internal fun ContentState(
             onConfirm = { viewModel.onNameDialogClose(it, isConfirmed = true) },
             onDismiss = { viewModel.onNameDialogClose(null, isConfirmed = false) },
             onCancel = { viewModel.onNameDialogClose(null, isConfirmed = false) },
+        )
+    }
+
+    if (state.isDeleteDialogShown) {
+        StaticTextAlertDialog(
+            titleText = MR.strings.delete_group_title.toLocString(),
+            text = MR.strings.delete_group_request.toLocString(),
+            confirmButtonText = MR.strings.yes.toLocString(),
+            cancelButtonText = MR.strings.cancel.toLocString(),
+            onConfirm = { viewModel.onDeleteDialogClose(isConfirmed = true) },
+            onDismiss = { viewModel.onDeleteDialogClose(isConfirmed = false) },
+            onCancel = { viewModel.onDeleteDialogClose(isConfirmed = false) },
         )
     }
 }
