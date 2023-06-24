@@ -33,29 +33,35 @@ internal fun EditGroupsFeature(
 
         Scaffold(
             topBar = {
+                val title = if (params.groupId == null) {
+                    MR.strings.create_group
+                } else {
+                    MR.strings.edit_group
+                }
+
                 TopBar(
-                    title = MR.strings.edit_group.toLocString(),
+                    title = title.toLocString(),
                     navigation = TopBarAction(
                         icon = painterResource(MR.images.arrow_back),
                         onClick = { viewModel.onBackClick() },
                     ),
                     actions = buildList {
-                        if (state.value is EditGroupsState.Content) {
+                        (state.value as? EditGroupsState.Content)?.let { stateValue ->
                             add(
                                 TopBarAction(
                                     icon = painterResource(MR.images.save),
                                     onClick = { viewModel.onSaveClick() },
                                 ),
                             )
-                        }
 
-                        if ((state.value as? EditGroupsState.Content)?.isDeleteButtonShown == true) {
-                            add(
-                                TopBarAction(
-                                    icon = painterResource(MR.images.delete),
-                                    onClick = { viewModel.onDeleteClick() },
-                                ),
-                            )
+                            if (stateValue.isDeleteButtonShown) {
+                                add(
+                                    TopBarAction(
+                                        icon = painterResource(MR.images.delete),
+                                        onClick = { viewModel.onDeleteClick() },
+                                    ),
+                                )
+                            }
                         }
                     },
                 )
