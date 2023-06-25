@@ -76,9 +76,6 @@ SELECT *  FROM bunch;
 readBunch:
 SELECT *  FROM bunch WHERE bunch_id = ?;
 
-updateBunchTitle:
-UPDATE bunch SET title = ? WHERE bunch_id = ?;
-
 deleteBunch:
 DELETE FROM bunch WHERE bunch_id = ?;
 
@@ -97,14 +94,8 @@ createCardBunch:
 INSERT INTO card_bunch(card_id, bunch_id, sort_order)
 VALUES (?, ?, ?);
 
-readAllCardBunchs:
-SELECT *  FROM card_bunch;
-
 readCardBunch:
 SELECT *  FROM card_bunch WHERE bunch_id = ?;
 
 deleteCardBunch:
 DELETE FROM card_bunch WHERE bunch_id = ?;
-
-updateCardBunchSortOrder:
-UPDATE card_bunch SET sort_order = ? WHERE card_id = ? AND bunch_id = ?;
