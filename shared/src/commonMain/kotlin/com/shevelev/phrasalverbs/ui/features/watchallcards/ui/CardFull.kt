@@ -2,15 +2,21 @@ package com.shevelev.phrasalverbs.ui.features.watchallcards.ui
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -30,13 +36,17 @@ import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.Language
+import com.shevelev.phrasalverbs.resources.MR
+import dev.icerock.moko.resources.compose.painterResource
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun CardFull(
     modifier: Modifier = Modifier,
     card: Card,
+    isInLearningMode: Boolean,
     isRussianSideDefault: Boolean,
+    onLearntClick: () -> Unit,
 ) {
     val startLanguage = if (isRussianSideDefault) Language.RUSSIAN else Language.ENGLISH
     var language by remember { mutableStateOf(startLanguage) }
@@ -86,14 +96,22 @@ internal fun CardFull(
             }
         },
     ) {
+        var isLearnt by remember { mutableStateOf(card.isLearnt) }
+
         CardSide(
             side = card.side[language]!!,
+            isLearnt = isLearnt,
+            isInLearningMode = isInLearningMode,
             modifier = Modifier
                 .fillMaxSize()
                 .graphicsLayer {
                     alpha = if (language == startLanguage) animateBack else animateFront
                     rotationY = if (language == startLanguage) 0f else 180f
                 },
+            onLearntClick = {
+                isLearnt = !isLearnt
+                onLearntClick()
+            },
         )
     }
 }
@@ -101,15 +119,60 @@ internal fun CardFull(
 @Composable
 private fun CardSide(
     side: CardSide,
+    isLearnt: Boolean,
+    isInLearningMode: Boolean,
     modifier: Modifier = Modifier,
+    onLearntClick: () -> Unit,
 ) {
+    val topPadding = if (isInLearningMode) {
+        0.dp
+    } else {
+        Dimens.padding
+    }
     Column(
         modifier = modifier
-            .padding(all = Dimens.padding),
+            .padding(
+                start = Dimens.padding,
+                end = Dimens.padding,
+                top = topPadding,
+                bottom = Dimens.padding,
+            ),
+
     ) {
-        Clarification(
-            item = side.clarification,
-        )
+        if (isInLearningMode) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Clarification(
+                    item = side.clarification,
+                )
+
+                val icon = if (isLearnt) {
+                    MR.images.star_fill
+                } else {
+                    MR.images.star_empty
+                }
+                IconButton(
+                    modifier = Modifier.offset(
+                        x = Dimens.padding,
+                        y = 0.dp,
+                    ),
+                    onClick = onLearntClick,
+                ) {
+                    Icon(
+                        painter = painterResource(icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(Dimens.iconButtonSize),
+                    )
+                }
+            }
+        } else {
+            Clarification(
+                item = side.clarification,
+            )
+        }
 
         Spacer(
             modifier = Modifier.weight(1f),

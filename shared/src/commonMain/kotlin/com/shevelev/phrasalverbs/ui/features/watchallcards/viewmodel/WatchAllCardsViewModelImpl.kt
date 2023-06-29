@@ -6,6 +6,7 @@ import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorageRepository
+import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.resources.MR
 import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.FiniteListCardsProvider
 import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.InfiniteListCardsProvider
@@ -26,10 +27,23 @@ internal class WatchAllCardsViewModelImpl(
     override val state: StateFlow<WatchAllCardsState>
         get() = _state.asStateFlow()
 
-    init {
+    private var groupId: Long? = null
+
+    private val isInLearningMode: Boolean
+        get() = groupId != null
+
+    var isLearntMessageShown = false
+
+    override fun init(groupId: Long?) {
+        this.groupId = groupId
+
         viewModelScope.launch {
             try {
-                val allCards = cardsRepository.getAllCards()
+                val allCards = if (isInLearningMode) {
+                    cardsRepository.getGroup(groupId!!).cards
+                } else {
+                    cardsRepository.getAllCards()
+                }
 
                 val cardsProvider = if (keyValueStorageRepository.getIsInfiniteCardsList()) {
                     InfiniteListCardsProvider(allCards)
@@ -40,6 +54,7 @@ internal class WatchAllCardsViewModelImpl(
                 _state.emit(
                     WatchAllCardsState.Content(
                         isRussianSideDefault = keyValueStorageRepository.getIsRussianSideDefault(),
+                        isInLearningMode = isInLearningMode,
                         cardsProvider = cardsProvider,
                     ),
                 )
@@ -51,14 +66,35 @@ internal class WatchAllCardsViewModelImpl(
     }
 
     override fun onBackClick() {
-        navigation.navigateToMainMenu()
+        if (isInLearningMode) {
+            navigation.navigateToSelectGroup(isAddNewButtonVisible = false)
+        } else {
+            navigation.navigateToMainMenu()
+        }
     }
 
-    override fun onSwitchLanguageClick() {
-        (_state.value as? WatchAllCardsState.Content)?.let {
-            _state.tryEmit(
-                it.copy(isRussianSideDefault = !it.isRussianSideDefault),
-            )
+    override fun onSwitchLanguageClick() =
+        updateState {
+            it.copy(isRussianSideDefault = !it.isRussianSideDefault)
         }
+
+    override fun onLearntClick(card: Card) {
+        val activeState = _state.value as? WatchAllCardsState.Content ?: return
+        val isLearnt = !card.isLearnt
+
+        viewModelScope.launch {
+            cardsRepository.updateIsLearnt(card.id, isLearnt)
+            activeState.cardsProvider.updateIsLearnt(card.id, isLearnt)
+
+            if (isLearnt && !isLearntMessageShown) {
+                isLearntMessageShown = true
+                showPopup(MR.strings.card_is_learnt.toLocString())
+            }
+        }
+    }
+
+    private fun updateState(update: (WatchAllCardsState.Content) -> WatchAllCardsState.Content) {
+        val activeState = _state.value as? WatchAllCardsState.Content ?: return
+        _state.tryEmit(update(activeState))
     }
 }

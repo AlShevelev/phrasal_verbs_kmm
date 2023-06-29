@@ -31,7 +31,9 @@ internal fun ContentState(
                     .padding(bottom = Dimens.padding)
                     .padding(top = if (index == 0) Dimens.padding else 0.dp),
                 card = card,
+                isInLearningMode = state.isInLearningMode,
                 isRussianSideDefault = state.isRussianSideDefault,
+                onLearntClick = { viewModel.onLearntClick(card) },
             )
         }
     }

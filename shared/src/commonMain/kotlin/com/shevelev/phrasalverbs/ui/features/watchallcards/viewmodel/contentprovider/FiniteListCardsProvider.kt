@@ -3,8 +3,8 @@ package com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentpro
 import com.shevelev.phrasalverbs.domain.entities.Card
 
 internal class FiniteListCardsProvider(
-    private val cards: List<Card>
-) : CardsProvider {
+    cards: List<Card>
+) : CardsProvider(cards) {
 
     override val count: Int
         get() = cards.size

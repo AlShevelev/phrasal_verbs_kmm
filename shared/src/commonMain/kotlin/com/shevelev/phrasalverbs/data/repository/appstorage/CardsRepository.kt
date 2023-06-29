@@ -27,4 +27,6 @@ internal interface CardsRepository {
     suspend fun deleteGroup(groupId: Long)
 
     suspend fun updateGroup(groupId: Long, name: String, cards: List<Card>)
+
+    suspend fun updateIsLearnt(cardId: Long, isLearnt: Boolean)
 }

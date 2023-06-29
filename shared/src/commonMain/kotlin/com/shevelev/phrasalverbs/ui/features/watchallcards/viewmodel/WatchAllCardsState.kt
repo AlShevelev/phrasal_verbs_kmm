@@ -7,6 +7,7 @@ internal sealed interface WatchAllCardsState {
 
     data class Content(
         val isRussianSideDefault: Boolean,
+        val isInLearningMode: Boolean,
         val cardsProvider: CardsProvider,
     ) : WatchAllCardsState
 }

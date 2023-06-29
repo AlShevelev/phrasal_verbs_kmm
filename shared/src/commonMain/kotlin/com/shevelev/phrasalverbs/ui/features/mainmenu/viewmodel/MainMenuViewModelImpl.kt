@@ -47,11 +47,11 @@ internal class MainMenuViewModelImpl(
     }
 
     override fun onLearnClick() {
-        navigation.navigateToLearning()
+        navigation.navigateToSelectGroup(isAddNewButtonVisible = false)
     }
 
     override fun onWatchAllCardsClick() {
-        navigation.navigateToWatchAllCards()
+        navigation.navigateToWatchAllCards(null)
     }
 
     override fun onSettingsClick() {

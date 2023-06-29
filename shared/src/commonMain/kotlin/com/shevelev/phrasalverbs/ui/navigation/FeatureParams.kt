@@ -8,9 +8,12 @@ internal sealed interface FeatureParams {
         val groupId: Long?,
     ) : FeatureParams
 
-    object WatchAllCards : FeatureParams
-
-    object Learning : FeatureParams
+    /**
+     * @property groupId if the parameter is null - we should show all the cards
+     */
+    data class WatchAllCards(
+        val groupId: Long?,
+    ) : FeatureParams
 
     object MainMenu : FeatureParams
 

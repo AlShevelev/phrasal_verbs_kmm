@@ -17,12 +17,8 @@ internal class NavigationGraphImpl : NavigationGraph {
         _activeFeature.tryEmit(FeatureParams.SelectGroup(isAddNewButtonVisible))
     }
 
-    override fun navigateToWatchAllCards() {
-        _activeFeature.tryEmit(FeatureParams.WatchAllCards)
-    }
-
-    override fun navigateToLearning() {
-        _activeFeature.tryEmit(FeatureParams.Learning)
+    override fun navigateToWatchAllCards(groupId: Long?) {
+        _activeFeature.tryEmit(FeatureParams.WatchAllCards(groupId))
     }
 
     override fun navigateToMainMenu() {

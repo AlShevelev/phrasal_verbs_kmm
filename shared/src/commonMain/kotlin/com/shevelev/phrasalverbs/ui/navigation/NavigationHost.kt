@@ -5,7 +5,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.koin.getKoin
 import com.shevelev.phrasalverbs.ui.features.editgroups.EditGroupsFeature
-import com.shevelev.phrasalverbs.ui.features.learning.LearningFeature
 import com.shevelev.phrasalverbs.ui.features.mainmenu.MainMenuFeature
 import com.shevelev.phrasalverbs.ui.features.selectgroup.SelectGroupFeature
 import com.shevelev.phrasalverbs.ui.features.settings.SettingsFeature
@@ -21,12 +20,6 @@ internal fun NavigationHost(
     when (val params = feature.value) {
         is FeatureParams.EditGroups -> {
             EditGroupsFeature(
-                params = params,
-                modifier = modifier,
-            )
-        }
-        is FeatureParams.Learning -> {
-            LearningFeature(
                 params = params,
                 modifier = modifier,
             )

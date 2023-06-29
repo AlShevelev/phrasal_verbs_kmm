@@ -7,6 +7,8 @@ object Dimens {
     val paddingSmall = 8.dp
     val paddingIcon = 12.dp
 
+    val iconButtonSize = 24.dp
+
     val elevation = 2.dp
 
     val border = 1.dp

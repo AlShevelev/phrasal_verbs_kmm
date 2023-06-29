@@ -9,9 +9,7 @@ internal interface NavigationGraph {
 
     fun navigateToSelectGroup(isAddNewButtonVisible: Boolean)
 
-    fun navigateToWatchAllCards()
-
-    fun navigateToLearning()
+    fun navigateToWatchAllCards(groupId: Long?)
 
     fun navigateToMainMenu()
 

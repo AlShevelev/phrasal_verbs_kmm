@@ -66,7 +66,12 @@ internal class CardsRepositoryImpl(
     override suspend fun getGroup(groupId: Long): CardGroup = withContext(ioDispatcher) {
         queries.transactionWithResult {
             val group = queries.readBunch(groupId).executeAsOne()
-            val cardGroupLink = queries.readCardBunch(groupId).executeAsList()
+
+            val cardGroupLink = queries
+                .readCardBunch(groupId)
+                .executeAsList()
+                .sortedBy { it.sort_order }
+
             val allCards = getAllCardsInternal()
 
             val cards = cardGroupLink
@@ -102,6 +107,11 @@ internal class CardsRepositoryImpl(
                 deleteGroupInternal(groupId)
                 createGroupInternal(groupId, name, cards)
             }
+        }
+
+    override suspend fun updateIsLearnt(cardId: Long, isLearnt: Boolean) =
+        withContext(ioDispatcher) {
+            queries.updateCardColor(mapper.booleanToDb(isLearnt), cardId)
         }
 
     /**

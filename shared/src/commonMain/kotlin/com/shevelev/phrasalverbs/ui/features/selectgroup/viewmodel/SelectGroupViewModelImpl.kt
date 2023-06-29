@@ -18,7 +18,11 @@ internal class SelectGroupViewModelImpl(
     scopeClosable: KoinScopeClosable,
 ) : ViewModelBase(scopeClosable), SelectGroupViewModel {
 
+    private var isLearnMode: Boolean = false
+
     override fun init(isAddNewButtonVisible: Boolean) {
+        isLearnMode = !isAddNewButtonVisible
+
         viewModelScope.launch {
             try {
                 val allGroups = cardsRepository
@@ -58,5 +62,10 @@ internal class SelectGroupViewModelImpl(
 
     override fun onNewGroupClick() = navigation.navigateToEditGroups(null)
 
-    override fun onGroupClick(groupId: Long) = navigation.navigateToEditGroups(groupId)
+    override fun onGroupClick(groupId: Long) =
+        if (isLearnMode) {
+            navigation.navigateToWatchAllCards(groupId)
+        } else {
+            navigation.navigateToEditGroups(groupId)
+        }
 }

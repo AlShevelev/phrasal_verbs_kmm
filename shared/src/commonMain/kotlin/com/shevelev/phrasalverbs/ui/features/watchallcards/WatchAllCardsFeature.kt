@@ -3,6 +3,7 @@ package com.shevelev.phrasalverbs.ui.features.watchallcards
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
@@ -60,6 +61,10 @@ internal fun WatchAllCardsFeature(
                     )
                 }
             }
+        }
+
+        LaunchedEffect(Unit) {
+            viewModel.init(params.groupId)
         }
 
         BackActionHandler(

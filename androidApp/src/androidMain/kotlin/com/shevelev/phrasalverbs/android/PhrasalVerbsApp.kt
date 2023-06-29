@@ -7,7 +7,6 @@ import com.shevelev.phrasalverbs.data.di.DatabaseDriverKoinModuleAndroid
 import com.shevelev.phrasalverbs.data.di.KeyValueStorageKoinModule
 import com.shevelev.phrasalverbs.domain.di.DomainKoinModule
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsFeatureKoinModule
-import com.shevelev.phrasalverbs.ui.features.learning.di.LearningKoinFeatureModule
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuFeatureKoinModule
 import com.shevelev.phrasalverbs.ui.features.selectgroup.di.SelectGroupKoinModule
 import com.shevelev.phrasalverbs.ui.features.settings.di.SettingsFeatureKoinModule
@@ -36,7 +35,6 @@ class PhrasalVerbsApp : Application() {
 
                 NavigationKoinModule,
                 EditGroupsFeatureKoinModule,
-                LearningKoinFeatureModule,
                 MainMenuFeatureKoinModule,
                 SettingsFeatureKoinModule,
                 WatchAllCardsFeatureKoinModule,

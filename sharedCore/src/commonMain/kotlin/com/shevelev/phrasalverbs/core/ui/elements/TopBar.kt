@@ -32,7 +32,7 @@ fun TopBar(
     TopBarInternal(
         title = title,
         navigation = navigation,
-        actions = actions.toTypedArray()
+        actions = actions.toTypedArray(),
     )
 }
 
