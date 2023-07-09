@@ -105,9 +105,8 @@ internal class KeyValueStorageReaderImpl(
      * @param key value's key
      * @return resulted list or null if the value has not been found
      */
-    override suspend fun getStringList(key: String): List<String>? = getValuesList(key,
-        Types.STRING
-    )
+    override suspend fun getStringList(key: String): List<String>? =
+        getValuesList(key, Types.STRING)
 
     /**
      * Checks for the existence of a value in the store

@@ -4,7 +4,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 
 data class PlatformInfo(
     var versionName: String = "",
-    val versionCode: Int = 0
+    val versionCode: String = "0"
 )
 
 val LocalPlatform = staticCompositionLocalOf { PlatformInfo() }

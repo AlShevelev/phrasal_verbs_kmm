@@ -112,6 +112,8 @@ sqldelight {
         packageName = "com.shevelev.phrasalverbs.data.api.keyvaluestorage"
         sourceFolders = listOf("sqldelight/keyvaluestorage")
     }
+
+    linkSqlite = true
 }
 
 multiplatformResources {

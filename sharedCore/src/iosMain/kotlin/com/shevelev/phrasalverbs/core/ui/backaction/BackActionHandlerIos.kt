@@ -6,5 +6,5 @@ import androidx.compose.runtime.Composable
 actual fun BackActionHandler(
     onBackClick: () -> Unit,
 ) {
-    // Not implemented for iOs so far
+    // There is no such standard action in iOs
 }

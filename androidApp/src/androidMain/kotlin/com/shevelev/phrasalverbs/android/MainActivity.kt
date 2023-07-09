@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
             MainView(
                 platformInfo = PlatformInfo(
                     versionName = BuildConfig.VERSION_NAME,
-                    versionCode = BuildConfig.VERSION_CODE,
+                    versionCode = BuildConfig.VERSION_CODE.toString(),
                 ),
             )
         }
