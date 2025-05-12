@@ -7,7 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.feature.Feature
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.di.MainMenuKoinScope
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.BottomBar
 import com.shevelev.phrasalverbs.ui.features.mainmenu.ui.ContentState

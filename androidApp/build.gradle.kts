@@ -1,13 +1,12 @@
 plugins {
+    alias(libs.plugins.android.application)
     kotlin("multiplatform")
-    id("com.android.application")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 kotlin {
-    android()
-
-    val koinVersion = extra["koin.version"] as String
+    androidTarget()
 
     sourceSets {
         val androidMain by getting {
@@ -15,8 +14,8 @@ kotlin {
                 implementation(project(":shared"))
                 implementation(project(":sharedCore"))
 
-                implementation("io.insert-koin:koin-core:$koinVersion")
-                implementation("io.insert-koin:koin-android:$koinVersion")
+                implementation(libs.koin.core)
+                implementation(libs.koin.android)
             }
         }
     }
@@ -28,6 +27,10 @@ android {
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.shevelev.phrasalverbs.android"
         minSdk = (findProperty("android.minSdk") as String).toInt()
@@ -36,10 +39,10 @@ android {
         versionName = "1.0"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(17)
     }
 }

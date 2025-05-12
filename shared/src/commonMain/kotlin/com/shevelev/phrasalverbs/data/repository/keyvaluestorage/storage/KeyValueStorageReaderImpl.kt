@@ -1,6 +1,6 @@
 package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
-import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageQueries
+import com.shevelev.phrasalverbs.data.api.appstorage.AppStorageQueries
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
  * SQLDelight database
  */
 internal class KeyValueStorageReaderImpl(
-    private val dbQueries: KeyValueStorageQueries,
+    private val dbQueries: AppStorageQueries,
     private val storageKey: String,
     private val ioDispatcher: CoroutineDispatcher,
 ) : KeyValueStorageReader {
@@ -119,16 +119,16 @@ internal class KeyValueStorageReaderImpl(
             ?: false
     }
 
-    private suspend fun getValue(key: String, type: Short): String? = withContext(ioDispatcher) {
+    private suspend fun getValue(key: String, type: Long): String? = withContext(ioDispatcher) {
         dbQueries.readCombinedList(key, storageKey).executeAsOneOrNull()
-            ?.takeIf { it.type == type && it.single }
+            ?.takeIf { it.type == type && it.single == 1L }
             ?.value_
     }
 
-    private suspend fun getValuesList(key: String, type: Short): List<String>? = withContext(ioDispatcher) {
+    private suspend fun getValuesList(key: String, type: Long): List<String>? = withContext(ioDispatcher) {
         dbQueries.transactionWithResult {
             dbQueries.readKey(key, storageKey).executeAsOneOrNull()
-                ?.takeIf { !it.single && it.type == type }
+                ?.takeIf { it.single != 1L && it.type == type }
                 ?.let { keyRecord ->
                     dbQueries.readValuesList(keyRecord.key_id).executeAsList()
                 }

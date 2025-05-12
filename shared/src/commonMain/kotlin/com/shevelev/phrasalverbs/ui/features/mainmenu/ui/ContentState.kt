@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.ui.elements.MenuButton
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuState
 import com.shevelev.phrasalverbs.ui.features.mainmenu.viewmodel.MainMenuViewModel
 

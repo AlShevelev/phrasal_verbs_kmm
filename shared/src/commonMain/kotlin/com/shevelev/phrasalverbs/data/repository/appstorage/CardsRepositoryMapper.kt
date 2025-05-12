@@ -4,15 +4,15 @@ import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
 internal interface CardsRepositoryMapper {
-    fun booleanToDb(value: Boolean): Short
+    fun booleanToDb(value: Boolean): Long
 
-    fun booleanFromDb(value: Short?): Boolean
+    fun booleanFromDb(value: Long?): Boolean
 
-    fun contentItemTypeToDb(type: ContentItemType): Short
+    fun contentItemTypeToDb(type: ContentItemType): Long
 
-    fun contentItemTypeFromDb(type: Short?): ContentItemType?
+    fun contentItemTypeFromDb(type: Long?): ContentItemType?
 
-    fun languageToDb(language: Language): Short
+    fun languageToDb(language: Language): Long
 
-    fun languageFromDb(language: Short?): Language?
+    fun languageFromDb(language: Long?): Language?
 }

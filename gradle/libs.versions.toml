@@ -1,0 +1,34 @@
+[versions]
+androidGradlePlugin = "8.7.3"
+sqlDelight = "2.0.2"
+coroutines = "1.10.2"
+koin = "4.0.4"
+mokoResources = "0.24.5"
+androidxActivity = "1.10.1"
+androidxAppcompat = "1.7.0"
+androidxCoreKtx = "1.16.0"
+
+
+[libraries]
+sqldelight-primitive-adapters = { group = "app.cash.sqldelight", name = "primitive-adapters", version.ref = "sqlDelight" }
+sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
+sqldelight-native-driver = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sqlDelight" }
+sqldelight-gradle-plugin = { group = "app.cash.sqldelight", name = "gradle-plugin", version.ref = "sqlDelight" }
+
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+
+moko-resources = { group = "dev.icerock.moko", name = "resources", version.ref = "mokoResources" }
+moko-resources-compose = { group = "dev.icerock.moko", name = "resources-compose", version.ref = "mokoResources" }
+moko-resources-generator = { group = "dev.icerock.moko", name = "resources-generator", version.ref = "mokoResources" }
+
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }

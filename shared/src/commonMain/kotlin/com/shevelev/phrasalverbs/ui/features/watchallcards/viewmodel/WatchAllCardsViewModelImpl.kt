@@ -7,7 +7,7 @@ import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorageRepository
 import com.shevelev.phrasalverbs.domain.entities.Card
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.FiniteListCardsProvider
 import com.shevelev.phrasalverbs.ui.features.watchallcards.viewmodel.contentprovider.InfiniteListCardsProvider
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph

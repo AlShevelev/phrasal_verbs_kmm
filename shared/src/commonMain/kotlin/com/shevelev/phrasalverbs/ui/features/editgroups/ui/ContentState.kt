@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.dialogs.EditTextAlertDialog
 import com.shevelev.phrasalverbs.core.ui.dialogs.StaticTextAlertDialog
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsState
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsViewModel
 

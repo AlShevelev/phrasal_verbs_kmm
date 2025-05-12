@@ -1,13 +1,14 @@
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
-    id("com.android.library")
+    alias(libs.plugins.android.library)
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
-    android()
+    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -21,25 +22,17 @@ kotlin {
             baseName = "sharedCore"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
-
-    val coroutinesVersion = extra["coroutines.version"] as String
-    val koinVersion = extra["koin.version"] as String
-    val mokoResourcesVersion = extra["moko.resources.version"] as String
-    val androidxActivityVersion = extra["androidx.activity.version"] as String
-    val androidxAppcompatVersion = extra["androidx.appcompat.version"] as String
-    val androidxCoreKtxVersion = extra["androidx.core-ktx.version"] as String
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation(libs.kotlinx.coroutines.core)
 
-                api("io.insert-koin:koin-core:$koinVersion")
+                api(libs.koin.core)
 
-                api("dev.icerock.moko:resources:$mokoResourcesVersion")
-                api("dev.icerock.moko:resources-compose:$mokoResourcesVersion")
+                api(libs.moko.resources)
+                api(libs.moko.resources.compose)
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -50,9 +43,9 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:$androidxActivityVersion")
-                api("androidx.appcompat:appcompat:$androidxAppcompatVersion")
-                api("androidx.core:core-ktx:$androidxCoreKtxVersion")
+                api(libs.androidx.activity.compose)
+                api(libs.androidx.appcompat)
+                api(libs.androidx.core.ktx)
             }
         }
 
@@ -78,13 +71,12 @@ android {
 
     defaultConfig {
         minSdk = (findProperty("android.minSdk") as String).toInt()
-        targetSdk = (findProperty("android.targetSdk") as String).toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(17)
     }
 }

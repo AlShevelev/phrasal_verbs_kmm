@@ -12,7 +12,7 @@ import com.shevelev.phrasalverbs.core.ui.elements.TopBar
 import com.shevelev.phrasalverbs.core.ui.elements.TopBarAction
 import com.shevelev.phrasalverbs.core.ui.feature.Feature
 import com.shevelev.phrasalverbs.core.ui.feature.LoadingState
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.di.EditGroupsKoinScope
 import com.shevelev.phrasalverbs.ui.features.editgroups.ui.ContentState
 import com.shevelev.phrasalverbs.ui.features.editgroups.viewmodel.EditGroupsState

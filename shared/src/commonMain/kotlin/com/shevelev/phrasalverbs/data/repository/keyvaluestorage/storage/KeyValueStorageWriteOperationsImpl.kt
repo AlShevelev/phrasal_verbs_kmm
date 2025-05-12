@@ -1,6 +1,6 @@
 package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
 
-import com.shevelev.phrasalverbs.data.api.keyvaluestorage.KeyValueStorageQueries
+import com.shevelev.phrasalverbs.data.api.appstorage.AppStorageQueries
 import com.shevelev.phrasalverbs.core.idgenerator.IdGenerator
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
  * SQLDelight database
  */
 internal class KeyValueStorageWriteOperationsImpl(
-    private val dbQueries: KeyValueStorageQueries,
+    private val dbQueries: AppStorageQueries,
     private val storageKey: String,
     private val ioDispatcher: CoroutineDispatcher,
 ) : KeyValueStorageWriteOperations {
@@ -123,7 +123,7 @@ internal class KeyValueStorageWriteOperationsImpl(
         }
     }
 
-    private suspend fun setValue(key: String, type: Short, value: String) = withContext(ioDispatcher) {
+    private suspend fun setValue(key: String, type: Long, value: String) = withContext(ioDispatcher) {
         dbQueries.transaction {
             val keyRecord = dbQueries.readKey(key, storageKey).executeAsOneOrNull()
 
@@ -131,40 +131,40 @@ internal class KeyValueStorageWriteOperationsImpl(
                 val keyId = IdGenerator.newId()
                 val valueId = IdGenerator.newId()
 
-                dbQueries.createKey(keyId, key, storageKey, type, true)
+                dbQueries.createKey(keyId, key, storageKey, type, single = 1L)
                 dbQueries.createValue(valueId, keyId, value, 0)
             } else {
                 val keyId = keyRecord.key_id
 
-                if (!keyRecord.single) {
+                if (keyRecord.single != 1L) {
                     val valueId = IdGenerator.newId()
 
                     dbQueries.deleteValue(keyId)
                     dbQueries.createValue(valueId, keyId, value, 0)
 
-                    dbQueries.updateKey(type, true, keyId)
+                    dbQueries.updateKey(type, single = 1L, keyId)
                 } else {
                     dbQueries.updateValue(value, keyId)
 
                     if (keyRecord.type != type) {
-                        dbQueries.updateKey(type, true, keyId)
+                        dbQueries.updateKey(type, single = 1L, keyId)
                     }
                 }
             }
         }
     }
 
-    private suspend fun setValuesList(key: String, type: Short, values: List<String>) = withContext(ioDispatcher) {
+    private suspend fun setValuesList(key: String, type: Long, values: List<String>) = withContext(ioDispatcher) {
         dbQueries.transaction {
             val keyRecord = dbQueries.readKey(key, storageKey).executeAsOneOrNull()
 
             if (keyRecord == null) {
                 val keyId = IdGenerator.newId()
-                dbQueries.createKey(keyId, key, storageKey, type, false)
+                dbQueries.createKey(keyId, key, storageKey, type, single = 0L)
 
                 values.forEachIndexed { index, value ->
                     val valueId = IdGenerator.newId()
-                    dbQueries.createValue(valueId, keyId, value, index.toShort())
+                    dbQueries.createValue(valueId, keyId, value, index.toLong())
                 }
             } else {
                 val keyId = keyRecord.key_id
@@ -173,11 +173,11 @@ internal class KeyValueStorageWriteOperationsImpl(
 
                 values.forEachIndexed { index, value ->
                     val valueId = IdGenerator.newId()
-                    dbQueries.createValue(valueId, keyId, value, index.toShort())
+                    dbQueries.createValue(valueId, keyId, value, index.toLong())
                 }
 
-                if (keyRecord.single || keyRecord.type != type) {
-                    dbQueries.updateKey(type, false, keyId)
+                if (keyRecord.single == 1L || keyRecord.type != type) {
+                    dbQueries.updateKey(type, single = 0L, keyId)
                 }
             }
         }

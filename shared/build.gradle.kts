@@ -1,14 +1,15 @@
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
-    id("com.android.library")
+    alias(libs.plugins.android.library)
     id("org.jetbrains.compose")
-    id("com.squareup.sqldelight")
+    id("org.jetbrains.kotlin.plugin.compose")
+    id("app.cash.sqldelight")
     id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
-    android()
+    androidTarget()
 
     iosX64()
     iosArm64()
@@ -24,30 +25,21 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
-
-    val coroutinesVersion = extra["coroutines.version"] as String
-    val sqlDelightVersion = extra["sqlDelight.version"] as String
-    val koinVersion = extra["koin.version"] as String
-    val mokoResourcesVersion = extra["moko.resources.version"] as String
-    val androidxActivityVersion = extra["androidx.activity.version"] as String
-    val androidxAppcompatVersion = extra["androidx.appcompat.version"] as String
-    val androidxCoreKtxVersion = extra["androidx.core-ktx.version"] as String
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation(project(":sharedCore"))
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation(libs.kotlinx.coroutines.core)
 
-                implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+                implementation(libs.sqldelight.primitive.adapters)
 
-                api("io.insert-koin:koin-core:$koinVersion")
+                api(libs.koin.core)
 
-                api("dev.icerock.moko:resources:$mokoResourcesVersion")
-                api("dev.icerock.moko:resources-compose:$mokoResourcesVersion")
+                api(libs.moko.resources)
+                api(libs.moko.resources.compose)
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -58,11 +50,11 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:$androidxActivityVersion")
-                api("androidx.appcompat:appcompat:$androidxAppcompatVersion")
-                api("androidx.core:core-ktx:$androidxCoreKtxVersion")
+                api(libs.androidx.activity.compose)
+                api(libs.androidx.appcompat)
+                api(libs.androidx.core.ktx)
 
-                implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
+                implementation(libs.sqldelight.android.driver)
             }
         }
         val iosX64Main by getting
@@ -75,7 +67,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
 
             dependencies {
-                implementation("com.squareup.sqldelight:native-driver:$sqlDelightVersion")
+                implementation(libs.sqldelight.native.driver)
             }
         }
     }
@@ -87,36 +79,28 @@ android {
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
-    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
         minSdk = (findProperty("android.minSdk") as String).toInt()
-        targetSdk = (findProperty("android.targetSdk") as String).toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(17)
     }
 }
 
 sqldelight {
-    database("AppStorageDatabase") {
-        packageName = "com.shevelev.phrasalverbs.data.api.appstorage"
-        sourceFolders = listOf("sqldelight/appstorage")
+    databases {
+        create("AppStorageDatabase") {
+            packageName.set("com.shevelev.phrasalverbs.data.api.appstorage")
+        }
     }
-
-    database("KeyValueStorageDatabase") {
-        packageName = "com.shevelev.phrasalverbs.data.api.keyvaluestorage"
-        sourceFolders = listOf("sqldelight/keyvaluestorage")
-    }
-
-    linkSqlite = true
 }
 
 multiplatformResources {
-    multiplatformResourcesPackage = "com.shevelev.phrasalverbs.resources" // required
-    iosBaseLocalizationRegion = "ru" // optional, default "en"
+    resourcesPackage.set("com.shevelev.phrasalverbs.ui.resources")
+    iosBaseLocalizationRegion.set("ru") // optional, default "en"
 }

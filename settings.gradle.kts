@@ -4,6 +4,14 @@ include(":androidApp")
 include(":shared")
 include(":sharedCore")
 
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    }
+}
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -25,14 +33,6 @@ pluginManagement {
         id("com.android.library").version(agpVersion)
 
         id("org.jetbrains.compose").version(composeVersion)
+        id("org.jetbrains.kotlin.plugin.compose").version(kotlinVersion)
     }
 }
-
-dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    }
-}
-

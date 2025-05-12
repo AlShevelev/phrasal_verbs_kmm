@@ -5,7 +5,7 @@ import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.keyvaluestorage.KeyValueStorageRepository
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.navigation.NavigationGraph
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

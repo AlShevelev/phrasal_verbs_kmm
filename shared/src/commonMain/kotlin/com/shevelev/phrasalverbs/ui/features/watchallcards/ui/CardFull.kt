@@ -36,7 +36,7 @@ import com.shevelev.phrasalverbs.domain.entities.Card
 import com.shevelev.phrasalverbs.domain.entities.CardContentItem
 import com.shevelev.phrasalverbs.domain.entities.CardSide
 import com.shevelev.phrasalverbs.domain.entities.Language
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import dev.icerock.moko.resources.compose.painterResource
 
 @OptIn(ExperimentalMaterialApi::class)

@@ -4,13 +4,13 @@ package com.shevelev.phrasalverbs.data.repository.keyvaluestorage.storage
  * Set of constants for supported types
  */
 internal object Types {
-    const val INTEGER: Short = 0
-    const val SHORT: Short = 1
-    const val LONG: Short = 2
+    const val INTEGER = 0L
+    const val SHORT = 1L
+    const val LONG = 2L
 
-    const val FLOAT: Short = 3
+    const val FLOAT = 3L
 
-    const val BOOLEAN: Short = 4
+    const val BOOLEAN = 4L
 
-    const val STRING: Short = 5
+    const val STRING = 5L
 }

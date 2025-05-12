@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.theme.Dimens
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsState
 import com.shevelev.phrasalverbs.ui.features.settings.viewmodel.SettingsViewModel
 import dev.icerock.moko.resources.StringResource

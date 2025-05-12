@@ -5,7 +5,7 @@ import com.shevelev.phrasalverbs.core.log.Logger
 import com.shevelev.phrasalverbs.core.resource.toLocString
 import com.shevelev.phrasalverbs.core.ui.viewmodel.ViewModelBase
 import com.shevelev.phrasalverbs.data.repository.appstorage.CardsRepository
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.CreateCardListsLogicFacade
 import com.shevelev.phrasalverbs.ui.features.editgroups.domain.UpdateCardListsLogicFacade

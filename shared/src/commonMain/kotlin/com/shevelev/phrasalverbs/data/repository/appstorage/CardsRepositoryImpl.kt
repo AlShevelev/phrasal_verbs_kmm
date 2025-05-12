@@ -178,7 +178,7 @@ internal class CardsRepositoryImpl(
             queries.createCardBunch(
                 card.id,
                 dbGroupId,
-                index.toShort(),
+                index.toLong(),
             )
         }
     }
@@ -222,7 +222,7 @@ internal class CardsRepositoryImpl(
                 contentItem.value,
                 contentItem.valueVoicing,
                 contentItem.description,
-                sortOrder.toShort(),
+                sortOrder.toLong(),
             )
         }
     }

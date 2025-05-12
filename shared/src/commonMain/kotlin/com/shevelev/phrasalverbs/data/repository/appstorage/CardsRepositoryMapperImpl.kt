@@ -4,20 +4,20 @@ import com.shevelev.phrasalverbs.domain.entities.ContentItemType
 import com.shevelev.phrasalverbs.domain.entities.Language
 
 internal class CardsRepositoryMapperImpl : CardsRepositoryMapper {
-    override fun booleanToDb(value: Boolean): Short = if (value) 1 else 0
+    override fun booleanToDb(value: Boolean): Long = if (value) 1 else 0
 
-    override fun booleanFromDb(value: Short?): Boolean {
-        return value == 1.toShort()
+    override fun booleanFromDb(value: Long?): Boolean {
+        return value == 1L
     }
 
-    override fun contentItemTypeToDb(type: ContentItemType): Short =
+    override fun contentItemTypeToDb(type: ContentItemType): Long =
         when (type) {
-            ContentItemType.CLARIFICATION -> 0
-            ContentItemType.MAIN -> 1
-            ContentItemType.EXAMPLE -> 2
+            ContentItemType.CLARIFICATION -> 0L
+            ContentItemType.MAIN -> 1L
+            ContentItemType.EXAMPLE -> 2L
         }
 
-    override fun contentItemTypeFromDb(type: Short?): ContentItemType? =
+    override fun contentItemTypeFromDb(type: Long?): ContentItemType? =
         type?.let {
             when (it.toInt()) {
                 0 -> ContentItemType.CLARIFICATION
@@ -27,13 +27,13 @@ internal class CardsRepositoryMapperImpl : CardsRepositoryMapper {
             }
         }
 
-    override fun languageToDb(language: Language): Short =
+    override fun languageToDb(language: Language): Long =
         when (language) {
-            Language.RUSSIAN -> 0
-            Language.ENGLISH -> 1
+            Language.RUSSIAN -> 0L
+            Language.ENGLISH -> 1L
         }
 
-    override fun languageFromDb(language: Short?): Language? =
+    override fun languageFromDb(language: Long?): Language? =
         language?.let {
             when (it.toInt()) {
                 0 -> Language.RUSSIAN

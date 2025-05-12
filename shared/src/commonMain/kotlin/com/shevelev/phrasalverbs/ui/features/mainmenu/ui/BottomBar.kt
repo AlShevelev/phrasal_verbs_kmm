@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.shevelev.phrasalverbs.core.resource.toLocString
-import com.shevelev.phrasalverbs.resources.MR
+import com.shevelev.phrasalverbs.ui.resources.MR
 import com.shevelev.phrasalverbs.ui.compositionlocal.LocalPlatform
 import com.shevelev.phrasalverbs.core.ui.theme.ColorsTheme
 
